@@ -74,13 +74,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
-      out.write("                         <td>Nombre: </td>\n");
+      out.write("                         <td>Nickname: </td>\n");
       out.write("                         <td><input type=\"text\" name=\"texto1\" value=\"\" size=\"15\" /></td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
-      out.write("                         <td>Apellido: </td>\n");
-      out.write("                         <td><input type=\"text\" name=\"texto2\" value=\"\" size=\"15\" /></td>\n");
+      out.write("                         <td></td>\n");
+      out.write("                         <td></td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
@@ -89,8 +89,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
-      out.write("                         <td>Nickname: </td>\n");
-      out.write("                         <td><input type=\"text\" name=\"texto4\" value=\"\" size=\"15\" /></td>\n");
+      out.write("                         <td></td>\n");
+      out.write("                         <td></td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");

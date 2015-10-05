@@ -35,13 +35,13 @@
                      </tr>
                      <tr>
                          <td></td>
-                         <td>Nombre: </td>
+                         <td>Nickname: </td>
                          <td><input type="text" name="texto1" value="" size="15" /></td>
                      </tr>
                      <tr>
                          <td></td>
-                         <td>Apellido: </td>
-                         <td><input type="text" name="texto2" value="" size="15" /></td>
+                         <td></td>
+                         <td></td>
                      </tr>
                      <tr>
                          <td></td>
@@ -50,8 +50,8 @@
                      </tr>
                      <tr>
                          <td></td>
-                         <td>Nickname: </td>
-                         <td><input type="text" name="texto4" value="" size="15" /></td>
+                         <td></td>
+                         <td></td>
                      </tr>
                      <tr>
                          <td></td>
