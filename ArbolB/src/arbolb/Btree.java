@@ -373,7 +373,7 @@ public String GetDeclNodo(Bnodo actual)
                    {
                        System.out.println(      "       "+actual.Claves[i].nump); 
                        String v;
-                       v=i+"";
+                       v=i+1+"";
                        if (i==actual.Cuentas-1)
                        {
                                codigo+="<f"+v+">";

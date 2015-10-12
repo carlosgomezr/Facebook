@@ -19,6 +19,7 @@ String fecha;
 NodoPr(int val){
 nump=val;
 }
+NodoPr(int val,int ident){}
 NodoPr(){
 }
 }
