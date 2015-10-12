@@ -20,51 +20,8 @@ import java.io.FileNotFoundException;
  */
 public class Funcion {
     
-public void generarPublicaciones(listaPublicacion lista,String ruta){
-            listaPublicacion aux = lista;
-	    File f;
-            FileWriter escribir;
-	    try{
-	    f = new File(ruta);
-	    escribir = new FileWriter(f);
-	    BufferedWriter bw = new BufferedWriter(escribir);
-	    PrintWriter pw = new PrintWriter(bw);
-            pw.write("digraph grafica { \n");
-            pw.write("label= \"LISTA DOBLE  PUBLICACIONES\"");
-            pw.write("node [shape=record];\n");
-	    pw.write("subgraph g { \n "); 
-            if(lista.primero!=null){
-                
-         
-                    if(aux.primero.next!=null){
-                        while(aux.primero.next!=null){
-                            pw.write("node"+aux.primero.id+"[label=\" Titulo: "+aux.primero.titulo+" Quien publicó: "+aux.primero.nombre+" Texto: "+aux.primero.texto+" Imagen: "+aux.primero.imagen+"\"];\n");
-                            pw.write("node"+aux.primero.next.id+"[label=\" Titulo: "+aux.primero.next.titulo+" Quien publicó: "+aux.primero.next.nombre+" Texto: "+aux.primero.next.texto+" Imagen: "+aux.primero.next.imagen+"\"];\n");
-                            pw.write("node"+aux.primero.id+"->node"+aux.primero.next.id+";\n");
-                            pw.write("node"+aux.primero.next.id+"->node"+aux.primero.id+";\n");
-                            aux.primero = aux.primero.next;
-                        }
-                    }
-                    else{
-                            pw.write("node"+aux.primero.id+"[label=\" Titulo: "+aux.primero.titulo+" Quien publicó: "+aux.primero.nombre+" Texto: "+aux.primero.texto+" Imagen: "+aux.primero.imagen+"\"];\n");
-                    }
-                
-            }
-            else{
-                    System.out.println("    lista vacia  ");
-            }
-            pw.write("}\n");
-	    pw.write("}\n");
-	    pw.close();
-	    bw.close();
-	    }
-	    catch(IOException e){System.out.println("Error: "+e.getMessage());
-            
-            }       
-}
-    
-public void generarEvento(listaEvento lista,String ruta){
-            listaEvento aux = lista;
+public void generarHistorial(listaHistorial lista,String ruta, String usuario){
+            listaHistorial aux = lista;
 	    File f;
             int c = 0;
             int c2 = 1;
@@ -76,7 +33,7 @@ public void generarEvento(listaEvento lista,String ruta){
 	    BufferedWriter bw = new BufferedWriter(escribir);
 	    PrintWriter pw = new PrintWriter(bw);
             pw.write("digraph grafica { \n");
-            pw.write("label= \"LISTA DOBLE  EVENTOS\"");
+            pw.write("label= \"LISTA DOBLE  HISTORIAL "+usuario+" \"+");
             pw.write("node [shape=record];\n");
 	    pw.write("subgraph g { \n "); 
             if(lista.primero!=null){
@@ -84,8 +41,8 @@ public void generarEvento(listaEvento lista,String ruta){
          
                     if(aux.primero.next!=null){
                         while(aux.primero.next!=null){
-                            pw.write("node"+c+"[label=\" Nombre: "+aux.primero.nombre+" Fecha: "+aux.primero.fecha+" Direccion: "+aux.primero.direccion+" Estado: "+aux.primero.estado+"\"];\n");
-                            pw.write("node"+c2+"[label=\" Nombre: "+aux.primero.next.nombre+" Fecha: "+aux.primero.next.fecha+" Direccion: "+aux.primero.next.direccion+" Estado: "+aux.primero.next.estado+"\"];\n");
+                            pw.write("node"+c+"[label=\" Contenido: "+aux.primero.contenido+"\"];\n");
+                            pw.write("node"+c2+"[label=\" Contenido: "+aux.primero.next.contenido+"\"];\n");
                             pw.write("node"+c+"->node"+c2+";\n");
                             pw.write("node"+c2+"->node"+c+";\n");
                             aux.primero = aux.primero.next;
@@ -94,7 +51,7 @@ public void generarEvento(listaEvento lista,String ruta){
                         }
                     }
                     else{
-                            pw.write("node"+c+"[label=\" Nombre: "+aux.primero.nombre+" Fecha: "+aux.primero.fecha+" Direccion: "+aux.primero.direccion+" Estado: "+aux.primero.estado+"\"];\n");
+                            pw.write("node"+c+"[label=\" Contenido: "+aux.primero.contenido+"\"];\n");
                     }
                 
             }
@@ -110,7 +67,6 @@ public void generarEvento(listaEvento lista,String ruta){
             
             }       
 }
-
 
 
 

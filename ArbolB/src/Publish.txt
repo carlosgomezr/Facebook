@@ -1,0 +1,17 @@
+digraph grafica { 
+label= "LISTA DOBLE  PUBLICACIONES"node [shape=record];
+subgraph g { 
+ node1[label=" Titulo: Titulo 1\n Quien publicó:  YO 1\n Texto: Texto 1\n Imagen: Imagen 1"];
+node2[label=" Titulo: Titulo 2\n Quien publicó:  YO 2\n Texto: Texto 2\n Imagen: Imagen 2"];
+node1->node2;
+node2->node1;
+node2[label=" Titulo: Titulo 2\n Quien publicó:  YO 2\n Texto: Texto 2\n Imagen: Imagen 2"];
+node3[label=" Titulo: Titulo 3\n Quien publicó:  OTRO 3\n Texto: Texto 3\n Imagen: Imagen 3"];
+node2->node3;
+node3->node2;
+node3[label=" Titulo: Titulo 3\n Quien publicó:  OTRO 3\n Texto: Texto 3\n Imagen: Imagen 3"];
+node4[label=" Titulo: Titulo 4\n Quien publicó:  OTRO 4\n Texto: Texto 4\n Imagen: Imagen 4"];
+node3->node4;
+node4->node3;
+}
+}

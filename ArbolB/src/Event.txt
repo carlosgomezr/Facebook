@@ -1,0 +1,13 @@
+digraph grafica { 
+label= "LISTA DOBLE  EVENTOS"node [shape=record];
+subgraph g { 
+ node0[label=" Nombre: Fiesta 1\n Fecha: 28 de agosto\n Direccion: zona 1\n Estado: ACTIVO"];
+node1[label=" Nombre: Fiesta 2\n Fecha: 30 de agosto\n Direccion: zona 2\n Estado: ACTIVO"];
+node0->node1;
+node1->node0;
+node1[label=" Nombre: Fiesta 2\n Fecha: 30 de agosto\n Direccion: zona 2\n Estado: ACTIVO"];
+node2[label=" Nombre: Fiesta 3\n Fecha: 31 de agosto\n Direccion: zona 4\n Estado: CANCELADO"];
+node1->node2;
+node2->node1;
+}
+}

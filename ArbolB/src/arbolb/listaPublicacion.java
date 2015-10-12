@@ -74,8 +74,8 @@ public void imprimirAndroid()
 
 public boolean delete(int num)
     {
-        nodoP anterior=null;
-        nodoP actual=primero;
+      nodoP anterior=null;
+      nodoP actual=primero;
         
        
         while(actual!=ultimo)
@@ -106,6 +106,8 @@ public boolean delete(int num)
             }
              else{
                 ultimo=actual.ant;
+                ultimo.next = null;
+                //System.out.println("    ultimo.next"+ultimo.next.id);
              }
             return true;
         }

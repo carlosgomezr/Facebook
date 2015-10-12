@@ -21,9 +21,10 @@ public AVLNode root;
 public AVLNode padre;
 public AVLNode r;       
 public boolean flag=false;
-
-    public void insert( String correo,int contador ){
-        root = insert(correo,contador,root );
+public String evento="";
+public String publicacion="";
+    public void insert( String correo,String nombre,int contador ){
+        root = insert(correo,nombre,contador,root );
     }
     //public void eliminar(int x){
     //    eliminar(root,x);
@@ -58,30 +59,181 @@ public boolean flag=false;
         
   }
 
-public void existemod(AVLNode nuevo,String x,String password,int contador,String nuevocorreo){
+public void existemod(AVLNode nuevo,String x,String password,int contador,String nuevocorreo,String nombre){
 
         if ( x.compareTo(nuevo.correo)<0){
             if(nuevo.izquierdo!=null){
-                existemod(nuevo.izquierdo,x,password,contador,nuevocorreo);
+                existemod(nuevo.izquierdo,x,password,contador,nuevocorreo,nombre);
             }
         }
         if ( x.compareTo(nuevo.correo)>0){
             if(nuevo.derecho!=null){
-                existemod(nuevo.derecho,x,password,contador,nuevocorreo);
+                existemod(nuevo.derecho,x,password,contador,nuevocorreo,nombre);
             }
         }        
         if( x.compareTo(nuevo.correo)==0){
-            modificarEliminar(nuevo,x,contador,nuevocorreo);
+            modificarEliminar(nuevo,x,contador,nuevocorreo,nombre);
         }
      
 }
 
-private AVLNode insert(String nombre, int contador,AVLNode t ){
+public void insertarEvento(AVLNode nuevo,String x,String evento, String fecha, String direccion){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                insertarEvento(nuevo.izquierdo,x,evento,fecha,direccion);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                insertarEvento(nuevo.derecho,x,evento,fecha,direccion);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+               nuevo.evento.alta(evento, fecha, direccion, "ACTIVO");
+        }
+     
+}
+
+public void cancelarEvento(AVLNode nuevo,String x,String evento){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                cancelarEvento(nuevo.izquierdo,x,evento);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                cancelarEvento(nuevo.derecho,x,evento);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+               nuevo.evento.cancelar(evento);
+        }
+     
+}
+
+public void mostrarEvento(AVLNode nuevo,String x){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                mostrarEvento(nuevo.izquierdo,x);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                mostrarEvento(nuevo.derecho,x);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+            evento = "";   
+            nuevo.evento.imprimir();
+            evento = nuevo.evento.concatenar;
+        } 
+}
+
+public void mostrarEventoAndroid(AVLNode nuevo,String x){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                mostrarEventoAndroid(nuevo.izquierdo,x);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                mostrarEventoAndroid(nuevo.derecho,x);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+            evento = "";   
+            nuevo.evento.imprimirAndroid();
+            evento = nuevo.evento.concatenar;
+        } 
+}
+
+public void insertarPublicacion(AVLNode nuevo,String x,int id,String titulo, String publicador, String texto, String imagen){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                System.out.println("izquierda xD ");
+                insertarPublicacion(nuevo.izquierdo,x,id,titulo,publicador,texto,imagen);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                 System.out.println("derecha xD ");
+                 insertarPublicacion(nuevo.derecho,x,id,titulo,publicador,texto,imagen);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+                 nuevo.publicacion.alta(id, titulo, publicador, texto, imagen);
+                 System.out.println("Lo encontre xD "+x);
+        }
+     
+}
+
+public void eliminarPublicacion(AVLNode nuevo,String x,int id){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                eliminarPublicacion(nuevo.izquierdo,x,id);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                eliminarPublicacion(nuevo.derecho,x,id);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+               nuevo.publicacion.delete(id);
+        }
+     
+}
+
+public void mostrarPublicacion(AVLNode nuevo,String x){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                mostrarPublicacion(nuevo.izquierdo,x);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                mostrarPublicacion(nuevo.derecho,x);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+            publicacion = "";   
+            nuevo.publicacion.imprimir();
+            publicacion = nuevo.publicacion.concatenar;
+        } 
+}
+
+public void mostrarPublicacionAndroid(AVLNode nuevo,String x){
+
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+                mostrarPublicacionAndroid(nuevo.izquierdo,x);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                mostrarPublicacionAndroid(nuevo.derecho,x);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+            publicacion = "";   
+            nuevo.publicacion.imprimirAndroid();
+            publicacion = nuevo.publicacion.concatenar;
+        } 
+}
+
+private AVLNode insert(String correo, String nombre, int contador,AVLNode t ){
         System.out.println("    t.insertar  "+t+" ");
         if( t == null )
-            t = new AVLNode(nombre,contador );
+            t = new AVLNode(correo,nombre,contador );
         else if( nombre.compareTo(t.correo)<0 ) {
-            t.izquierdo = insert(nombre,contador, t.izquierdo );
+            t.izquierdo = insert(correo,nombre,contador, t.izquierdo );
             if( height( t.izquierdo ) - height( t.derecho ) == 2 )
                 if( nombre.compareTo(t.izquierdo.correo)<0 )
                     t = rotateWithLeftChild( t ); /* Caso 1 */
@@ -89,7 +241,7 @@ private AVLNode insert(String nombre, int contador,AVLNode t ){
                     t = doubleWithLeftChild( t ); /* Caso 2 */
         }
         else if(nombre.compareTo(t.correo)>0) {
-            t.derecho = insert(nombre,contador, t.derecho );
+            t.derecho = insert(correo,nombre,contador, t.derecho );
             if( height( t.derecho ) - height( t.izquierdo ) == 2 )
                 if( nombre.compareTo(t.derecho.correo)>0)
                     t = rotateWithRightChild( t ); /* Caso 4 */
@@ -126,9 +278,9 @@ public AVLNode buscar(AVLNode nuevo,String x){
         return nuevo;
 }
     
-public void modificarEliminar(AVLNode nodo,String x, int contador,String nuevaclave){
+public void modificarEliminar(AVLNode nodo,String x, int contador,String nuevaclave,String nombre){
             eliminar(nodo,x);
-            insert(nuevaclave,contador);
+            insert(nuevaclave,nombre,contador);
 }
 
 public void modificar(AVLNode nodo,String x, String nombre, String password){
@@ -446,6 +598,213 @@ private static AVLNode rotateWithLeftChild( AVLNode k2 ){
 
     
     
+
+public String ToDot(AVLNode node)
+{
+    String stream="";
+    try{
+   
+ 
+    if(node.izquierdo !=null)
+        {   
+            stream=stream+"nodea"+node.contador+"[label=\" correo: "+node.correo+"\\n nombre: "+node.nombre+"\"];\n";
+            stream=stream+"nodea"+node.izquierdo.contador+"[label=\" correo: "+node.izquierdo.correo+"\\n nombre: "+node.izquierdo.nombre+"\"];\n";
+            stream=stream+"nodea"+node.contador+"->nodea"+node.izquierdo.contador+"[label=\"izq\"];\n";
+            stream=stream+ToDot(node.izquierdo);
+            //if(node->lista!=NULL){
+            //conca+=graficarjuego(node->lista);
+            //} 
+                    
+        }
+    if(node.derecho !=null)
+        {
+           
+            stream=stream+"nodea"+node.contador+"[label=\" correo: "+node.correo+"\\n nombre: "+node.nombre+"\"];\n";
+            stream=stream+"nodea"+node.derecho.contador+"[label=\" correo: "+node.derecho.correo+"\\n nombre: "+node.derecho.nombre+"\"];\n";
+            stream=stream+"nodea"+node.contador+"->nodea"+node.derecho.contador+"[label=\"der\"];\n";
+            stream=stream+ToDot(node.derecho);
+            
+        }
+    if(node!=null){
+            stream=stream+"nodea"+node.contador+"[label=\" correo: "+node.correo+"\\n nombre: "+node.nombre+"\"];\n";
+            //if(node->lista!=NULL){
+                 //   conca+=graficarjuego(node->lista);
+               // }
+                //cod += graficarjuego(node->lista);
+            }
+    if(node==null){
+    
+    }
+           
+    }catch(Exception ex){}
+     return stream;
+}
+    
+
+
+public void GraphAVL(AVLNode node,String nombre,String ruta){
+	    File f;
+	    FileWriter escribir;
+	    String cod="";
+           
+            try{
+	    System.out.println(ruta);
+	    f = new File(ruta);
+	    escribir = new FileWriter(f);
+	    BufferedWriter bw = new BufferedWriter(escribir);
+	    PrintWriter pw = new PrintWriter(bw);
+            pw.write("digraph grafica { \n");
+            pw.write("label= \" "+nombre+ "\"");
+            pw.write("node [shape=record];\n");
+            pw.write("subgraph g {\n");
+
+                cod=cod+(ToDot(node));
+            pw.write(cod);    
+            pw.write("}\n");
+            pw.write("}\n");
+            
+	    pw.close();
+	    bw.close();
+            }
+	    catch(IOException e){System.out.println("Error: "+e.getMessage());
+            
+            }
+}
+    
+public void PublicacionxUsuario(AVLNode nuevo,String x,String ruta, String nombre){
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+               System.out.println("p izquierda xD "+x);
+               PublicacionxUsuario(nuevo.izquierdo,x,ruta,nombre);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                 System.out.println("p derecha xD "+x);
+                 PublicacionxUsuario(nuevo.derecho,x,ruta,nombre);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+                 System.out.println("p Lo encontre xD "+x);
+                 generarPublicaciones(nuevo.publicacion,ruta);
+        }
+        
+}
+
+public void generarPublicaciones(listaPublicacion lista,String ruta){
+            listaPublicacion aux = lista;
+	    File f;
+            FileWriter escribir;
+	    try{
+	    f = new File(ruta);
+	    escribir = new FileWriter(f);
+	    BufferedWriter bw = new BufferedWriter(escribir);
+	    PrintWriter pw = new PrintWriter(bw);
+            pw.write("digraph grafica { \n");
+            pw.write("label= \"LISTA DOBLE  PUBLICACIONES\"");
+            pw.write("node [shape=record];\n");
+	    pw.write("subgraph g { \n "); 
+            if(lista.primero!=null){
+                
+         
+                    if(aux.primero.next!=null){
+                        while(aux.primero.next!=null){
+                            pw.write("node"+aux.primero.id+"[label=\" Titulo: "+aux.primero.titulo+"\\n Quien publicó: "+aux.primero.nombre+"\\n Texto: "+aux.primero.texto+"\\n Imagen: "+aux.primero.imagen+"\"];\n");
+                            pw.write("node"+aux.primero.next.id+"[label=\" Titulo: "+aux.primero.next.titulo+"\\n Quien publicó: "+aux.primero.next.nombre+"\\n Texto: "+aux.primero.next.texto+"\\n Imagen: "+aux.primero.next.imagen+"\"];\n");
+                            pw.write("node"+aux.primero.id+"->node"+aux.primero.next.id+";\n");
+                            pw.write("node"+aux.primero.next.id+"->node"+aux.primero.id+";\n");
+                            aux.primero = aux.primero.next;
+                        }
+                    }
+                    else{
+                            pw.write("node"+aux.primero.id+"[label=\" Titulo: "+aux.primero.titulo+"\\n Quien publicó: "+aux.primero.nombre+"\\n Texto: "+aux.primero.texto+"\\n Imagen: "+aux.primero.imagen+"\"];\n");
+                    }
+                
+            }
+            else{
+                    System.out.println("    lista vacia  ");
+            }
+            pw.write("}\n");
+	    pw.write("}\n");
+	    pw.close();
+	    bw.close();
+	    }
+	    catch(IOException e){System.out.println("Error: "+e.getMessage());
+            
+            }       
+}
+
+public void EventoxUsuario(AVLNode nuevo,String x,String ruta, String nombre){
+        if ( x.compareTo(nuevo.correo)<0){
+            if(nuevo.izquierdo!=null){
+               System.out.println("p izquierda xD "+x);
+               EventoxUsuario(nuevo.izquierdo,x,ruta,nombre);
+            }
+        }
+        if ( x.compareTo(nuevo.correo)>0){
+            if(nuevo.derecho!=null){
+                System.out.println("p derecha xD "+x);
+                EventoxUsuario(nuevo.derecho,x,ruta,nombre);
+            }
+        }        
+        if( x.compareTo(nuevo.correo)==0){
+                 System.out.println("p Lo encontre xD "+x);
+                 generarEvento(nuevo.evento,ruta);
+        }
+   
+    }
+    
+
+    
+public void generarEvento(listaEvento lista,String ruta){
+            listaEvento aux = lista;
+	    File f;
+            int c = 0;
+            int c2 = 1;
+	   
+            FileWriter escribir;
+	    try{
+	    f = new File(ruta);
+	    escribir = new FileWriter(f);
+	    BufferedWriter bw = new BufferedWriter(escribir);
+	    PrintWriter pw = new PrintWriter(bw);
+            pw.write("digraph grafica { \n");
+            pw.write("label= \"LISTA DOBLE  EVENTOS\"");
+            pw.write("node [shape=record];\n");
+	    pw.write("subgraph g { \n "); 
+            if(lista.primero!=null){
+                
+         
+                    if(aux.primero.next!=null){
+                        while(aux.primero.next!=null){
+                            pw.write("node"+c+"[label=\" Nombre: "+aux.primero.nombre+"\\n Fecha: "+aux.primero.fecha+"\\n Direccion: "+aux.primero.direccion+"\\n Estado: "+aux.primero.estado+"\"];\n");
+                            pw.write("node"+c2+"[label=\" Nombre: "+aux.primero.next.nombre+"\\n Fecha: "+aux.primero.next.fecha+"\\n Direccion: "+aux.primero.next.direccion+"\\n Estado: "+aux.primero.next.estado+"\"];\n");
+                            pw.write("node"+c+"->node"+c2+";\n");
+                            pw.write("node"+c2+"->node"+c+";\n");
+                            aux.primero = aux.primero.next;
+                            c=c+1;
+                            c2=c2+1;
+                        }
+                    }
+                    else{
+                            pw.write("node"+c+"[label=\" Nombre: "+aux.primero.nombre+"\\n Fecha: "+aux.primero.fecha+"\\n Direccion: "+aux.primero.direccion+"\\n Estado: "+aux.primero.estado+"\"];\n");
+                    }
+                
+            }
+            else{
+                    System.out.println("    lista vacia xd ");
+            }
+            pw.write("}\n");
+	    pw.write("}\n");
+	    pw.close();
+	    bw.close();
+	    }
+	    catch(IOException e){System.out.println("Error: "+e.getMessage());
+            
+            }       
+}
+
+
 
 }
 

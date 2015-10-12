@@ -1,0 +1,30 @@
+digraph grafica { 
+label= " user"node [shape=record];
+subgraph g {
+nodea4[label=" correo: dado@gmail.com\n nombre: dado"];
+nodea2[label=" correo: burro@gmail.com\n nombre: burro"];
+nodea4->nodea2[label="izq"];
+nodea2[label=" correo: burro@gmail.com\n nombre: burro"];
+nodea1[label=" correo: arbol@gmail.com\n nombre: arbol"];
+nodea2->nodea1[label="izq"];
+nodea1[label=" correo: arbol@gmail.com\n nombre: arbol"];
+nodea2[label=" correo: burro@gmail.com\n nombre: burro"];
+nodea3[label=" correo: casa@gmail.com\n nombre: casa"];
+nodea2->nodea3[label="der"];
+nodea3[label=" correo: casa@gmail.com\n nombre: casa"];
+nodea2[label=" correo: burro@gmail.com\n nombre: burro"];
+nodea4[label=" correo: dado@gmail.com\n nombre: dado"];
+nodea6[label=" correo: foco@gmail.com\n nombre: foco"];
+nodea4->nodea6[label="der"];
+nodea6[label=" correo: foco@gmail.com\n nombre: foco"];
+nodea5[label=" correo: elefante@gmail.com\n nombre: elefante"];
+nodea6->nodea5[label="izq"];
+nodea5[label=" correo: elefante@gmail.com\n nombre: elefante"];
+nodea6[label=" correo: foco@gmail.com\n nombre: foco"];
+nodea7[label=" correo: gato@gmail.com\n nombre: gato"];
+nodea6->nodea7[label="der"];
+nodea7[label=" correo: gato@gmail.com\n nombre: gato"];
+nodea6[label=" correo: foco@gmail.com\n nombre: foco"];
+nodea4[label=" correo: dado@gmail.com\n nombre: dado"];
+}
+}
