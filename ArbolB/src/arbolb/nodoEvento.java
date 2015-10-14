@@ -10,14 +10,16 @@ package arbolb;
  * @author Carlos Gomez
  */
 public class nodoEvento {
+    int id;
     String nombre;
     String fecha;
     String direccion;
     String estado;
     nodoEvento next;
     nodoEvento ant;
-    nodoEvento(String nombre,String fecha, String direccion, String estado)
+    nodoEvento(int id,String nombre,String fecha, String direccion, String estado)
     {
+        this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
         this.direccion = direccion;

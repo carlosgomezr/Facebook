@@ -1,0 +1,14 @@
+digraph grafica { 
+label= " AVLisla"node [shape=record];
+subgraph g {
+nodea2[label=" correo: kaya1\n nombre: kaya1XD"];
+nodea1[label=" correo: kaya0\n nombre: kaya0XD"];
+nodea2->nodea1[label="izq"];
+nodea1[label=" correo: kaya0\n nombre: kaya0XD"];
+nodea2[label=" correo: kaya1\n nombre: kaya1XD"];
+nodea3[label=" correo: kaya2\n nombre: kaya2XD"];
+nodea2->nodea3[label="der"];
+nodea3[label=" correo: kaya2\n nombre: kaya2XD"];
+nodea2[label=" correo: kaya1\n nombre: kaya1XD"];
+}
+}

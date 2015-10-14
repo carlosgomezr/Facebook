@@ -1,20 +1,20 @@
 digraph grafica { 
 label= "ARBOL B"node [shape=record];
 rankdir=TD; 
-"node5" [ label= " <r0> | <f1>ID: 5 \n Titulo: 5| <r1> | <f2>ID: 8 \n Titulo: 8| <r2> |<f3>ID: 11 \n Titulo: 11| <r3> " ]; 
-"node5" [ label= " <r0> | <f1>ID: 5 \n Titulo: 5| <r1> | <f2>ID: 8 \n Titulo: 8| <r2> |<f3>ID: 11 \n Titulo: 11| <r3> " ]; 
-"node0" [ label= " <r0> | <f1>ID: 0 \n Titulo: 0| <r1> | <f2>ID: 1 \n Titulo: 1| <r2> | <f3>ID: 2 \n Titulo: 2| <r3> |<f4>ID: 3 \n Titulo: 3| <r4> " ]; 
-"node6" [ label= " <r0> | <f1>ID: 6 \n Titulo: 6| <r1> |<f2>ID: 7 \n Titulo: 7| <r2> " ]; 
-"node9" [ label= " <r0> | <f1>ID: 9 \n Titulo: 9| <r1> |<f2>ID: 10 \n Titulo: 10| <r2> " ]; 
-"node12" [ label= " <r0> | <f1>ID: 12 \n Titulo: 12| <r1> |<f2>ID: 13 \n Titulo: 13| <r2> " ]; 
-"node5" [ label= " <r0> | <f1>ID: 5 \n Titulo: 5| <r1> | <f2>ID: 8 \n Titulo: 8| <r2> |<f3>ID: 11 \n Titulo: 11| <r3> " ]; 
-"node5" [ label= " <r0> | <f1>ID: 5 \n Titulo: 5| <r1> | <f2>ID: 8 \n Titulo: 8| <r2> |<f3>ID: 11 \n Titulo: 11| <r3> " ]; 
-"node0" [ label= " <r0> | <f1>ID: 0 \n Titulo: 0| <r1> | <f2>ID: 1 \n Titulo: 1| <r2> | <f3>ID: 2 \n Titulo: 2| <r3> |<f4>ID: 3 \n Titulo: 3| <r4> " ]; 
-"node6" [ label= " <r0> | <f1>ID: 6 \n Titulo: 6| <r1> |<f2>ID: 7 \n Titulo: 7| <r2> " ]; 
-"node9" [ label= " <r0> | <f1>ID: 9 \n Titulo: 9| <r1> |<f2>ID: 10 \n Titulo: 10| <r2> " ]; 
-"node12" [ label= " <r0> | <f1>ID: 12 \n Titulo: 12| <r1> |<f2>ID: 13 \n Titulo: 13| <r2> " ]; 
-"node5":r0->"node0":f2; 
-"node5":r1->"node6":f2; 
-"node5":r2->"node9":f2; 
-"node5":r3->"node12":f2; 
+"node3" [ label= " <r0> | <f1> Correo: casa\n Nickname: user3\n Password: casapass\n Edad: 30\n Genero: masculino3\n Estado: soltero1\n Pais: guatemala1| <r1> | <f2> Correo: faro\n Nickname: user6\n Password: faropass\n Edad: 60\n Genero: masculino6\n Estado: soltero1\n Pais: guatemala1| <r2> |<f3> Correo: isla\n Nickname: user9\n Password: islapass\n Edad: 90\n Genero: masculino9\n Estado: soltero1\n Pais: guatemala1| <r3> " ]; 
+"node3" [ label= " <r0> | <f1> Correo: casa\n Nickname: user3\n Password: casapass\n Edad: 30\n Genero: masculino3\n Estado: soltero1\n Pais: guatemala1| <r1> | <f2> Correo: faro\n Nickname: user6\n Password: faropass\n Edad: 60\n Genero: masculino6\n Estado: soltero1\n Pais: guatemala1| <r2> |<f3> Correo: isla\n Nickname: user9\n Password: islapass\n Edad: 90\n Genero: masculino9\n Estado: soltero1\n Pais: guatemala1| <r3> " ]; 
+"node1" [ label= " <r0> | <f1> Correo: arbol\n Nickname: user1\n Password: arbolpass\n Edad: 10\n Genero: masculino1\n Estado: soltero1\n Pais: guatemala1| <r1> |<f2> Correo: burro\n Nickname: user2\n Password: burropass\n Edad: 20\n Genero: masculino2\n Estado: soltero1\n Pais: guatemala1| <r2> " ]; 
+"node4" [ label= " <r0> | <f1> Correo: dado\n Nickname: user4\n Password: dadopass\n Edad: 40\n Genero: masculino4\n Estado: soltero1\n Pais: guatemala1| <r1> |<f2> Correo: elefante\n Nickname: user5\n Password: elefantepass\n Edad: 50\n Genero: masculino5\n Estado: soltero1\n Pais: guatemala1| <r2> " ]; 
+"node7" [ label= " <r0> | <f1> Correo: gato\n Nickname: user7\n Password: gatopass\n Edad: 70\n Genero: masculino7\n Estado: soltero1\n Pais: guatemala1| <r1> |<f2> Correo: hilo\n Nickname: user8\n Password: hilopass\n Edad: 80\n Genero: masculino8\n Estado: soltero1\n Pais: guatemala1| <r2> " ]; 
+"node10" [ label= " <r0> | <f1> Correo: jocote\n Nickname: user10\n Password: jocotepass\n Edad: 100\n Genero: masculino10\n Estado: soltero1\n Pais: guatemala1| <r1> | <f2> Correo: koala\n Nickname: user11\n Password: koalapass\n Edad: 110\n Genero: masculino11\n Estado: soltero1\n Pais: guatemala1| <r2> |<f3> Correo: loco\n Nickname: user12\n Password: locopass\n Edad: 120\n Genero: masculino12\n Estado: soltero1\n Pais: guatemala1| <r3> " ]; 
+"node3" [ label= " <r0> | <f1> Correo: casa\n Nickname: user3\n Password: casapass\n Edad: 30\n Genero: masculino3\n Estado: soltero1\n Pais: guatemala1| <r1> | <f2> Correo: faro\n Nickname: user6\n Password: faropass\n Edad: 60\n Genero: masculino6\n Estado: soltero1\n Pais: guatemala1| <r2> |<f3> Correo: isla\n Nickname: user9\n Password: islapass\n Edad: 90\n Genero: masculino9\n Estado: soltero1\n Pais: guatemala1| <r3> " ]; 
+"node3" [ label= " <r0> | <f1> Correo: casa\n Nickname: user3\n Password: casapass\n Edad: 30\n Genero: masculino3\n Estado: soltero1\n Pais: guatemala1| <r1> | <f2> Correo: faro\n Nickname: user6\n Password: faropass\n Edad: 60\n Genero: masculino6\n Estado: soltero1\n Pais: guatemala1| <r2> |<f3> Correo: isla\n Nickname: user9\n Password: islapass\n Edad: 90\n Genero: masculino9\n Estado: soltero1\n Pais: guatemala1| <r3> " ]; 
+"node1" [ label= " <r0> | <f1> Correo: arbol\n Nickname: user1\n Password: arbolpass\n Edad: 10\n Genero: masculino1\n Estado: soltero1\n Pais: guatemala1| <r1> |<f2> Correo: burro\n Nickname: user2\n Password: burropass\n Edad: 20\n Genero: masculino2\n Estado: soltero1\n Pais: guatemala1| <r2> " ]; 
+"node4" [ label= " <r0> | <f1> Correo: dado\n Nickname: user4\n Password: dadopass\n Edad: 40\n Genero: masculino4\n Estado: soltero1\n Pais: guatemala1| <r1> |<f2> Correo: elefante\n Nickname: user5\n Password: elefantepass\n Edad: 50\n Genero: masculino5\n Estado: soltero1\n Pais: guatemala1| <r2> " ]; 
+"node7" [ label= " <r0> | <f1> Correo: gato\n Nickname: user7\n Password: gatopass\n Edad: 70\n Genero: masculino7\n Estado: soltero1\n Pais: guatemala1| <r1> |<f2> Correo: hilo\n Nickname: user8\n Password: hilopass\n Edad: 80\n Genero: masculino8\n Estado: soltero1\n Pais: guatemala1| <r2> " ]; 
+"node10" [ label= " <r0> | <f1> Correo: jocote\n Nickname: user10\n Password: jocotepass\n Edad: 100\n Genero: masculino10\n Estado: soltero1\n Pais: guatemala1| <r1> | <f2> Correo: koala\n Nickname: user11\n Password: koalapass\n Edad: 110\n Genero: masculino11\n Estado: soltero1\n Pais: guatemala1| <r2> |<f3> Correo: loco\n Nickname: user12\n Password: locopass\n Edad: 120\n Genero: masculino12\n Estado: soltero1\n Pais: guatemala1| <r3> " ]; 
+"node3":r0->"node1":f2; 
+"node3":r1->"node4":f2; 
+"node3":r2->"node7":f2; 
+"node3":r3->"node10":f2; 
 }

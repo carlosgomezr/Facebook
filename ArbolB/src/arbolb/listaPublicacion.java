@@ -112,6 +112,42 @@ public boolean delete(int num)
             return true;
         }
         return false;
+}
+
+public int tamaño(){
+        int t=0;
+        if( estavacio() )
+	{
+		t=0;
+	}
+	nodoP actual = ultimo;
+        nodoP aux=ultimo;
+	while( actual != null)
+	{
+                t = t+1;
+		actual = actual.ant;
+	}
+        ultimo = aux;
+        return t;
+}
+        
+public nodoP posicion(int tam){
+        nodoP aux=null;
+        if( estavacio() )
+	{
+		aux = null;
+	}
+	nodoP actual = primero;
+        nodoP auxiliar = primero;
+        for(int i=0;i<tam;i++){
+            if(actual!=null){
+                aux = actual;
+                actual = actual.next;
+                //System.out.println("entre al if posicion "+i);
+            }
+        }
+        primero=auxiliar;
+        return aux;
     }
 
 }

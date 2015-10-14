@@ -21,17 +21,17 @@ public class listaEvento {
         else return false;
     }
  
-    public void alta(String nombre,String fecha, String direccion, String estado)
+    public void alta(int id,String nombre,String fecha, String direccion, String estado)
     {
         if((primero==null))
         {
-            nodoEvento nuevo = new nodoEvento(nombre,fecha,direccion, estado);
+            nodoEvento nuevo = new nodoEvento(id,nombre,fecha,direccion, estado);
             primero = nuevo;
             ultimo = nuevo;
         }
         else
         {
-            nodoEvento nuevo = new nodoEvento(nombre,fecha,direccion,estado);
+            nodoEvento nuevo = new nodoEvento(id,nombre,fecha,direccion,estado);
             ultimo.next=nuevo;
             nuevo.ant=ultimo;
             ultimo=nuevo;
@@ -68,7 +68,7 @@ public void imprimirAndroid()
        primero=aux;
 }
 
-public void cancelar(String nombre)
+public void cancelar(int id)
 {
         concatenar = "";
         nodoEvento actual;
@@ -76,7 +76,7 @@ public void cancelar(String nombre)
         actual=primero;
         while(actual!=null)
         {
-            if(actual.nombre.compareTo(nombre)==0){
+            if(actual.id == id){
                 actual.estado = "CANCELADO";
             }
             actual=actual.next;
@@ -84,4 +84,41 @@ public void cancelar(String nombre)
        primero=aux;
 }
     
+public int tamaño(){
+        int t=0;
+        if( estavacio() )
+	{
+		t=0;
+	}
+	nodoEvento actual = ultimo;
+        nodoEvento aux=ultimo;
+	while( actual != null)
+	{
+                t = t+1;
+		actual = actual.ant;
+	}
+        ultimo = aux;
+        return t;
+}
+        
+public nodoEvento posicion(int tam){
+        nodoEvento aux=null;
+        if( estavacio() )
+	{
+		aux = null;
+	}
+	nodoEvento actual = primero;
+        nodoEvento auxiliar = primero;
+        for(int i=0;i<tam;i++){
+            if(actual!=null){
+                aux = actual;
+                actual = actual.next;
+                //System.out.println("entre al if posicion "+i);
+            }
+        }
+        primero=auxiliar;
+        return aux;
+}
+
+
 }

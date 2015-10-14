@@ -77,25 +77,25 @@ public void existemod(AVLNode nuevo,String x,String password,int contador,String
      
 }
 
-public void insertarEvento(AVLNode nuevo,String x,String evento, String fecha, String direccion){
+public void insertarEvento(AVLNode nuevo,String x,int id,String evento, String fecha, String direccion){
 
         if ( x.compareTo(nuevo.correo)<0){
             if(nuevo.izquierdo!=null){
-                insertarEvento(nuevo.izquierdo,x,evento,fecha,direccion);
+                insertarEvento(nuevo.izquierdo,x,id,evento,fecha,direccion);
             }
         }
         if ( x.compareTo(nuevo.correo)>0){
             if(nuevo.derecho!=null){
-                insertarEvento(nuevo.derecho,x,evento,fecha,direccion);
+                insertarEvento(nuevo.derecho,x,id,evento,fecha,direccion);
             }
         }        
         if( x.compareTo(nuevo.correo)==0){
-               nuevo.evento.alta(evento, fecha, direccion, "ACTIVO");
+               nuevo.evento.alta(id,evento, fecha, direccion, "ACTIVO");
         }
      
 }
 
-public void cancelarEvento(AVLNode nuevo,String x,String evento){
+public void cancelarEvento(AVLNode nuevo,String x,int evento){
 
         if ( x.compareTo(nuevo.correo)<0){
             if(nuevo.izquierdo!=null){

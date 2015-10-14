@@ -20,6 +20,16 @@ NodoPr X;
 Bnodo Xr;
 String salida="",imps="";
 boolean EmpA = false,Esta=false;
+String publicacion="";
+String evento="";
+String auxnombre="";
+String auxedad="";
+String auxgenero="";
+String auxpais="";
+String auxestado="";
+String auxfoto="";
+boolean bandera=false;
+boolean banderalog=false;
 //***************************************
 //*****Inserta un nodo en un arbol b*****
 //***************************************
@@ -240,31 +250,33 @@ Combina(raiz, 1);
 //***************************
 //*****Metodos Generales*****
 //***************************
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //muestra los temas por estudiante
-public void temasestudiante(ListaSimpleB idents,Bnodo Raiz){
-NodosLista m=idents.PrimerNodo;
-imps="";
-while(m!=null){ 
-imps=imps+"IDENTIFICACION: "+m.indice;
-temasestudianteaux(m.indice,Raiz);
-imps=imps+"";
-m=m.siguiente;
-}
-}
-public void temasestudianteaux(int id,Bnodo Raiz){
-int i;
-if(!Vacio(Raiz)){
-temasestudianteaux(id,Raiz.Ramas[0]);
-i=1;
-while (i != Raiz.Cuentas+1){
-if(id==Raiz.Claves[i-1].ident){
-imps=imps+"  Tema: "+Raiz.Claves[i-1].codtem+" *****"+"-Num Prestamo: "+Raiz.Claves[i-1].nump+"-Libro: "+Raiz.Claves[i-1].codlib+"-Cod Autor: "+Raiz.Claves[i-1].codaut+"-Fecha/Hora: "+Raiz.Claves[i-1].fecha;
-}
-temasestudianteaux(id,Raiz.Ramas[i]);
-++i;
-}
-}
-}
+//public void temasestudiante(ListaSimpleB idents,Bnodo Raiz){
+//NodosLista m=idents.PrimerNodo;
+//imps="";
+//while(m!=null){ 
+//imps=imps+"IDENTIFICACION: "+m.indice;
+//temasestudianteaux(m.indice,Raiz);
+//imps=imps+"";
+//m=m.siguiente;
+//}
+//}
+//public void temasestudianteaux(int id,Bnodo Raiz){
+//int i;
+//if(!Vacio(Raiz)){
+//temasestudianteaux(id,Raiz.Ramas[0]);
+//i=1;
+//while (i != Raiz.Cuentas+1){
+//if(id==Raiz.Claves[i-1].ident){
+//imps=imps+"  Tema: "+Raiz.Claves[i-1].codtem+" *****"+"-Num Prestamo: "+Raiz.Claves[i-1].nump+"-Libro: "+Raiz.Claves[i-1].codlib+"-Cod Autor: "+Raiz.Claves[i-1].codaut+"-Fecha/Hora: "+Raiz.Claves[i-1].fecha;
+//}
+//temasestudianteaux(id,Raiz.Ramas[i]);
+//++i;
+//}
+//}
+//}
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //Retorna true si el arbol esta vacio
 public boolean Vacio(Bnodo raiz){
 return (raiz==null || raiz.Cuentas==0);
@@ -272,32 +284,39 @@ return (raiz==null || raiz.Cuentas==0);
 //Buscar retorna true si lo encuentra y la posicion
 public int BuscarNodo(NodoPr clave, Bnodo raiz){
 int j=0;
-if(clave.nump < raiz.Claves[0].nump){
+//if(clave.nump < raiz.Claves[0].nump){
+if(clave.correo.compareTo(raiz.Claves[0].correo)<0){
 Esta = false;
 j=0;
 }
 else{
 j = raiz.Cuentas;
-while (clave.nump < raiz.Claves[j-1].nump && j>1)
+//while (clave.nump < raiz.Claves[j-1].nump && j>1)
+while(clave.correo.compareTo(raiz.Claves[j-1].correo)<0 && j>1)
 --j;
-Esta = (clave.nump == raiz.Claves[j-1].nump);
+//Esta = (clave.nump == raiz.Claves[j-1].nump);
+Esta = (clave.correo.compareTo(raiz.Claves[j-1].correo)==0);
 }
 return j;
 }
+
 //miembro
 public boolean Miembro(NodoPr clave, Bnodo raiz){
 boolean si=false;
 int j=0;
 if(!Vacio(p)){
-if(clave.nump < raiz.Claves[0].nump){
+//if(clave.nump < raiz.Claves[0].nump){
+if(clave.correo.compareTo(raiz.Claves[0].correo)<0){
 si = false;
 j=0;
 }
 else{
 j = raiz.Cuentas;
-while (clave.nump < raiz.Claves[j-1].nump && j>1)
+//while (clave.nump < raiz.Claves[j-1].nump && j>1)
+while(clave.correo.compareTo(raiz.Claves[j-1].correo)<0 && j>1)
 --j;
-si = (clave.nump == raiz.Claves[j-1].nump);
+si = (clave.correo.compareTo(raiz.Claves[j-1].correo)==0);
+//si = (clave.nump == raiz.Claves[j-1].nump);
 }
 }
 return si;
@@ -319,9 +338,437 @@ nodo=Pila.UltimoNodo.datos;
 Pila.EliminaFinal();
 i++;
 if (i <= nodo.Cuentas){
-salida=salida+"Num Prestamo: "+nodo.Claves[i-1].nump+"-Id: "+nodo.Claves[i-1].ident;
-salida=salida+"\n-Cod Tema: "+nodo.Claves[i-1].codtem+"\n-Cod Libro: "+nodo.Claves[i-1].codlib+"\n-Cod Autor: "+nodo.Claves[i-1].codaut+"\n-Fecha/hora: "+nodo.Claves[i-1].fecha+"";
+//salida=salida+"Num Prestamo: "+nodo.Claves[i-1].nump+"-Id: "+nodo.Claves[i-1].ident;
+//salida=salida+"\n-Cod Tema: "+nodo.Claves[i-1].codtem+"\n-Cod Libro: "+nodo.Claves[i-1].codlib+"\n-Cod Autor: "+nodo.Claves[i-1].codaut+"\n-Fecha/hora: "+nodo.Claves[i-1].fecha+"";
 salida=salida+"\n-------------------------------\n";
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Modifica los datos de genero, pais, edad, pais del arbol B
+void modificarDatos(String x,String password, int edad, String genero, String pais, String estado){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].password = password;
+        nodo.Claves[i-1].edad = edad;
+        nodo.Claves[i-1].genero = genero;
+        nodo.Claves[i-1].pais = pais;
+        nodo.Claves[i-1].estado = estado;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Modifica la foto
+void modificarFoto(String x,String foto){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].foto = foto;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Da los valores del nodo del arbol B
+void darDatosB(String x){
+int i=0;
+Bnodo nodo=p;
+auxnombre="";
+auxedad="";
+auxgenero="";
+auxpais="";
+auxestado="";
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        auxnombre=nodo.Claves[i-1].user;
+        auxedad=nodo.Claves[i-1].edad+"";
+        auxgenero=nodo.Claves[i-1].genero;
+        auxpais=nodo.Claves[i-1].pais;
+        auxestado=nodo.Claves[i-1].estado;
+        auxfoto=nodo.Claves[i-1].foto;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Inserta en el AVL del arbol B
+void insertarAVL(String x,String correo,String nombre,int id){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.insert(correo, nombre, id);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+void eliminarAVL(String x,String correo){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.eliminar(nodo.Claves[i-1].usuarios.root, correo);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Inserta en la lista de publicaciones del AVL del arbol B
+void insertarAVLPublicacion(String x,String correo,int id,String titulo,String publicador,String texto,String imagen){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0){
+        nodo.Claves[i-1].publicacion.alta(id, titulo, publicador, texto, imagen);
+    }
+    if(nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.insertarPublicacion(nodo.Claves[i-1].usuarios.root, correo, id, titulo, publicador, texto, imagen);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Inserta en la lista de eventos del AVL del arbol B
+void insertarAVLEvento(String x,String correo,int id,String evento,String fecha,String direccion){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.insertarEvento(nodo.Claves[i-1].usuarios.root, correo, id, evento, fecha, direccion);
+    }
+    if(nodo.Claves[i-1].correo.compareTo(x)==0){
+        nodo.Claves[i-1].evento.alta(id, evento, fecha, direccion,"ACTIVO");
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+void graficarAVL(String x,String nombre,String ruta){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.GraphAVL(nodo.Claves[i-1].usuarios.root, nombre,ruta);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+void graficarAVLPublicacion(String x,String correo,String ruta,String nombre){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.PublicacionxUsuario(nodo.Claves[i-1].usuarios.root, correo, ruta, nombre);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+void graficarAVLEvento(String x,String correo,String ruta,String nombre){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.EventoxUsuario(nodo.Claves[i-1].usuarios.root, correo, ruta, nombre);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+void eliminarAVLPublicacion(String x,String correo,int id){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.eliminarPublicacion(nodo.Claves[i-1].usuarios.root, correo, id);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+void cancelarAVLEvento(String x,String correo,int id){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.cancelarEvento(nodo.Claves[i-1].usuarios.root, correo, id);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Da los valores del nodo del arbol B
+void verificarUser(String x){
+int i=0;
+Bnodo nodo=p;
+bandera = false;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].user.compareTo(x)==0){
+        bandera = true;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+//Da los valores del nodo del arbol B
+void Login(String x,String password){
+int i=0;
+Bnodo nodo=p;
+banderalog = false;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        if(nodo.Claves[i-1].password.compareTo(password)==0){
+            banderalog = true;
+        }
+    }
 if (i < nodo.Cuentas)
 Pila.InsertaFinal(nodo, i);
 nodo=nodo.Ramas[i];
@@ -380,7 +827,8 @@ public String GetDeclNodo(Bnodo actual)
                                String clave;
                                clave=actual.Claves[i].nump+"";
                                //codigo+=clave.str();
-                               codigo+="ID: "+clave+" \\n Titulo: "+actual.Claves[i].nump;
+                               //codigo+="ID: "+clave+" \\n Titulo: "+actual.Claves[i].nump;
+                               codigo+=" Correo: "+actual.Claves[i].correo+"\\n Nickname: "+actual.Claves[i].user+"\\n Password: "+actual.Claves[i].password+"\\n Edad: "+actual.Claves[i].edad+"\\n Genero: "+actual.Claves[i].genero+"\\n Estado: "+actual.Claves[i].estado+"\\n Pais: "+actual.Claves[i].pais;
                               
                                String v1;
                                v1=i+1+"";
@@ -395,7 +843,8 @@ public String GetDeclNodo(Bnodo actual)
                                    clave=actual.Claves[i].nump+"";
 
                                    //codigo+=clave.str();
-                                  codigo+="ID: "+clave+" \\n Titulo: "+actual.Claves[i].nump;
+                                  //codigo+="ID: "+clave+" \\n Titulo: "+actual.Claves[i].nump;
+                                   codigo+=" Correo: "+actual.Claves[i].correo+"\\n Nickname: "+actual.Claves[i].user+"\\n Password: "+actual.Claves[i].password+"\\n Edad: "+actual.Claves[i].edad+"\\n Genero: "+actual.Claves[i].genero+"\\n Estado: "+actual.Claves[i].estado+"\\n Pais: "+actual.Claves[i].pais;
                                }
                                String v1;
                                v1=i+1+"";
