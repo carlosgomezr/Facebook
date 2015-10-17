@@ -10,25 +10,57 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Eventos (~owo)~</title>
-    </head>
+    </head><%! String usuarioLog=""; String usuarioPerfil="";%>
     <body background="BACK FB.png">
         <img src="BANNER FB.png"/>  
     <font color="white" face="arial">
-        <h1>Eventos (~owo)~</h1>
-        Crea, revisa y planifica tus eventos .... (~owo)~
+        <h1>Eventos</h1>
+        Crea, revisa y planifica tus eventos .... 
    
     <br></br>
     <DIV ALIGN=right>
         <form name="pasarperfil" action="Perfil.jsp" method="POST">
-            <input type="submit" value="Mi Perfil O.O" name="boton1" />
+            <input type="submit" value="Mi Perfil" name="boton1" />
         </form>
     </div>
     <DIV ALIGN=right>
         <h2> Mis Eventos </h2>
-        <h3> Evento Cumpleaños :D</h3>Fecha: 17 de octubre <br></br>Direccion: Zona 1 Mario's House <br></br>Estado: ESPERANDO...
-        <br></br>
-        <h3> Evento Cumpleaños :D</h3>Fecha: 17 de octubre <br></br>Direccion: Zona 1 Mario's House <br></br>Estado: ESPERANDO...
+
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	// TODO process result here
+	java.lang.String result = port.darUsuarioLog();
+	out.println("Result = "+result);
+        usuarioLog = result;
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+        
+        
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	// TODO process result here
+	java.lang.String result = port.mostrarEvento(x);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
+
         <h2> Crea tus eventos :D </h2>
+        <form name="pasarevento" action="evento.jsp" method="POST">
         <table border="0">
             <tbody>
                 <tr>
@@ -63,20 +95,41 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <form name="pasarevento" action="evento.jsp" method="POST">
+        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioLog;
+	java.lang.String evento = request.getParameter("texto1");
+	java.lang.String fecha = request.getParameter("texto2");
+	java.lang.String direccion = request.getParameter("texto3");
+	// TODO process result here
+	java.lang.String result = port.agregarEvento(x, correo, evento, fecha, direccion);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
                             <input type="submit" value="Crear Evento" name="boton5" />
-                        </form>
+                        
                     </td>
                     
                 </tr>
                 
             </tbody>
         </table>
+        </form>
         <br></br>
         <h2>Evento que deseo cancelar :c </h2>
         <form name="pasarperfil" action="Perfil.jsp" method="POST">
             <input type="text" name="texto1" value="" size="20" />
             <input type="submit" value="Cancelar Evento" name="boton2" />
+            
+            
         </form>
     </div>
     </font> 

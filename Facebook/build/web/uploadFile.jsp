@@ -6,7 +6,7 @@
 <%@page import="java.io.File"%>
 <%@page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
 <% 
-    String ubicacionArchivo = "C:\\Users\\estua_000\\Documents\\NetBeansProjects\\Facebook\\photos";
+    String ubicacionArchivo = "C:\\Users\\estua_000\\Documents\\NetBeansProjects\\Facebook\\web\\photos";
     DiskFileItemFactory factory = new DiskFileItemFactory();
     factory.setSizeThreshold(1024);
     factory.setRepository(new File(ubicacionArchivo));
@@ -25,4 +25,5 @@
     }catch(FileUploadException ex){
         out.write("Error al subir foto :( intenta de nuevo :D "+ex.getMessage());
     }
+    response.sendRedirect("http://localhost:8080/Facebook/Perfil.jsp");
 %>

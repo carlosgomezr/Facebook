@@ -59,23 +59,27 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                 <input type=\"text\" name=\"texto1\" value=\"\" size=\"15\" />\n");
       out.write("                  Password:\n");
       out.write("                  <input type=\"password\" name=\"texto2\" value=\"\" size=\"15\" /> \n");
-      out.write("                  <input type=\"submit\" value=\"Log-in :3\" name=\"boton1\">\n");
+      out.write("                  <input type=\"submit\" value=\"Log-in\" name=\"boton1\">\n");
       out.write("             </form>\n");
+      out.write("                 <form name=\"pasarreporte\" action=\"reporte.jsp\" method=\"POST\">\n");
+      out.write("                     <input type=\"submit\" value=\"REPORTES\" name=\"botonr\" />\n");
+      out.write("                 </form>\n");
       out.write("             </DIV>\n");
+      out.write("             <form name=\"pasarlogin\" action=\"index.jsp\" method=\"POST\">\n");
       out.write("             <table border=\"0\">\n");
       out.write("                 <tbody>\n");
       out.write("                     <tr>\n");
       out.write("                         <td  rowspan=\"8\"> <img src=\"CHANGE.png\" width=\"750\" height=\"400\"/> </td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
-      out.write("                         <td> REGISTRATE YA :3</td>\n");
+      out.write("                         <td> REGISTRARSE</td>\n");
       out.write("                         <td></td>\n");
       out.write("                         <td></td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
       out.write("                         <td>Nickname: </td>\n");
-      out.write("                         <td><input type=\"text\" name=\"texto1\" value=\"\" size=\"15\" /></td>\n");
+      out.write("                         <td><input type=\"text\" name=\"texto3\" value=\"\" size=\"15\" /></td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
@@ -85,7 +89,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
       out.write("                         <td>Correo: </td>\n");
-      out.write("                         <td><input type=\"text\" name=\"texto3\" value=\"\" size=\"15\" /></td>\n");
+      out.write("                         <td><input type=\"text\" name=\"texto4\" value=\"\" size=\"15\" /></td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
@@ -100,14 +104,55 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                     <tr>\n");
       out.write("                         <td></td>\n");
       out.write("                         <td></td>\n");
-      out.write("                         <td><form name=\"pasarlogin\" action=\"index.jsp\" method=\"POST\">\n");
+      out.write("                         \n");
+      out.write("                         <td>\n");
+      out.write("            ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String nombre = request.getParameter("texto3");
+	java.lang.String correo = request.getParameter("texto4");
+	java.lang.String password = request.getParameter("texto5");
+	// TODO process result here
+	java.lang.String result = port.agregarUsuario(nombre, correo, password);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("                     \n");
+      out.write("        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	// TODO process result here
+	java.lang.String result = port.graphArbolB();
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("                         \n");
+      out.write("                             \n");
       out.write("                                    <input type=\"submit\" value=\"Registrar xD\" name=\"boton2\" />\n");
-      out.write("                             </form>\n");
       out.write("                         </td>\n");
       out.write("                     </tr>\n");
       out.write("                 </tbody>\n");
       out.write("             </table>\n");
-      out.write("\n");
+      out.write("             </form>\n");
       out.write("             \n");
       out.write("    </font>\n");
       out.write("    </body>\n");

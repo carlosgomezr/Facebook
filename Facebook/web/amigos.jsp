@@ -14,13 +14,13 @@
     <body background="BACK FB.png">
         <img src="BANNER FB.png"/>    
     <font color="white" face="arial">
-        <h1>AMIGOS ¬w¬</h1>
-        Tu lista de amigos, conocidos y mas.. ¬w¬ 
+        <h1>AMIGOS</h1>
+        Tu lista de amigos, conocidos y mas...
     </font>
     <br></br>
     <DIV ALIGN=right>
         <form name="pasarperfil" action="Perfil.jsp" method="POST">
-            <input type="submit" value="Mi Perfil O.O" name="boton1" />
+            <input type="submit" value="Mi Perfil" name="boton1" />
         </form>
     </div>
     </body>

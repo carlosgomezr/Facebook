@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://service/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service/">
+
+<xs:element name="AgregarAmigo" type="tns:AgregarAmigo"/>
+
+<xs:element name="AgregarAmigoResponse" type="tns:AgregarAmigoResponse"/>
+
+<xs:element name="AgregarEvento" type="tns:AgregarEvento"/>
+
+<xs:element name="AgregarEventoResponse" type="tns:AgregarEventoResponse"/>
+
+<xs:element name="AgregarPublicacion" type="tns:AgregarPublicacion"/>
+
+<xs:element name="AgregarPublicacionResponse" type="tns:AgregarPublicacionResponse"/>
+
+<xs:element name="AgregarUsuario" type="tns:AgregarUsuario"/>
+
+<xs:element name="AgregarUsuarioResponse" type="tns:AgregarUsuarioResponse"/>
+
+<xs:element name="AsignarPhoto" type="tns:AsignarPhoto"/>
+
+<xs:element name="AsignarPhotoResponse" type="tns:AsignarPhotoResponse"/>
+
+<xs:element name="AsignarUsuario" type="tns:AsignarUsuario"/>
+
+<xs:element name="AsignarUsuarioLog" type="tns:AsignarUsuarioLog"/>
+
+<xs:element name="AsignarUsuarioLogResponse" type="tns:AsignarUsuarioLogResponse"/>
+
+<xs:element name="AsignarUsuarioResponse" type="tns:AsignarUsuarioResponse"/>
+
+<xs:element name="DarDatosPerfil" type="tns:DarDatosPerfil"/>
+
+<xs:element name="DarDatosPerfilAndroid" type="tns:DarDatosPerfilAndroid"/>
+
+<xs:element name="DarDatosPerfilAndroidResponse" type="tns:DarDatosPerfilAndroidResponse"/>
+
+<xs:element name="DarDatosPerfilResponse" type="tns:DarDatosPerfilResponse"/>
+
+<xs:element name="DarUsuarioLog" type="tns:DarUsuarioLog"/>
+
+<xs:element name="DarUsuarioLogResponse" type="tns:DarUsuarioLogResponse"/>
+
+<xs:element name="DarUsuarioPerfil" type="tns:DarUsuarioPerfil"/>
+
+<xs:element name="DarUsuarioPerfilResponse" type="tns:DarUsuarioPerfilResponse"/>
+
+<xs:element name="EliminarAmigo" type="tns:EliminarAmigo"/>
+
+<xs:element name="EliminarAmigoResponse" type="tns:EliminarAmigoResponse"/>
+
+<xs:element name="EliminarUsuario" type="tns:EliminarUsuario"/>
+
+<xs:element name="EliminarUsuarioResponse" type="tns:EliminarUsuarioResponse"/>
+
+<xs:element name="GraphArbolB" type="tns:GraphArbolB"/>
+
+<xs:element name="GraphArbolBResponse" type="tns:GraphArbolBResponse"/>
+
+<xs:element name="Login" type="tns:Login"/>
+
+<xs:element name="LoginResponse" type="tns:LoginResponse"/>
+
+<xs:element name="ModificarUsuario" type="tns:ModificarUsuario"/>
+
+<xs:element name="ModificarUsuarioResponse" type="tns:ModificarUsuarioResponse"/>
+
+<xs:element name="MostrarEvento" type="tns:MostrarEvento"/>
+
+<xs:element name="MostrarEventoAndroid" type="tns:MostrarEventoAndroid"/>
+
+<xs:element name="MostrarEventoAndroidResponse" type="tns:MostrarEventoAndroidResponse"/>
+
+<xs:element name="MostrarEventoResponse" type="tns:MostrarEventoResponse"/>
+
+<xs:element name="MostrarPhoto" type="tns:MostrarPhoto"/>
+
+<xs:element name="MostrarPhotoAndroid" type="tns:MostrarPhotoAndroid"/>
+
+<xs:element name="MostrarPhotoAndroidResponse" type="tns:MostrarPhotoAndroidResponse"/>
+
+<xs:element name="MostrarPhotoResponse" type="tns:MostrarPhotoResponse"/>
+
+<xs:element name="MostrarPublicacion" type="tns:MostrarPublicacion"/>
+
+<xs:element name="MostrarPublicacionAndroid" type="tns:MostrarPublicacionAndroid"/>
+
+<xs:element name="MostrarPublicacionAndroidResponse" type="tns:MostrarPublicacionAndroidResponse"/>
+
+<xs:element name="MostrarPublicacionResponse" type="tns:MostrarPublicacionResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:complexType name="Login">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPhoto">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPhotoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarEvento">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="evento" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarEventoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarUsuario">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarUsuario">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPublicacion">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPublicacionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarDatosPerfil">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarDatosPerfilResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarUsuarioLog">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarUsuarioLogResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ModificarUsuario">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="edad" type="xs:string" minOccurs="0"/>
+<xs:element name="genero" type="xs:string" minOccurs="0"/>
+<xs:element name="pais" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ModificarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarEvento">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarEventoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPublicacionAndroid">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPublicacionAndroidResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarUsuarioPerfil">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="DarUsuarioPerfilResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GraphArbolB">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="GraphArbolBResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarAmigo">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarAmigoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EliminarUsuario">
+<xs:sequence>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EliminarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarPhoto">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarPhotoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarPublicacion">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="titulo" type="xs:string" minOccurs="0"/>
+<xs:element name="publicador" type="xs:string" minOccurs="0"/>
+<xs:element name="texto" type="xs:string" minOccurs="0"/>
+<xs:element name="imagen" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AgregarPublicacionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarDatosPerfilAndroid">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarDatosPerfilAndroidResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EliminarAmigo">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="EliminarAmigoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarEventoAndroid">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarEventoAndroidResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarUsuarioLog">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="DarUsuarioLogResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPhotoAndroid">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MostrarPhotoAndroidResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

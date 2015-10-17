@@ -7,6 +7,7 @@ import javax.servlet.jsp.*;
 public final class Perfil_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+ String usuarioLog=""; String usuarioPerfil="";
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
@@ -49,46 +50,149 @@ public final class Perfil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>My Facebook</title>\n");
-      out.write("    </head>\n");
+      out.write("    </head>");
+      out.write("\n");
       out.write("    <body background=\"BACK FB.png\">\n");
       out.write("    <center>\n");
       out.write("    <font color=\"white\" face=\"arial\">\n");
       out.write("             <img src=\"BANNER FB.png\"/>    \n");
       out.write("             <center>\n");
+      out.write("            ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	// TODO process result here
+	java.lang.String result = port.darUsuarioLog();
+	out.println("Usuario Log"+result);
+        usuarioLog = result;
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("         \n");
       out.write("                 <table border=\"0\">\n");
       out.write("                     <tbody>\n");
+      out.write("                         \n");
       out.write("                         <tr>\n");
-      out.write("                             <td> <input type=\"text\" name=\"texto0\" value=\"¿ Buscar Amigos ? :B\" size=\"40\" /> </td>\n");
-      out.write("                             <td> <form name=\"pasarbuscar\" action=\"buscar.jsp\" method=\"POST\">\n");
-      out.write("                                     <input type=\"submit\" value=\"Buscar @u@\" name=\"boton0\" /> \n");
+      out.write("                             <form name=\"pasarbuscar\" action=\"buscar.jsp\" method=\"POST\">\n");
+      out.write("                             <td> <input type=\"text\" name=\"texto0\" value=\"¿ Buscar Amigos ?\" size=\"40\" /> </td>\n");
+      out.write("                             <td> \n");
+      out.write("                       ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String usuario = request.getParameter("texto0");
+	// TODO process result here
+	java.lang.String result = port.asignarUsuario(usuario);
+	out.println("Buscar "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("                                              \n");
+      out.write("    \n");
+      out.write("                                     <input type=\"submit\" value=\"Buscar\" name=\"boton0\" /> \n");
       out.write("                                  </form> \n");
       out.write("                             </td>\n");
       out.write("                             <td><form name=\"pasarlogin\" action=\"index.jsp\" method=\"POST\">\n");
-      out.write("                                     <input type=\"submit\" value=\"Log out :c\" name=\"boton\" />\n");
+      out.write("                                     <input type=\"submit\" value=\"Log out\" name=\"boton\" />\n");
       out.write("                                 </form>\n");
       out.write("                             </td>\n");
+      out.write("                             <td>\n");
+      out.write("                                 <form name=\"pasarindex\" action=\"index.jsp\" method=\"POST\">\n");
+      out.write("                ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String correo = usuarioLog;
+	// TODO process result here
+	java.lang.String result = port.eliminarUsuario(correo);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("\n");
+      out.write("                                     \n");
+      out.write("                                     <input type=\"submit\" value=\"ELIMINAR CUENTA\" name=\"eliminar\" />\n");
+      out.write("                                 </form>\n");
+      out.write("                                 \n");
+      out.write("                             </td>\n");
+      out.write("                         </tr>\n");
+      out.write("                         \n");
+      out.write("                         <tr>\n");
+      out.write("                             <td></td>\n");
       out.write("                             <td></td>\n");
       out.write("                         </tr>\n");
+      out.write("                         \n");
       out.write("                     </tbody>\n");
       out.write("                 </table>\n");
-      out.write("\n");
-      out.write("                 \n");
-      out.write("                 \n");
+      out.write("<DIV ALIGN=left>  \n");
+      out.write("    <img src=\"photos/mujer.png\" width=\"80\" height=\"80\"/> ---------¿Que es lo que me pasa?---------> \n");
+      out.write("</DIV>             \n");
       out.write("                 <br></br>\n");
       out.write("             </center>\n");
-      out.write("             <DIV ALIGN=left>  \n");
-      out.write("                 <img src=\"hombre.png\"/> ---------¿Que es lo que me pasa?--------->\n");
-      out.write("                 <textarea name=\"texto1\" rows=\"5\" cols=\"50\">\n");
-      out.write("Publica Aqui :D\n");
-      out.write("                 </textarea>\n");
-      out.write("             </DIV>\n");
+      out.write("             \n");
       out.write("             <DIV ALIGN=right>     \n");
       out.write("             <table border=\"0\">\n");
       out.write("                 <tbody>\n");
       out.write("                     <tr>\n");
       out.write("                         <td>\n");
       out.write("                             <form name=\"pasarperfil\" action=\"Perfil.jsp\" method=\"POST\">  \n");
+      out.write("                             Titulo\n");
+      out.write("                                <input type=\"text\" name=\"titulo\" value=\"Escribe tu titulo aqui\" size=\"30\" />\n");
+      out.write("                                <DIV ALIGN=right>  \n");
+      out.write("                                    <textarea name=\"texto1\" rows=\"5\" cols=\"50\">\n");
+      out.write("                                    Publica Aqui :D\n");
+      out.write("                                    </textarea>\n");
+      out.write("                                </DIV>\n");
       out.write("                                <DIV ALIGN=left>  \n");
+      out.write("        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioLog;
+	java.lang.String titulo = request.getParameter("titulo");
+	java.lang.String publicador = usuarioLog;
+	java.lang.String texto = request.getParameter("texto1");
+	java.lang.String imagen = "";
+	// TODO process result here
+	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("                                \n");
+      out.write("                                    \n");
       out.write("                                    <input type=\"submit\" value=\"Publicar\" name=\"boton1\" /> \n");
       out.write("                                </DIV>\n");
       out.write("                             </form>\n");
@@ -103,19 +207,27 @@ public final class Perfil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td>\n");
       out.write("                            <form name=\"pasaramigos\" action=\"amigos.jsp\" method=\"POST\">\n");
       out.write("                                <DIV ALIGN=right> \n");
-      out.write("                                    <input type=\"submit\" value=\"Amigos ¬w¬\" name=\"boton3\" />\n");
+      out.write("                                    <input type=\"submit\" value=\"Amigos\" name=\"boton3\" />\n");
       out.write("                                </DIV>\n");
       out.write("                            </form>   \n");
       out.write("                         </td>\n");
       out.write("                         <td>\n");
       out.write("                             <form name=\"pasarevento\" action=\"evento.jsp\" method=\"POST\">\n");
-      out.write("                                 <input type=\"submit\" value=\"Eventos (~ouo)~\" name=\"boton4\" />\n");
+      out.write("                                 <input type=\"submit\" value=\"Eventos \" name=\"boton4\" />\n");
       out.write("                             </form>\n");
       out.write("                         </td>\n");
       out.write("                         <td>\n");
       out.write("                             <form name=\"pasarmodificar\" action=\"modificar.jsp\" method=\"POST\">\n");
-      out.write("                                 <input type=\"submit\" value=\"Modificar :$\" name=\"boton5\" />\n");
+      out.write("                                 <input type=\"submit\" value=\"Modificar \" name=\"boton5\" />\n");
       out.write("                             </form>\n");
+      out.write("                         </td>\n");
+      out.write("                         <td>\n");
+      out.write("                            <form action=\"uploadFile.jsp\" method=\"POST\" enctype=\"multipart/form-data\">\n");
+      out.write("                                <input type=\"file\" name=\"Image\"/>\n");
+      out.write("                         </td>\n");
+      out.write("                         <td>       \n");
+      out.write("                            <input type=\"submit\" value=\"Publicar Foto\"/>\n");
+      out.write("                            </form>\n");
       out.write("                         </td>\n");
       out.write("                     </tr>\n");
       out.write("                 </tbody>\n");
@@ -140,16 +252,66 @@ public final class Perfil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td> Nombre: Carlos Estuardo</td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
-      out.write("                         <td> Sexo: Masculino</td>\n");
+      out.write("                         <td> Genero: Masculino</td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
       out.write("                         <td> Edad: 19</td>\n");
+      out.write("                     </tr> \n");
+      out.write("                     <tr>\n");
+      out.write("                         <td> Pais: Guatemala</td>\n");
+      out.write("                     </tr>\n");
+      out.write("                      <tr>\n");
+      out.write("                         <td> Estado Civil: ¬w¬</td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
-      out.write("                         <td>---------------------------------------------------</td>\n");
+      out.write("                         \n");
+      out.write("                         <td>\n");
+      out.write("                        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	// TODO process result here
+	java.lang.String result = port.darDatosPerfil(x);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("         \n");
+      out.write("                             \n");
+      out.write("                             ---------------------------------------------------</td>\n");
       out.write("                     </tr>\n");
       out.write("                 </tbody>\n");
       out.write("             </table>\n");
+      out.write("        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	// TODO process result here
+	java.lang.String result = port.mostrarPublicacion(x);
+	out.println("Publicaciones "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("         \n");
+      out.write("             \n");
       out.write("             </FONT>\n");
       out.write("             </DIV>  \n");
       out.write(" \n");
