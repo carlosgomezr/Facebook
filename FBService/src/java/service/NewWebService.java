@@ -17,6 +17,7 @@ import javax.jws.WebParam;
 public class NewWebService {
 String usuarioLog = ""; // usuario con el que loguea el cliente
 String usuarioPerfil = ""; // nombre del usuario del perfil en el que me encuentro
+String name = "";
 String photo = ""; // nombre de la fotografia que subio el usuario ya sea perfil o publicacion
 int idusuarios=0; // incrementable que asciende al insertar usuario al arbol B
 int idpublicaciones=0; // incrmentable que asciende tras insertar publicacion
@@ -212,7 +213,7 @@ public static listaHistorial historial = new listaHistorial();
     public String AgregarEvento(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo, @WebParam(name = "evento") String evento, @WebParam(name = "fecha") String fecha, @WebParam(name = "direccion") String direccion) {
         if(x!=null && correo!=null && evento!=null && fecha!=null && direccion!=null){
             m.insertarAVLEvento(x, correo, ideventos, evento, fecha, direccion);
-            m.graficarAVLEvento("isla","kaya0","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","Eventos :B");
+            m.graficarAVLEvento(x,correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","Eventos :B");
             Funcion g = new Funcion();
             g.generarImagen("Eventos"+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
         }
@@ -280,8 +281,9 @@ public static listaHistorial historial = new listaHistorial();
     @WebMethod(operationName = "MostrarPublicacion")
     public String MostrarPublicacion(@WebParam(name = "x") String x) {
         m.mostrarPublicacion(x);
-        //TODO write your implementation code here:
-        return m.publicacion;
+        String mensaje = "Pub";
+        mensaje=m.publicacion;
+        return mensaje;
     }
 
     /**
@@ -290,8 +292,9 @@ public static listaHistorial historial = new listaHistorial();
     @WebMethod(operationName = "MostrarPublicacionAndroid")
     public String MostrarPublicacionAndroid(@WebParam(name = "x") String x) {
         m.mostrarPublicacionAndroid(x);
-        //TODO write your implementation code here:
-        return m.publicacion;
+        String mensaje = "pubAndroid"; 
+        mensaje = m.publicacion;
+        return mensaje;
     }
 
     /**
@@ -300,8 +303,9 @@ public static listaHistorial historial = new listaHistorial();
     @WebMethod(operationName = "MostrarEvento")
     public String MostrarEvento(@WebParam(name = "x") String x) {
         m.mostrarEvento(x);
-        //TODO write your implementation code here:
-        return m.evento;
+        String mensaje= "Eve";
+        mensaje= m.evento;
+        return mensaje;
     }
 
     /**
@@ -310,8 +314,9 @@ public static listaHistorial historial = new listaHistorial();
     @WebMethod(operationName = "MostrarEventoAndroid")
     public String MostrarEventoAndroid(@WebParam(name = "x") String x) {
         m.mostrarEventoAndroid(x);
-        //TODO write your implementation code here:
-        return m.evento;
+        String mensaje = "EveAndroid";
+        mensaje = m.evento;
+        return mensaje;
     }
 
     /**
@@ -321,14 +326,11 @@ public static listaHistorial historial = new listaHistorial();
     public String MostrarPhoto(@WebParam(name = "x") String x) {
     String mensaje="";
     m.darPhotoB(x);
-    if(m.auxfoto!=null){
-        mensaje="<img src=\"photos/"+m.auxfoto+"\"/  width=\"80\" height=\"80\">";
-    }else{
-        mensaje="<img src=\"photos/hombre.png"+"\"/  width=\"80\" height=\"80\">";
-    }
+    mensaje="<img src=\"photos/"+m.auxfoto+"\"/  width=\"80\" height=\"80\">";
+    
     
         //TODO write your implementation code here:
-        return mensaje;
+    return mensaje;
     }
 
     /**
@@ -353,7 +355,7 @@ public static listaHistorial historial = new listaHistorial();
         if(m.existebandera==true){
             mensaje="ELIMINAR";
         }
-        else{
+        if(m.existebandera==false){
             mensaje="AGREGAR +";
         }
         //TODO write your implementation code here:
@@ -375,7 +377,7 @@ public static listaHistorial historial = new listaHistorial();
             m.insertarAVL(x,parameter1, m.auxnombre, idAVL);
         }
         //TODO write your implementation code here:
-        return null;
+        return m.existebandera+"";
     }
 
     /**
@@ -385,7 +387,7 @@ public static listaHistorial historial = new listaHistorial();
     public String GraphAVL(@WebParam(name = "x") String x) {
         m.graficarAVL(x,"AVL "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt");
         Funcion g = new Funcion();
-        g.generarImagen("ArbolB","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        g.generarImagen("Arbol AVL","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
                
         //TODO write your implementation code here:
         return "AVL "+x;
@@ -442,6 +444,26 @@ public static listaHistorial historial = new listaHistorial();
         m.graficarAVLPublicacion(x, correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Evento.txt", "Eventos "+x);
         g.generarImagen("Evento "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Evento.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
         return "Graficar Evento";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "AsignarName")
+    public String AsignarName(@WebParam(name = "nombre") String nombre) {
+        m.darDatosB(nombre);
+        name = m.auxnombre;
+        //TODO write your implementation code here:
+        return null;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "DarNombre")
+    public String DarNombre() {
+        //TODO write your implementation code here:
+        return name;
     }
 
 

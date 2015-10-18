@@ -1,0 +1,9 @@
+digraph grafica { 
+label= "LISTA DOBLE  PUBLICACIONES"node [shape=record];
+subgraph g { 
+ node0[label=" Titulo: Hello World\n Quien publicó: ana@gmail.com\n Texto: hi hi xD\n Imagen: "];
+node0[label=" Titulo: Desu\n Quien publicó: ana@gmail.com\n Texto: Lol desu ne\n Imagen: "];
+node0->node0;
+node0->node0;
+}
+}

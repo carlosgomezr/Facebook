@@ -1,8 +1,8 @@
 digraph grafica { 
 label= "ARBOL B"node [shape=record];
 rankdir=TD; 
-"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: pusuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: nuevapassword1\n Edad: 20\n Genero: masculino\n Estado: Soltero\n Pais: Guatemala\n Photo: | <r2> " ]; 
-"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: pusuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: nuevapassword1\n Edad: 20\n Genero: masculino\n Estado: Soltero\n Pais: Guatemala\n Photo: | <r2> " ]; 
-"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: pusuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: nuevapassword1\n Edad: 20\n Genero: masculino\n Estado: Soltero\n Pais: Guatemala\n Photo: | <r2> " ]; 
-"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: pusuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: nuevapassword1\n Edad: 20\n Genero: masculino\n Estado: Soltero\n Pais: Guatemala\n Photo: | <r2> " ]; 
+"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: usuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: usuario1\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r2> " ]; 
+"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: usuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: usuario1\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r2> " ]; 
+"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: usuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: usuario1\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r2> " ]; 
+"node2" [ label= " <r0> | <f1> Correo: ana@gmail.com\n Nickname: usuario2\n Password: usuario2\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r1> |<f2> Correo: kaya@gmail.com\n Nickname: usuario1\n Password: usuario1\n Edad: 0\n Genero: \n Estado: \n Pais: \n Photo: | <r2> " ]; 
 }

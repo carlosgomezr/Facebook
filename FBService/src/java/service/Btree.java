@@ -476,9 +476,6 @@ if (i <= nodo.Cuentas){
     if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
         auxfoto=nodo.Claves[i-1].foto;
     }
-    else{
-        auxfoto="hombre.png";
-    }
 if (i < nodo.Cuentas)
 Pila.InsertaFinal(nodo, i);
 nodo=nodo.Ramas[i];

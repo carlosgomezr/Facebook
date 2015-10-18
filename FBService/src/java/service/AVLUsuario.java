@@ -703,6 +703,10 @@ public void generarPublicaciones(listaPublicacion lista,String ruta){
 	    nodoP auxprimero = lista.primero;
             nodoP auxultimo = lista.ultimo;
             File f;
+            
+            int c = 0;
+            int c2 = 1;
+	    
             FileWriter escribir;
 	    try{
 	    f = new File(ruta);
@@ -718,11 +722,13 @@ public void generarPublicaciones(listaPublicacion lista,String ruta){
          
                     if(aux.primero.next!=null){
                         while(aux.primero.next!=null){
-                            pw.write("node"+aux.primero.id+"[label=\" Titulo: "+aux.primero.titulo+"\\n Quien publicó: "+aux.primero.nombre+"\\n Texto: "+aux.primero.texto+"\\n Imagen: "+aux.primero.imagen+"\"];\n");
-                            pw.write("node"+aux.primero.next.id+"[label=\" Titulo: "+aux.primero.next.titulo+"\\n Quien publicó: "+aux.primero.next.nombre+"\\n Texto: "+aux.primero.next.texto+"\\n Imagen: "+aux.primero.next.imagen+"\"];\n");
-                            pw.write("node"+aux.primero.id+"->node"+aux.primero.next.id+";\n");
-                            pw.write("node"+aux.primero.next.id+"->node"+aux.primero.id+";\n");
+                            pw.write("node"+c+"[label=\" Titulo: "+aux.primero.titulo+"\\n Quien publicó: "+aux.primero.nombre+"\\n Texto: "+aux.primero.texto+"\\n Imagen: "+aux.primero.imagen+"\"];\n");
+                            pw.write("node"+c2+"[label=\" Titulo: "+aux.primero.next.titulo+"\\n Quien publicó: "+aux.primero.next.nombre+"\\n Texto: "+aux.primero.next.texto+"\\n Imagen: "+aux.primero.next.imagen+"\"];\n");
+                            pw.write("node"+c+"->node"+c2+";\n");
+                            pw.write("node"+c2+"->node"+c+";\n");
                             aux.primero = aux.primero.next;
+                            c=c+1;
+                            c2=c2+1;
                         }
                     }
                     else{

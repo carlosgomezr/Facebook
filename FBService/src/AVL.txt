@@ -1,0 +1,6 @@
+digraph grafica { 
+label= " AVL kaya@gmail.com"node [shape=record];
+subgraph g {
+nodea0[label=" correo: ana@gmail.com\n nombre: usuario2"];
+}
+}
