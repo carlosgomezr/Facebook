@@ -24,7 +24,7 @@ int ideventos=0; // incrementable que asciende tras insertar evento
 int idAVL=0;   // incrementable que asciende tras insertar amigo 
 public static  Btree m = new
 Btree();
-
+public static listaHistorial historial = new listaHistorial();
     /**
      * This is a sample web service operation
      */
@@ -43,10 +43,12 @@ Btree();
         boolean btamaño= false;
         boolean barroba= false;
         boolean bpunto= false;
+        boolean bexiste= false;
+        
         if(tpassword>=6){ 
             btamaño= true;
         }else{
-            mensaje=" ERROR PASSWORD MENOR A 6 CARACTERES \n";
+            mensaje=" ERROR PASSWORD MENOR A 6 CARACTERES <br></br>";
         }
         for(int i=0;i<correo.length();i++){
             if(correo.charAt(i)=='@'){
@@ -55,27 +57,28 @@ Btree();
                 bpunto=true;
             }
             else{
-                mensaje=" ERROR CORREO NO VALIDO \n";
+                mensaje=" ERROR CORREO NO VALIDO <br></br>";
             }
         }
         if(btamaño==true && barroba==true && bpunto==true){
             m.verificarUser(nombre);
             if(m.bandera==false){
+                idusuarios = idusuarios+1;
+                mensaje="USUARIO CREADO "+nombre+"  "+correo+"  "+password;
                 NodoPr user = new NodoPr(idusuarios,correo,password,nombre,0,"","","","");
                 m.Inserta(user);
                 m.GraficarArbolB("C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\ArbolB.txt");
                 Funcion g = new Funcion();
                 g.generarImagen("ArbolB","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\ArbolB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
-                idusuarios = idusuarios+1;
-                mensaje="USUARIO CREADO "+nombre+"  "+correo+"  "+password;
+               
             }
             else{
-                mensaje="NO SE PUDO CREAR USUARIO";
+                mensaje=" NO SE PUDO CREAR USUARIO <br></br>";
             }
         }
                         
         
-        return mensaje;
+        return mensaje+" id "+idusuarios;
     }
 
     /**
@@ -102,7 +105,9 @@ Btree();
      */
     @WebMethod(operationName = "AsignarUsuario")
     public String AsignarUsuario(@WebParam(name = "usuario") String usuario) {
-        usuarioPerfil = usuario;
+        if(usuario!="" || usuario!=null){
+            usuarioPerfil = usuario;
+        }
         //TODO write your implementation code here:
         return "usuarioPerfil "+usuarioPerfil;
     }
@@ -112,7 +117,8 @@ Btree();
      */
     @WebMethod(operationName = "AsignarUsuarioLog")
     public String AsignarUsuarioLog(@WebParam(name = "usuario") String usuario) {
-        usuarioLog = usuario;
+        m.DarCorreoLogin(usuario);
+        usuarioLog = m.auxcorreo;
         //TODO write your implementation code here:
         return "usuarioLog "+usuarioLog;
     }
@@ -189,10 +195,12 @@ Btree();
      */
     @WebMethod(operationName = "AgregarPublicacion")
     public String AgregarPublicacion(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo, @WebParam(name = "titulo") String titulo, @WebParam(name = "publicador") String publicador, @WebParam(name = "texto") String texto, @WebParam(name = "imagen") String imagen) {
-        m.insertarAVLPublicacion(x, correo, idpublicaciones, titulo, publicador, texto, imagen);
-        m.graficarAVLPublicacion(x, correo ,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicar.txt","Publicaciones");
-        Funcion g = new Funcion();
-        g.generarImagen("Publicaciones "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicar.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\"); 
+        if(x!=null && correo!=null && titulo!=null && publicador!=null && texto!=null && imagen!=null){
+            m.insertarAVLPublicacion(x, correo, idpublicaciones, titulo, publicador, texto, imagen);
+            m.graficarAVLPublicacion(x, correo ,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicar.txt","Publicaciones");
+            Funcion g = new Funcion();
+            g.generarImagen("Publicaciones "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicar.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        }
         //TODO write your implementation code here:
         return "Publicado con exito ";
     }
@@ -202,10 +210,12 @@ Btree();
      */
     @WebMethod(operationName = "AgregarEvento")
     public String AgregarEvento(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo, @WebParam(name = "evento") String evento, @WebParam(name = "fecha") String fecha, @WebParam(name = "direccion") String direccion) {
-        m.insertarAVLEvento(x, correo, ideventos, evento, fecha, direccion);
-        m.graficarAVLEvento("isla","kaya0","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","Eventos :B");
-        Funcion g = new Funcion();
-        g.generarImagen("Eventos"+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        if(x!=null && correo!=null && evento!=null && fecha!=null && direccion!=null){
+            m.insertarAVLEvento(x, correo, ideventos, evento, fecha, direccion);
+            m.graficarAVLEvento("isla","kaya0","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","Eventos :B");
+            Funcion g = new Funcion();
+            g.generarImagen("Eventos"+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        }
         //TODO write your implementation code here:
         return "Evento creado ";
     }
@@ -257,7 +267,7 @@ Btree();
      */
     @WebMethod(operationName = "DarDatosPerfilAndroid")
     public String DarDatosPerfilAndroid(@WebParam(name = "x") String x) {
-         m.darDatosB(x);
+        m.darDatosB(x);
         String mensaje="";
         mensaje="Nombre: "+m.auxnombre+"\n"+"Genero: "+m.auxgenero+"\n"+"Edad: "+m.auxedad+"\n"+"Pais: "+m.auxpais+"\n"+"Estado: "+m.auxestado+"\n";
         //TODO write your implementation code here:
@@ -311,7 +321,12 @@ Btree();
     public String MostrarPhoto(@WebParam(name = "x") String x) {
     String mensaje="";
     m.darPhotoB(x);
-    mensaje="<img src=\"C:/Users/estua_000/Documents/NetBeansProjects/Facebook/photos/"+m.auxfoto+"\"/  width=\"80\" height=\"80\">";
+    if(m.auxfoto!=null){
+        mensaje="<img src=\"photos/"+m.auxfoto+"\"/  width=\"80\" height=\"80\">";
+    }else{
+        mensaje="<img src=\"photos/hombre.png"+"\"/  width=\"80\" height=\"80\">";
+    }
+    
         //TODO write your implementation code here:
         return mensaje;
     }
@@ -326,6 +341,107 @@ Btree();
     mensaje=m.auxfoto;
     //TODO write your implementation code here:
         return mensaje;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "ExisteAVL")
+    public String ExisteAVL(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo) {
+        String mensaje="inicio";
+        m.existeAVL(x, correo);
+        if(m.existebandera==true){
+            mensaje="ELIMINAR";
+        }
+        else{
+            mensaje="AGREGAR +";
+        }
+        //TODO write your implementation code here:
+        return mensaje;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "AgregarEliminarAVL")
+    public String AgregarEliminarAVL(@WebParam(name = "x") String x, @WebParam(name = "parameter1") String parameter1) {
+        String mensaje="";
+        m.existeAVL(x, parameter1);
+        if(m.existebandera==true){
+            m.eliminarAVL(x,parameter1);
+        }
+        else{
+            m.darDatosB(x);
+            m.insertarAVL(x,parameter1, m.auxnombre, idAVL);
+        }
+        //TODO write your implementation code here:
+        return null;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GraphAVL")
+    public String GraphAVL(@WebParam(name = "x") String x) {
+        m.graficarAVL(x,"AVL "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt");
+        Funcion g = new Funcion();
+        g.generarImagen("ArbolB","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+               
+        //TODO write your implementation code here:
+        return "AVL "+x;
+    }
+
+
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "AgregarHistorial")
+    public String AgregarHistorial(@WebParam(name = "nombre") String nombre, @WebParam(name = "contenido") String contenido) {
+        historial.alta(nombre, contenido);
+        Funcion g = new Funcion();
+        g.generarHistorial(historial,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Historial.txt",usuarioLog);
+        g.generarImagen("Historial","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Historial.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        //TODO write your implementation code here:
+        return "Agregar Historial ";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GraphHistorial")
+    public String GraphHistorial() {
+        Funcion g = new Funcion();
+        g.generarHistorial(historial,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Historial.txt",usuarioLog);
+        g.generarImagen("Historial","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Historial.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        
+        //TODO write your implementation code here:
+        return "Grafica Historial";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GraphPublicacion")
+    public String GraphPublicacion(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo) {
+        //TODO write your implementation code here:
+       
+        Funcion g = new Funcion();
+        m.graficarAVLPublicacion(x, correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicacion.txt", "Publicaciones "+x);
+        g.generarImagen("Publicacion "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicacion.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        return "Graficar Publicacion";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GraphEvento")
+    public String GraphEvento(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo) {
+        //TODO write your implementation code here:
+        Funcion g = new Funcion();
+        m.graficarAVLPublicacion(x, correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Evento.txt", "Eventos "+x);
+        g.generarImagen("Evento "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Evento.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        return "Graficar Evento";
     }
 
 

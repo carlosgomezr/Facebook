@@ -32,7 +32,7 @@ NodoPr(int val){
 nump=val;
 }
 NodoPr(int val,String correo,String password,String user,int edad, String genero,String pais, String estado, String foto){
-nump=val;
+this.nump=val;
 this.correo = correo;
 this.password = password;
 this.user = user;

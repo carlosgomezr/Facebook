@@ -27,6 +27,7 @@ public AVLNode r;
 public boolean flag=false;
 public String evento="";
 public String publicacion="";
+public boolean existe=false;
     public void insert( String correo,String nombre,int contador ){
         root = insert(correo,nombre,contador,root );
     }
@@ -534,9 +535,18 @@ public AVLNode eliminar_min(AVLNode t){
             {
                     AVLNode auxr = r;
                     String auxid = r.correo;
+                    String auxnombre = r.nombre;
+                    listaEvento auxevento = r.evento;
+                    listaPublicacion auxpublicacion = r.publicacion;
                     System.out.println("R :v"+r);
                     r.correo = t.correo;
+                    r.nombre = t.nombre;
+                    r.evento = t.evento;
+                    r.publicacion = t.publicacion;
                     t.correo = auxid;
+                    t.nombre = auxnombre;
+                    t.evento = auxevento;
+                    t.publicacion = auxpublicacion;
                     //t.height = max( height( t.izquierdo ), height( t.derecho ) ) + 1;
                     eliminar(t,auxid);
                     balancear();

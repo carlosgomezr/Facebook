@@ -1,0 +1,25 @@
+digraph grafica { 
+label= "LISTA DOBLE  HISTORIAL  "node [shape=record];
+subgraph g { 
+ node0[label=" User: kaya@gmail.com Contenido: Publicó null"];
+node1[label=" User: kaya@gmail.com Contenido: Publicó null"];
+node0->node1;
+node1->node0;
+node1[label=" User: kaya@gmail.com Contenido: Publicó null"];
+node2[label=" User: kaya@gmail.com Contenido:  Modifico Datos null null null null null"];
+node1->node2;
+node2->node1;
+node2[label=" User: kaya@gmail.com Contenido:  Modifico Datos null null null null null"];
+node3[label=" User: kaya@gmail.com Contenido:  Modifico Datos nuevapassword1 20 masculino Guatemala Soltero"];
+node2->node3;
+node3->node2;
+node3[label=" User: kaya@gmail.com Contenido:  Modifico Datos nuevapassword1 20 masculino Guatemala Soltero"];
+node4[label=" User: kaya@gmail.com Contenido: Publicó null"];
+node3->node4;
+node4->node3;
+node4[label=" User: kaya@gmail.com Contenido: Publicó null"];
+node5[label=" User: kaya@gmail.com Contenido: Publicó null"];
+node4->node5;
+node5->node4;
+}
+}

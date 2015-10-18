@@ -28,8 +28,10 @@ String auxgenero="";
 String auxpais="";
 String auxestado="";
 String auxfoto="";
+String auxcorreo="";
 boolean bandera=false;
 boolean banderalog=false;
+boolean existebandera=false;
 //***************************************
 //*****Inserta un nodo en un arbol b*****
 //***************************************
@@ -614,6 +616,37 @@ nodo=nodo.Ramas[i];
 while (!Pila.VaciaLista() || !Vacio(nodo));
 }
 
+void existeAVL(String x,String correo){
+int i=0;
+Bnodo nodo=p;
+existebandera=false;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0||nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.existe(nodo.Claves[i-1].usuarios.root, correo);
+        existebandera = nodo.Claves[i-1].usuarios.flag;       
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
 void eliminarAVLPublicacion(String x,String correo,int id){
 int i=0;
 Bnodo nodo=p;
@@ -830,6 +863,37 @@ while (!Pila.VaciaLista() || !Vacio(nodo));
 }
 
 
+void DarCorreoLogin(String x){
+int i=0;
+Bnodo nodo=p;
+auxcorreo="";
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        auxcorreo = nodo.Claves[i-1].correo;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+
 //Da los valores del nodo del arbol B
 void mostrarPublicacion(String x){
 int i=0;
@@ -1003,7 +1067,7 @@ public String GetDeclNodo(Bnodo actual)
                    codigo+="\"node"+s+"\" [ label= \" <r0> |";
                    for (int i=0;i<=actual.Cuentas-1;i++)
                    {
-                       System.out.println(      "       "+actual.Claves[i].nump); 
+                       System.out.println("       "+actual.Claves[i].nump); 
                        String v;
                        v=i+1+"";
                        if (i==actual.Cuentas-1)
@@ -1013,7 +1077,7 @@ public String GetDeclNodo(Bnodo actual)
                                clave=actual.Claves[i].nump+"";
                                //codigo+=clave.str();
                                //codigo+="ID: "+clave+" \\n Titulo: "+actual.Claves[i].nump;
-                               codigo+=" Correo: "+actual.Claves[i].correo+"\\n Nickname: "+actual.Claves[i].user+"\\n Password: "+actual.Claves[i].password+"\\n Edad: "+actual.Claves[i].edad+"\\n Genero: "+actual.Claves[i].genero+"\\n Estado: "+actual.Claves[i].estado+"\\n Pais: "+actual.Claves[i].pais;
+                               codigo+=" Correo: "+actual.Claves[i].correo+"\\n Nickname: "+actual.Claves[i].user+"\\n Password: "+actual.Claves[i].password+"\\n Edad: "+actual.Claves[i].edad+"\\n Genero: "+actual.Claves[i].genero+"\\n Estado: "+actual.Claves[i].estado+"\\n Pais: "+actual.Claves[i].pais+"\\n Photo: "+actual.Claves[i].foto;
                               
                                String v1;
                                v1=i+1+"";
@@ -1029,7 +1093,7 @@ public String GetDeclNodo(Bnodo actual)
 
                                    //codigo+=clave.str();
                                   //codigo+="ID: "+clave+" \\n Titulo: "+actual.Claves[i].nump;
-                                   codigo+=" Correo: "+actual.Claves[i].correo+"\\n Nickname: "+actual.Claves[i].user+"\\n Password: "+actual.Claves[i].password+"\\n Edad: "+actual.Claves[i].edad+"\\n Genero: "+actual.Claves[i].genero+"\\n Estado: "+actual.Claves[i].estado+"\\n Pais: "+actual.Claves[i].pais;
+                                   codigo+=" Correo: "+actual.Claves[i].correo+"\\n Nickname: "+actual.Claves[i].user+"\\n Password: "+actual.Claves[i].password+"\\n Edad: "+actual.Claves[i].edad+"\\n Genero: "+actual.Claves[i].genero+"\\n Estado: "+actual.Claves[i].estado+"\\n Pais: "+actual.Claves[i].pais+"\\n Photo: "+actual.Claves[i].foto;
                                }
                                String v1;
                                v1=i+1+"";

@@ -39,7 +39,7 @@ public void generarHistorial(listaHistorial lista,String ruta, String usuario){
 	    BufferedWriter bw = new BufferedWriter(escribir);
 	    PrintWriter pw = new PrintWriter(bw);
             pw.write("digraph grafica { \n");
-            pw.write("label= \"LISTA DOBLE  HISTORIAL "+usuario+" \"+");
+            pw.write("label= \"LISTA DOBLE  HISTORIAL "+" \"");
             pw.write("node [shape=record];\n");
 	    pw.write("subgraph g { \n "); 
             if(lista.primero!=null){
@@ -47,8 +47,8 @@ public void generarHistorial(listaHistorial lista,String ruta, String usuario){
          
                     if(aux.primero.next!=null){
                         while(aux.primero.next!=null){
-                            pw.write("node"+c+"[label=\" Contenido: "+aux.primero.contenido+"\"];\n");
-                            pw.write("node"+c2+"[label=\" Contenido: "+aux.primero.next.contenido+"\"];\n");
+                            pw.write("node"+c+"[label=\" User: "+aux.primero.nombre+" Contenido: "+aux.primero.contenido+"\"];\n");
+                            pw.write("node"+c2+"[label=\" User: "+aux.primero.next.nombre+" Contenido: "+aux.primero.next.contenido+"\"];\n");
                             pw.write("node"+c+"->node"+c2+";\n");
                             pw.write("node"+c2+"->node"+c+";\n");
                             aux.primero = aux.primero.next;
@@ -57,7 +57,7 @@ public void generarHistorial(listaHistorial lista,String ruta, String usuario){
                         }
                     }
                     else{
-                            pw.write("node"+c+"[label=\" Contenido: "+aux.primero.contenido+"\"];\n");
+                            pw.write("node"+c+"[label=\" User: "+aux.primero.nombre+" Contenido: "+aux.primero.contenido+"\"];\n");
                     }
                 
             }
