@@ -74,7 +74,7 @@
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
 	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = "Cambio su foto de perfil "+request.getParameter("file1");
+	java.lang.String contenido = "Cambio su foto de perfil "+aux;
 	// TODO process result here
 	java.lang.String result = port.agregarHistorial(nombre, contenido);
 	out.println("Result = "+result);

@@ -33,13 +33,16 @@ public class ObjectFactory {
     private final static QName _AgregarEvento_QNAME = new QName("http://service/", "AgregarEvento");
     private final static QName _MostrarPhotoAndroidResponse_QNAME = new QName("http://service/", "MostrarPhotoAndroidResponse");
     private final static QName _AgregarAmigoResponse_QNAME = new QName("http://service/", "AgregarAmigoResponse");
+    private final static QName _DarNombre_QNAME = new QName("http://service/", "DarNombre");
     private final static QName _AgregarUsuarioResponse_QNAME = new QName("http://service/", "AgregarUsuarioResponse");
     private final static QName _GraphHistorialResponse_QNAME = new QName("http://service/", "GraphHistorialResponse");
     private final static QName _GraphAVLResponse_QNAME = new QName("http://service/", "GraphAVLResponse");
     private final static QName _GraphHistorial_QNAME = new QName("http://service/", "GraphHistorial");
     private final static QName _MostrarPublicacionAndroid_QNAME = new QName("http://service/", "MostrarPublicacionAndroid");
+    private final static QName _AsignarName_QNAME = new QName("http://service/", "AsignarName");
     private final static QName _DarUsuarioPerfilResponse_QNAME = new QName("http://service/", "DarUsuarioPerfilResponse");
     private final static QName _GraphArbolBResponse_QNAME = new QName("http://service/", "GraphArbolBResponse");
+    private final static QName _AsignarNameResponse_QNAME = new QName("http://service/", "AsignarNameResponse");
     private final static QName _MostrarEventoResponse_QNAME = new QName("http://service/", "MostrarEventoResponse");
     private final static QName _MostrarPhoto_QNAME = new QName("http://service/", "MostrarPhoto");
     private final static QName _AgregarHistorial_QNAME = new QName("http://service/", "AgregarHistorial");
@@ -72,6 +75,7 @@ public class ObjectFactory {
     private final static QName _AgregarUsuario_QNAME = new QName("http://service/", "AgregarUsuario");
     private final static QName _GraphPublicacion_QNAME = new QName("http://service/", "GraphPublicacion");
     private final static QName _MostrarPublicacion_QNAME = new QName("http://service/", "MostrarPublicacion");
+    private final static QName _DarNombreResponse_QNAME = new QName("http://service/", "DarNombreResponse");
     private final static QName _AsignarPhotoResponse_QNAME = new QName("http://service/", "AsignarPhotoResponse");
     private final static QName _ModificarUsuarioResponse_QNAME = new QName("http://service/", "ModificarUsuarioResponse");
     private final static QName _EliminarAmigo_QNAME = new QName("http://service/", "EliminarAmigo");
@@ -130,6 +134,14 @@ public class ObjectFactory {
      */
     public ModificarUsuarioResponse createModificarUsuarioResponse() {
         return new ModificarUsuarioResponse();
+    }
+
+    /**
+     * Create an instance of {@link DarNombreResponse }
+     * 
+     */
+    public DarNombreResponse createDarNombreResponse() {
+        return new DarNombreResponse();
     }
 
     /**
@@ -357,6 +369,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AsignarName }
+     * 
+     */
+    public AsignarName createAsignarName() {
+        return new AsignarName();
+    }
+
+    /**
      * Create an instance of {@link MostrarPublicacionAndroid }
      * 
      */
@@ -370,6 +390,14 @@ public class ObjectFactory {
      */
     public MostrarPhoto createMostrarPhoto() {
         return new MostrarPhoto();
+    }
+
+    /**
+     * Create an instance of {@link AsignarNameResponse }
+     * 
+     */
+    public AsignarNameResponse createAsignarNameResponse() {
+        return new AsignarNameResponse();
     }
 
     /**
@@ -533,6 +561,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link DarNombre }
+     * 
+     */
+    public DarNombre createDarNombre() {
+        return new DarNombre();
+    }
+
+    /**
      * Create an instance of {@link MostrarPhotoAndroidResponse }
      * 
      */
@@ -654,6 +690,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DarNombre }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "DarNombre")
+    public JAXBElement<DarNombre> createDarNombre(DarNombre value) {
+        return new JAXBElement<DarNombre>(_DarNombre_QNAME, DarNombre.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AgregarUsuarioResponse }{@code >}}
      * 
      */
@@ -699,6 +744,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AsignarName }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "AsignarName")
+    public JAXBElement<AsignarName> createAsignarName(AsignarName value) {
+        return new JAXBElement<AsignarName>(_AsignarName_QNAME, AsignarName.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DarUsuarioPerfilResponse }{@code >}}
      * 
      */
@@ -714,6 +768,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "GraphArbolBResponse")
     public JAXBElement<GraphArbolBResponse> createGraphArbolBResponse(GraphArbolBResponse value) {
         return new JAXBElement<GraphArbolBResponse>(_GraphArbolBResponse_QNAME, GraphArbolBResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AsignarNameResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "AsignarNameResponse")
+    public JAXBElement<AsignarNameResponse> createAsignarNameResponse(AsignarNameResponse value) {
+        return new JAXBElement<AsignarNameResponse>(_AsignarNameResponse_QNAME, AsignarNameResponse.class, null, value);
     }
 
     /**
@@ -1002,6 +1065,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "MostrarPublicacion")
     public JAXBElement<MostrarPublicacion> createMostrarPublicacion(MostrarPublicacion value) {
         return new JAXBElement<MostrarPublicacion>(_MostrarPublicacion_QNAME, MostrarPublicacion.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DarNombreResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "DarNombreResponse")
+    public JAXBElement<DarNombreResponse> createDarNombreResponse(DarNombreResponse value) {
+        return new JAXBElement<DarNombreResponse>(_DarNombreResponse_QNAME, DarNombreResponse.class, null, value);
     }
 
     /**

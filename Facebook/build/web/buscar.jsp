@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Facebook</title>
-    </head><%! String usuarioLog=""; String usuarioPerfil; String men="XD";%>
+    </head><%! String usuarioLog=""; String usuarioPerfil; String men="ADD"; String name="";%>
     
     <body background="BACK FB.png">
         <img src="BANNER FB.png"/>   
@@ -47,25 +47,6 @@
     %>
     <%-- end web service invocation --%><hr/>
 
-        <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String correo = usuarioPerfil;
-	// TODO process result here
-	java.lang.String result = port.existeAVL(x, correo);
-	out.println("Result = "+result);
-        men=result;
-        out.println(" MENSAJE "+men);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
     
         <h1></h1>  
     <br></br>
@@ -73,35 +54,17 @@
         <form name="pasarperfil" action="Perfil.jsp" method="POST">
             <input type="submit" value="Mi Perfil" name="boton1" />
         </form>
-        <form name="pasarbuscar" action="buscar.jsp" method="POST">
+        <form name="pasarbuscar" action="amigoredir.jsp" method="POST">
             
-        <%-- start web service invocation --%><hr/>
+                <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String parameter1 = usuarioPerfil;
+	java.lang.String nombre = usuarioPerfil;
 	// TODO process result here
-	java.lang.String result = port.agregarEliminarAVL(x, parameter1);
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-    
-        <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = usuarioLog+" "+men+" a"+usuarioPerfil;
-	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
+	java.lang.String result = port.asignarName(nombre);
 	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
@@ -109,7 +72,8 @@
     %>
     <%-- end web service invocation --%><hr/>
 
-    
+            
+            
             <input type="submit" value="<%= men%>" name="agregar" />
         </form>
         
@@ -153,8 +117,8 @@
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioPerfil;
-	java.lang.String correo = usuarioLog;
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioPerfil;
 	java.lang.String titulo = request.getParameter("titulo");
 	java.lang.String publicador = usuarioPerfil;
 	java.lang.String texto = request.getParameter("texto1");
@@ -191,47 +155,8 @@
                          </td>
                          <td>
                              
- <form action="uploadFile.jsp" method="POST" enctype="multipart/form-data">
+ <form action="subirImagenBuscar.jsp" method="POST" enctype="multipart/form-data">
                                 <input type="file" name="Image"/>
-                                      <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioPerfil;
-	java.lang.String correo = usuarioLog;
-	java.lang.String titulo = request.getParameter("titulo");
-	java.lang.String publicador = usuarioPerfil;
-	java.lang.String texto = "";
-	java.lang.String imagen = request.getParameter("file");
-	// TODO process result here
-	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-  
-    
-        <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String nombre = usuarioPerfil;
-	java.lang.String contenido = "Publicó "+request.getParameter("file");
-	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
                                 <input type="submit" value="Publicar Foto"/>
                             </form>                             
                          </td>
@@ -248,21 +173,7 @@
                      <tr>
                          <td>----------------------My Info----------------------</td>
                      </tr>
-                     <tr>
-                         <td> Nombre: Carlos Estuardo</td>
-                     </tr>
-                     <tr>
-                         <td> Genero: Masculino</td>
-                     </tr>
-                     <tr>
-                         <td> Edad: 19</td>
-                     </tr> 
-                     <tr>
-                         <td> Pais: Guatemala</td>
-                     </tr>
-                      <tr>
-                         <td> Estado Civil: ¬w¬</td>
-                     </tr>
+                     
                      <tr>
                          <td>
                                 <%-- start web service invocation --%><hr/>

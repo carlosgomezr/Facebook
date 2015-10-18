@@ -45,8 +45,9 @@
                                      <input type="submit" value="Log out" name="boton" />
                                  </form>
                              </td>
-                             <td>
-                                                                 
+                             <td><form name="pasareliminar" action="eliminar.jsp" method="POST">
+                                     <input type="submit" value="Eliminar Cuentat" name="eliminar" />
+                                 </form>
                              </td>
                          </tr>
                          
@@ -163,47 +164,8 @@
                              </form>
                          </td>
                          <td>
-                            <form action="uploadFile.jsp" method="POST" enctype="multipart/form-data">
+                            <form action="subirImagen.jsp" method="POST" enctype="multipart/form-data">
                                 <input type="file" name="Image"/>
-                                      <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String correo = usuarioLog;
-	java.lang.String titulo = request.getParameter("titulo");
-	java.lang.String publicador = usuarioLog;
-	java.lang.String texto = "";
-	java.lang.String imagen = request.getParameter("file");
-	// TODO process result here
-	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
-	out.println("Result = "+result+" "+usuarioLog);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-  
-    
-        <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = "Publicó "+request.getParameter("file");
-	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
                                 <input type="submit" value="Publicar Foto"/>
                             </form>
                          </td>

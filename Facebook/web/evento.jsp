@@ -51,7 +51,7 @@
 	java.lang.String x = usuarioLog;
 	// TODO process result here
 	java.lang.String result = port.mostrarEvento(x);
-	out.println("Result = "+result);
+	out.println("Result xD= "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
@@ -102,7 +102,7 @@
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
 	java.lang.String x = usuarioLog;
-	java.lang.String correo = usuarioLog;
+	java.lang.String correo = request.getParameter("texto4");
 	java.lang.String evento = request.getParameter("texto1");
 	java.lang.String fecha = request.getParameter("texto2");
 	java.lang.String direccion = request.getParameter("texto3");
@@ -115,6 +115,27 @@
     %>
     <%-- end web service invocation --%><hr/>
 
+    
+        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioLog;
+	java.lang.String evento = request.getParameter("texto1");
+	java.lang.String fecha = request.getParameter("texto2");
+	java.lang.String direccion = request.getParameter("texto3");
+	// TODO process result here
+	java.lang.String result = port.agregarEvento(x, correo, evento, fecha, direccion);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+    
         <%-- start web service invocation --%><hr/>
     <%
     try {

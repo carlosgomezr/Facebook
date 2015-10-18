@@ -16,7 +16,6 @@
     <font color="white" face="arial">
         <h1>REPORTES</h1>
         Diagramas de las Estructuras de Datos del Sistema
-    </font>
     <br></br>
     <DIV ALIGN=right>  
     <form name="pasarlogin" action="index.jsp" method="POST">
@@ -73,7 +72,7 @@
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
 	java.lang.String x = request.getParameter("texto2");
-	java.lang.String correo = request.getParameter("texto3");
+	java.lang.String correo = request.getParameter("texto5");
 	// TODO process result here
 	java.lang.String result = port.graphEvento(x, correo);
 	out.println("Result = "+result);
@@ -132,5 +131,7 @@
         
         <input type="submit" value="                HISTORIAL              " name="boton4" />
     </form>
+    </font>
+
     </body>
 </html>

@@ -24,6 +24,10 @@
 
 <xs:element name="AgregarUsuarioResponse" type="tns:AgregarUsuarioResponse"/>
 
+<xs:element name="AsignarName" type="tns:AsignarName"/>
+
+<xs:element name="AsignarNameResponse" type="tns:AsignarNameResponse"/>
+
 <xs:element name="AsignarPhoto" type="tns:AsignarPhoto"/>
 
 <xs:element name="AsignarPhotoResponse" type="tns:AsignarPhotoResponse"/>
@@ -43,6 +47,10 @@
 <xs:element name="DarDatosPerfilAndroidResponse" type="tns:DarDatosPerfilAndroidResponse"/>
 
 <xs:element name="DarDatosPerfilResponse" type="tns:DarDatosPerfilResponse"/>
+
+<xs:element name="DarNombre" type="tns:DarNombre"/>
+
+<xs:element name="DarNombreResponse" type="tns:DarNombreResponse"/>
 
 <xs:element name="DarUsuarioLog" type="tns:DarUsuarioLog"/>
 
@@ -146,6 +154,18 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="AsignarName">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarNameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="GraphPublicacion">
 <xs:sequence>
 <xs:element name="x" type="xs:string" minOccurs="0"/>
@@ -203,19 +223,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="AsignarPhoto">
-<xs:sequence>
-<xs:element name="x" type="xs:string" minOccurs="0"/>
-<xs:element name="foto" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="AsignarPhotoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="EliminarUsuario">
 <xs:sequence>
 <xs:element name="correo" type="xs:string" minOccurs="0"/>
@@ -237,6 +244,19 @@
 </xs:complexType>
 
 <xs:complexType name="AgregarAmigoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarPhoto">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="foto" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AsignarPhotoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -322,19 +342,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="Login">
-<xs:sequence>
-<xs:element name="x" type="xs:string" minOccurs="0"/>
-<xs:element name="password" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="LoginResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="GraphEvento">
 <xs:sequence>
 <xs:element name="x" type="xs:string" minOccurs="0"/>
@@ -343,6 +350,19 @@
 </xs:complexType>
 
 <xs:complexType name="GraphEventoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Login">
+<xs:sequence>
+<xs:element name="x" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LoginResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -458,6 +478,16 @@
 </xs:complexType>
 
 <xs:complexType name="DarDatosPerfilAndroidResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DarNombre">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="DarNombreResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

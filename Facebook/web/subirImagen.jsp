@@ -29,44 +29,41 @@
     }
     
 %>
-<%! String usuarioLog=""; String usuarioPerfil="";%>
-   
-
-        <%-- start web service invocation --%><hr/>
+<%! String usuarioLog=""; String usuarioPerfil=""; String titulo1=""; String texto1="";%>
+<%
+            titulo1 = request.getParameter("titulo");
+            texto1 = request.getParameter("texto1");
+%>
+    <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioLog();
-	out.println("Usuario = "+result);
+	out.println("Result = "+result);
         usuarioLog = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
     <%-- end web service invocation --%><hr/>
-
-
     <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-       
-	java.lang.String foto = aux;
 	// TODO process result here
-	java.lang.String result = port.asignarPhoto(x, foto);
+	java.lang.String result = port.darUsuarioPerfil();
 	out.println("Result = "+result);
-        out.println("Variable AUX"+aux);
+        usuarioPerfil = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
     <%-- end web service invocation --%><hr/>
 
+        
         <%-- start web service invocation --%><hr/>
     <%
     try {
@@ -74,15 +71,35 @@
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
 	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = "Cambio su foto de perfil "+aux;
+	java.lang.String contenido = "Publicó "+aux;
 	// TODO process result here
 	java.lang.String result = port.agregarHistorial(nombre, contenido);
 	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
-    response.sendRedirect("http://localhost:8080/Facebook/cambiar.jsp");
     %>
     <%-- end web service invocation --%><hr/>
 
-     
+    
+        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioLog;
+	java.lang.String titulo = titulo1;
+	java.lang.String publicador = usuarioLog;
+	java.lang.String texto = texto1;
+	java.lang.String imagen = aux;
+	// TODO process result here
+	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
+	out.println("Result = "+result);
+        response.sendRedirect("http://localhost:8080/Facebook/Perfil.jsp");
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
