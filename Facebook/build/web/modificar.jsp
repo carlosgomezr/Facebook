@@ -84,7 +84,25 @@
     %>
     <%-- end web service invocation --%><hr/>
     
-                    
+        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String nombre = usuarioLog;
+	java.lang.String contenido = " Modifico Datos "+request.getParameter("texto0")+" "+request.getParameter("texto1")+" "+request.getParameter("texto2")+" "+request.getParameter("texto3")+" "+request.getParameter("texto4");
+	// TODO process result here
+	java.lang.String result = port.agregarHistorial(nombre, contenido);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+             
+    
+    
                         <input type="submit" value="ModificaR" name="boton2" />
                     </td>
             </tr>

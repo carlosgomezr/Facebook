@@ -7,6 +7,7 @@ import javax.servlet.jsp.*;
 public final class buscar_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
+ String usuarioLog=""; String usuarioPerfil=""; String men="";
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
@@ -49,9 +50,72 @@ public final class buscar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>My Facebook</title>\n");
-      out.write("    </head>\n");
+      out.write("    </head>");
+      out.write("\n");
       out.write("    <body background=\"BACK FB.png\">\n");
       out.write("        <img src=\"BANNER FB.png\"/>    \n");
+      out.write("        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	// TODO process result here
+	java.lang.String result = port.darUsuarioLog();
+	out.println("Result = "+result);
+        usuarioLog = result;
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("\n");
+      out.write("        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	// TODO process result here
+	java.lang.String result = port.darUsuarioPerfil();
+	out.println("Result = "+result);
+        usuarioPerfil=result;
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioPerfil;
+	// TODO process result here
+	java.lang.String result = port.existeAVL(x, correo);
+	out.println("Result = "+result);
+        men = result;
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("\n");
+      out.write("    \n");
       out.write("    <font color=\"white\" FACE=\"verdana\" SIZE=2>\n");
       out.write("        <h1></h1>  \n");
       out.write("    <br></br>\n");
@@ -60,7 +124,30 @@ public final class buscar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <input type=\"submit\" value=\"Mi Perfil\" name=\"boton1\" />\n");
       out.write("        </form>\n");
       out.write("        <form name=\"pasarbuscar\" action=\"buscar.jsp\" method=\"POST\">\n");
-      out.write("            <input type=\"submit\" value=\"Agregar +\" name=\"agregar\" />\n");
+      out.write("            ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String parameter1 = usuarioPerfil;
+	// TODO process result here
+	java.lang.String result = port.agregarEliminarAVL(x, parameter1);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("    \n");
+      out.write("            <input type=\"submit\" value=\"");
+      out.print( men);
+      out.write("\" name=\"agregar\" />\n");
       out.write("        </form>\n");
       out.write("        \n");
       out.write("    </div>\n");
@@ -72,7 +159,7 @@ public final class buscar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                 <tbody>\n");
       out.write("                     <tr>\n");
       out.write("                         <td>\n");
-      out.write("                             <form name=\"pasarperfil\" action=\"Perfil.jsp\" method=\"POST\">  \n");
+      out.write("                             <form name=\"pasarperfil\" action=\"buscar.jsp\" method=\"POST\">  \n");
       out.write("                             Titulo\n");
       out.write("                                <input type=\"text\" name=\"titulo\" value=\"Escribe tu titulo aqui\" size=\"30\" />\n");
       out.write("                                <DIV ALIGN=right>  \n");
@@ -81,9 +168,67 @@ public final class buscar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    </textarea>\n");
       out.write("                                </DIV>\n");
       out.write("                                <DIV ALIGN=left>  \n");
+      out.write("                                    ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioPerfil;
+	java.lang.String titulo = request.getParameter("titulo");
+	java.lang.String publicador = usuarioPerfil;
+	java.lang.String texto = request.getParameter("texto1");
+	java.lang.String imagen = "";
+	// TODO process result here
+	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("    \n");
+      out.write("                                    \n");
       out.write("                                    <input type=\"submit\" value=\"Publicar\" name=\"boton1\" /> \n");
       out.write("                                </DIV>\n");
       out.write("                             </form>\n");
+      out.write("                         </td>\n");
+      out.write("                         <td>\n");
+      out.write("                             \n");
+      out.write(" <form action=\"uploadFile.jsp\" method=\"POST\" enctype=\"multipart/form-data\">\n");
+      out.write("                                <input type=\"file\" name=\"Image\"/>\n");
+      out.write("                                      ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	java.lang.String correo = usuarioLog;
+	java.lang.String titulo = request.getParameter("titulo");
+	java.lang.String publicador = usuarioLog;
+	java.lang.String texto = "";
+	java.lang.String imagen = request.getParameter("file");
+	// TODO process result here
+	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("  \n");
+      out.write("                                <input type=\"submit\" value=\"Publicar Foto\"/>\n");
+      out.write("                            </form>                             \n");
       out.write("                         </td>\n");
       out.write("                    </tbody>\n");
       out.write("             </table>\n");
@@ -114,7 +259,29 @@ public final class buscar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td> Estado Civil: ¬w¬</td>\n");
       out.write("                     </tr>\n");
       out.write("                     <tr>\n");
-      out.write("                         <td>---------------------------------------------------</td>\n");
+      out.write("                         <td>\n");
+      out.write("                                ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioPerfil;
+	// TODO process result here
+	java.lang.String result = port.darDatosPerfil(x);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write(" \n");
+      out.write("                             \n");
+      out.write("                             ---------------------------------------------------</td>\n");
       out.write("                     </tr>\n");
       out.write("                 </tbody>\n");
       out.write("             </table>\n");

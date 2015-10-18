@@ -114,7 +114,26 @@
     }
     %>
     <%-- end web service invocation --%><hr/>
-                            <input type="submit" value="Crear Evento" name="boton5" />
+
+        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String nombre = usuarioLog;
+	java.lang.String contenido = "Creo Evento "+request.getParameter("texto1")+"  Fecha "+request.getParameter("texto2")+" Direccion "+request.getParameter("texto3");
+	// TODO process result here
+	java.lang.String result = port.agregarHistorial(nombre, contenido);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
+    
+                <input type="submit" value="Crear Evento" name="boton5" />
                         
                     </td>
                     

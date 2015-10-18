@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cambiar foto</title>
-    </head><%! String usuarioLog=""; String usuarioPerfil="";%>
+    </head><%! String usuarioLog=""; String usuarioPerfil=""; String aux="";%>
     <body background="BACK FB.png">
         <img src="BANNER FB.png"/>  
     <font color="white" face="arial">
@@ -34,27 +34,9 @@
     <br></br>
     
     <form action="uploadFile.jsp" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file"/>
-        <br>
+        <input type="file" name="file1"/>
+     
         <input type="submit" value="Seleccionar Foto"/>
-    <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String foto = request.getParameter("file");;
-	// TODO process result here
-	java.lang.String result = port.asignarPhoto(x, foto);
-	out.println("Result = "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
-        
     </form>
     
     

@@ -106,7 +106,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td></td>\n");
       out.write("                         \n");
       out.write("                         <td>\n");
-      out.write("            ");
+      out.write("        ");
       out.write("<hr/>\n");
       out.write("    ");
 
@@ -119,7 +119,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 	java.lang.String password = request.getParameter("texto5");
 	// TODO process result here
 	java.lang.String result = port.agregarUsuario(nombre, correo, password);
-	out.println("Result = "+result);
+	out.println("Result user = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
@@ -127,7 +127,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    ");
       out.write("<hr/>\n");
-      out.write("                     \n");
+      out.write("                         \n");
+      out.write("                             \n");
       out.write("        ");
       out.write("<hr/>\n");
       out.write("    ");
