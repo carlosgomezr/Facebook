@@ -16,21 +16,19 @@
     <font color="white" face="arial">
              <img src="BANNER FB.png"/>    
              <center>
-        <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioLog();
-	out.println("Result = "+result);
+	out.println("USUARIO "+result);
         usuarioLog = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-             
+    <br></br>
                  <table border="0">
                      <tbody>
                          
@@ -46,7 +44,7 @@
                                  </form>
                              </td>
                              <td><form name="pasareliminar" action="eliminar.jsp" method="POST">
-                                     <input type="submit" value="Eliminar Cuentat" name="eliminar" />
+                                     <input type="submit" value="Eliminar Cuenta" name="eliminar" />
                                  </form>
                              </td>
                          </tr>
@@ -60,7 +58,7 @@
                  </table>
     
 <DIV ALIGN=left>  
-    <%-- start web service invocation --%><hr/>
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -69,14 +67,12 @@
 	java.lang.String x = usuarioLog;
 	// TODO process result here
 	java.lang.String result = port.mostrarPhoto(x);
-	out.println("Result = "+result);
-        out.println("O.O");
-    } catch (Exception ex) {
+	out.println(""+result);
+        } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
+    
   ---------¿Que es lo que me pasa?---------> 
 </DIV>             
                  <br></br>
@@ -96,7 +92,7 @@
                                     </textarea>
                                 </DIV>
                                 <DIV ALIGN=left>  
-        <%-- start web service invocation --%><hr/>
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -110,32 +106,30 @@
 	java.lang.String imagen = "";
 	// TODO process result here
 	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
-	out.println("Result = "+result+"  "+usuarioLog);
-        out.println("Public :v ");
+	//out.println(""+result+"  "+usuarioLog);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-                                
-        <%-- start web service invocation --%><hr/>
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "Publicó ";
 	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = "Publicó "+request.getParameter("texto1");
+	java.lang.String palabra2 = " ";
+	java.lang.String contenido = request.getParameter("texto1");
 	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
 	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-                                
-                                    <input type="submit" value="Publicar" name="boton1" /> 
+    <br></br>                        
+                        <input type="submit" value="Publicar" name="boton1" /> 
                                 </DIV>
                              </form>
                          </td>
@@ -199,7 +193,7 @@
 	java.lang.String x = usuarioLog;
 	// TODO process result here
 	java.lang.String result = port.darDatosPerfil(x);
-	out.println("Result = "+result);
+	out.println(""+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
@@ -215,7 +209,7 @@
     
              </FONT>
              </DIV>  
-    <%-- start web service invocation --%><hr/>
+     <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -224,7 +218,22 @@
 	java.lang.String x = usuarioLog;
 	// TODO process result here
 	java.lang.String result = port.mostrarPublicacion(x);
-	out.println("Result Public = "+result);
+	out.println("Me Publicaron? "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	// TODO process result here
+	java.lang.String result = port.mostrarMiPublicacion(x);
+	out.println("Result Mi publicacion = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }

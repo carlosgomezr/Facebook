@@ -26,141 +26,30 @@ public interface NewWebService {
 
     /**
      * 
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "DarDatosPerfilAndroid")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DarDatosPerfilAndroid", targetNamespace = "http://service/", className = "service.DarDatosPerfilAndroid")
-    @ResponseWrapper(localName = "DarDatosPerfilAndroidResponse", targetNamespace = "http://service/", className = "service.DarDatosPerfilAndroidResponse")
-    @Action(input = "http://service/NewWebService/DarDatosPerfilAndroidRequest", output = "http://service/NewWebService/DarDatosPerfilAndroidResponse")
-    public String darDatosPerfilAndroid(
-        @WebParam(name = "x", targetNamespace = "")
-        String x);
-
-    /**
-     * 
-     * @param usuario
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AsignarUsuarioLog")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AsignarUsuarioLog", targetNamespace = "http://service/", className = "service.AsignarUsuarioLog")
-    @ResponseWrapper(localName = "AsignarUsuarioLogResponse", targetNamespace = "http://service/", className = "service.AsignarUsuarioLogResponse")
-    @Action(input = "http://service/NewWebService/AsignarUsuarioLogRequest", output = "http://service/NewWebService/AsignarUsuarioLogResponse")
-    public String asignarUsuarioLog(
-        @WebParam(name = "usuario", targetNamespace = "")
-        String usuario);
-
-    /**
-     * 
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "MostrarPublicacionAndroid")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "MostrarPublicacionAndroid", targetNamespace = "http://service/", className = "service.MostrarPublicacionAndroid")
-    @ResponseWrapper(localName = "MostrarPublicacionAndroidResponse", targetNamespace = "http://service/", className = "service.MostrarPublicacionAndroidResponse")
-    @Action(input = "http://service/NewWebService/MostrarPublicacionAndroidRequest", output = "http://service/NewWebService/MostrarPublicacionAndroidResponse")
-    public String mostrarPublicacionAndroid(
-        @WebParam(name = "x", targetNamespace = "")
-        String x);
-
-    /**
-     * 
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "MostrarEventoAndroid")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "MostrarEventoAndroid", targetNamespace = "http://service/", className = "service.MostrarEventoAndroid")
-    @ResponseWrapper(localName = "MostrarEventoAndroidResponse", targetNamespace = "http://service/", className = "service.MostrarEventoAndroidResponse")
-    @Action(input = "http://service/NewWebService/MostrarEventoAndroidRequest", output = "http://service/NewWebService/MostrarEventoAndroidResponse")
-    public String mostrarEventoAndroid(
-        @WebParam(name = "x", targetNamespace = "")
-        String x);
-
-    /**
-     * 
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "MostrarPhotoAndroid")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "MostrarPhotoAndroid", targetNamespace = "http://service/", className = "service.MostrarPhotoAndroid")
-    @ResponseWrapper(localName = "MostrarPhotoAndroidResponse", targetNamespace = "http://service/", className = "service.MostrarPhotoAndroidResponse")
-    @Action(input = "http://service/NewWebService/MostrarPhotoAndroidRequest", output = "http://service/NewWebService/MostrarPhotoAndroidResponse")
-    public String mostrarPhotoAndroid(
-        @WebParam(name = "x", targetNamespace = "")
-        String x);
-
-    /**
-     * 
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "MostrarPublicacion")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "MostrarPublicacion", targetNamespace = "http://service/", className = "service.MostrarPublicacion")
-    @ResponseWrapper(localName = "MostrarPublicacionResponse", targetNamespace = "http://service/", className = "service.MostrarPublicacionResponse")
-    @Action(input = "http://service/NewWebService/MostrarPublicacionRequest", output = "http://service/NewWebService/MostrarPublicacionResponse")
-    public String mostrarPublicacion(
-        @WebParam(name = "x", targetNamespace = "")
-        String x);
-
-    /**
-     * 
-     * @param texto
-     * @param publicador
+     * @param fecha
+     * @param evento
      * @param correo
      * @param x
-     * @param titulo
-     * @param imagen
+     * @param direccion
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "AgregarPublicacion")
+    @WebMethod(operationName = "AgregarEvento")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AgregarPublicacion", targetNamespace = "http://service/", className = "service.AgregarPublicacion")
-    @ResponseWrapper(localName = "AgregarPublicacionResponse", targetNamespace = "http://service/", className = "service.AgregarPublicacionResponse")
-    @Action(input = "http://service/NewWebService/AgregarPublicacionRequest", output = "http://service/NewWebService/AgregarPublicacionResponse")
-    public String agregarPublicacion(
+    @RequestWrapper(localName = "AgregarEvento", targetNamespace = "http://service/", className = "service.AgregarEvento")
+    @ResponseWrapper(localName = "AgregarEventoResponse", targetNamespace = "http://service/", className = "service.AgregarEventoResponse")
+    @Action(input = "http://service/NewWebService/AgregarEventoRequest", output = "http://service/NewWebService/AgregarEventoResponse")
+    public String agregarEvento(
         @WebParam(name = "x", targetNamespace = "")
         String x,
         @WebParam(name = "correo", targetNamespace = "")
         String correo,
-        @WebParam(name = "titulo", targetNamespace = "")
-        String titulo,
-        @WebParam(name = "publicador", targetNamespace = "")
-        String publicador,
-        @WebParam(name = "texto", targetNamespace = "")
-        String texto,
-        @WebParam(name = "imagen", targetNamespace = "")
-        String imagen);
-
-    /**
-     * 
-     * @param x
-     * @param parameter1
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AgregarEliminarAVL")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AgregarEliminarAVL", targetNamespace = "http://service/", className = "service.AgregarEliminarAVL")
-    @ResponseWrapper(localName = "AgregarEliminarAVLResponse", targetNamespace = "http://service/", className = "service.AgregarEliminarAVLResponse")
-    @Action(input = "http://service/NewWebService/AgregarEliminarAVLRequest", output = "http://service/NewWebService/AgregarEliminarAVLResponse")
-    public String agregarEliminarAVL(
-        @WebParam(name = "x", targetNamespace = "")
-        String x,
-        @WebParam(name = "parameter1", targetNamespace = "")
-        String parameter1);
+        @WebParam(name = "evento", targetNamespace = "")
+        String evento,
+        @WebParam(name = "fecha", targetNamespace = "")
+        String fecha,
+        @WebParam(name = "direccion", targetNamespace = "")
+        String direccion);
 
     /**
      * 
@@ -176,54 +65,66 @@ public interface NewWebService {
 
     /**
      * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "DarUsuarioPerfil")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DarUsuarioPerfil", targetNamespace = "http://service/", className = "service.DarUsuarioPerfil")
-    @ResponseWrapper(localName = "DarUsuarioPerfilResponse", targetNamespace = "http://service/", className = "service.DarUsuarioPerfilResponse")
-    @Action(input = "http://service/NewWebService/DarUsuarioPerfilRequest", output = "http://service/NewWebService/DarUsuarioPerfilResponse")
-    public String darUsuarioPerfil();
-
-    /**
-     * 
-     * @param password
-     * @param correo
-     * @param nombre
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AgregarUsuario")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AgregarUsuario", targetNamespace = "http://service/", className = "service.AgregarUsuario")
-    @ResponseWrapper(localName = "AgregarUsuarioResponse", targetNamespace = "http://service/", className = "service.AgregarUsuarioResponse")
-    @Action(input = "http://service/NewWebService/AgregarUsuarioRequest", output = "http://service/NewWebService/AgregarUsuarioResponse")
-    public String agregarUsuario(
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre,
-        @WebParam(name = "correo", targetNamespace = "")
-        String correo,
-        @WebParam(name = "password", targetNamespace = "")
-        String password);
-
-    /**
-     * 
-     * @param correo
      * @param x
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "GraphEvento")
+    @WebMethod(operationName = "MostrarPhoto")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GraphEvento", targetNamespace = "http://service/", className = "service.GraphEvento")
-    @ResponseWrapper(localName = "GraphEventoResponse", targetNamespace = "http://service/", className = "service.GraphEventoResponse")
-    @Action(input = "http://service/NewWebService/GraphEventoRequest", output = "http://service/NewWebService/GraphEventoResponse")
-    public String graphEvento(
+    @RequestWrapper(localName = "MostrarPhoto", targetNamespace = "http://service/", className = "service.MostrarPhoto")
+    @ResponseWrapper(localName = "MostrarPhotoResponse", targetNamespace = "http://service/", className = "service.MostrarPhotoResponse")
+    @Action(input = "http://service/NewWebService/MostrarPhotoRequest", output = "http://service/NewWebService/MostrarPhotoResponse")
+    public String mostrarPhoto(
         @WebParam(name = "x", targetNamespace = "")
-        String x,
+        String x);
+
+    /**
+     * 
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AsignarName")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AsignarName", targetNamespace = "http://service/", className = "service.AsignarName")
+    @ResponseWrapper(localName = "AsignarNameResponse", targetNamespace = "http://service/", className = "service.AsignarNameResponse")
+    @Action(input = "http://service/NewWebService/AsignarNameRequest", output = "http://service/NewWebService/AsignarNameResponse")
+    public String asignarName(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre);
+
+    /**
+     * 
+     * @param correo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "EliminarUsuario")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "EliminarUsuario", targetNamespace = "http://service/", className = "service.EliminarUsuario")
+    @ResponseWrapper(localName = "EliminarUsuarioResponse", targetNamespace = "http://service/", className = "service.EliminarUsuarioResponse")
+    @Action(input = "http://service/NewWebService/EliminarUsuarioRequest", output = "http://service/NewWebService/EliminarUsuarioResponse")
+    public String eliminarUsuario(
         @WebParam(name = "correo", targetNamespace = "")
         String correo);
+
+    /**
+     * 
+     * @param foto
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AsignarPhoto")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AsignarPhoto", targetNamespace = "http://service/", className = "service.AsignarPhoto")
+    @ResponseWrapper(localName = "AsignarPhotoResponse", targetNamespace = "http://service/", className = "service.AsignarPhotoResponse")
+    @Action(input = "http://service/NewWebService/AsignarPhotoRequest", output = "http://service/NewWebService/AsignarPhotoResponse")
+    public String asignarPhoto(
+        @WebParam(name = "x", targetNamespace = "")
+        String x,
+        @WebParam(name = "foto", targetNamespace = "")
+        String foto);
 
     /**
      * 
@@ -242,18 +143,87 @@ public interface NewWebService {
 
     /**
      * 
-     * @param nombre
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "AsignarName")
+    @WebMethod(operationName = "GraphHistorial")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AsignarName", targetNamespace = "http://service/", className = "service.AsignarName")
-    @ResponseWrapper(localName = "AsignarNameResponse", targetNamespace = "http://service/", className = "service.AsignarNameResponse")
-    @Action(input = "http://service/NewWebService/AsignarNameRequest", output = "http://service/NewWebService/AsignarNameResponse")
-    public String asignarName(
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre);
+    @RequestWrapper(localName = "GraphHistorial", targetNamespace = "http://service/", className = "service.GraphHistorial")
+    @ResponseWrapper(localName = "GraphHistorialResponse", targetNamespace = "http://service/", className = "service.GraphHistorialResponse")
+    @Action(input = "http://service/NewWebService/GraphHistorialRequest", output = "http://service/NewWebService/GraphHistorialResponse")
+    public String graphHistorial();
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarEvento")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarEvento", targetNamespace = "http://service/", className = "service.MostrarEvento")
+    @ResponseWrapper(localName = "MostrarEventoResponse", targetNamespace = "http://service/", className = "service.MostrarEventoResponse")
+    @Action(input = "http://service/NewWebService/MostrarEventoRequest", output = "http://service/NewWebService/MostrarEventoResponse")
+    public String mostrarEvento(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param correo
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "GraphPublicacion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GraphPublicacion", targetNamespace = "http://service/", className = "service.GraphPublicacion")
+    @ResponseWrapper(localName = "GraphPublicacionResponse", targetNamespace = "http://service/", className = "service.GraphPublicacionResponse")
+    @Action(input = "http://service/NewWebService/GraphPublicacionRequest", output = "http://service/NewWebService/GraphPublicacionResponse")
+    public String graphPublicacion(
+        @WebParam(name = "x", targetNamespace = "")
+        String x,
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "DarUsuarioPerfil")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DarUsuarioPerfil", targetNamespace = "http://service/", className = "service.DarUsuarioPerfil")
+    @ResponseWrapper(localName = "DarUsuarioPerfilResponse", targetNamespace = "http://service/", className = "service.DarUsuarioPerfilResponse")
+    @Action(input = "http://service/NewWebService/DarUsuarioPerfilRequest", output = "http://service/NewWebService/DarUsuarioPerfilResponse")
+    public String darUsuarioPerfil();
+
+    /**
+     * 
+     * @param usuario
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AsignarUsuario")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AsignarUsuario", targetNamespace = "http://service/", className = "service.AsignarUsuario")
+    @ResponseWrapper(localName = "AsignarUsuarioResponse", targetNamespace = "http://service/", className = "service.AsignarUsuarioResponse")
+    @Action(input = "http://service/NewWebService/AsignarUsuarioRequest", output = "http://service/NewWebService/AsignarUsuarioResponse")
+    public String asignarUsuario(
+        @WebParam(name = "usuario", targetNamespace = "")
+        String usuario);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "DarNombre")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DarNombre", targetNamespace = "http://service/", className = "service.DarNombre")
+    @ResponseWrapper(localName = "DarNombreResponse", targetNamespace = "http://service/", className = "service.DarNombreResponse")
+    @Action(input = "http://service/NewWebService/DarNombreRequest", output = "http://service/NewWebService/DarNombreResponse")
+    public String darNombre();
 
     /**
      * 
@@ -292,12 +262,12 @@ public interface NewWebService {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "GraphPublicacion")
+    @WebMethod(operationName = "ExisteAVL")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GraphPublicacion", targetNamespace = "http://service/", className = "service.GraphPublicacion")
-    @ResponseWrapper(localName = "GraphPublicacionResponse", targetNamespace = "http://service/", className = "service.GraphPublicacionResponse")
-    @Action(input = "http://service/NewWebService/GraphPublicacionRequest", output = "http://service/NewWebService/GraphPublicacionResponse")
-    public String graphPublicacion(
+    @RequestWrapper(localName = "ExisteAVL", targetNamespace = "http://service/", className = "service.ExisteAVL")
+    @ResponseWrapper(localName = "ExisteAVLResponse", targetNamespace = "http://service/", className = "service.ExisteAVLResponse")
+    @Action(input = "http://service/NewWebService/ExisteAVLRequest", output = "http://service/NewWebService/ExisteAVLResponse")
+    public String existeAVL(
         @WebParam(name = "x", targetNamespace = "")
         String x,
         @WebParam(name = "correo", targetNamespace = "")
@@ -305,18 +275,81 @@ public interface NewWebService {
 
     /**
      * 
-     * @param usuario
+     * @param correo
+     * @param x
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "AsignarUsuario")
+    @WebMethod(operationName = "GraphEvento")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AsignarUsuario", targetNamespace = "http://service/", className = "service.AsignarUsuario")
-    @ResponseWrapper(localName = "AsignarUsuarioResponse", targetNamespace = "http://service/", className = "service.AsignarUsuarioResponse")
-    @Action(input = "http://service/NewWebService/AsignarUsuarioRequest", output = "http://service/NewWebService/AsignarUsuarioResponse")
-    public String asignarUsuario(
-        @WebParam(name = "usuario", targetNamespace = "")
-        String usuario);
+    @RequestWrapper(localName = "GraphEvento", targetNamespace = "http://service/", className = "service.GraphEvento")
+    @ResponseWrapper(localName = "GraphEventoResponse", targetNamespace = "http://service/", className = "service.GraphEventoResponse")
+    @Action(input = "http://service/NewWebService/GraphEventoRequest", output = "http://service/NewWebService/GraphEventoResponse")
+    public String graphEvento(
+        @WebParam(name = "x", targetNamespace = "")
+        String x,
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo);
+
+    /**
+     * 
+     * @param contenido
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AgregarHistorial")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AgregarHistorial", targetNamespace = "http://service/", className = "service.AgregarHistorial")
+    @ResponseWrapper(localName = "AgregarHistorialResponse", targetNamespace = "http://service/", className = "service.AgregarHistorialResponse")
+    @Action(input = "http://service/NewWebService/AgregarHistorialRequest", output = "http://service/NewWebService/AgregarHistorialResponse")
+    public String agregarHistorial(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "contenido", targetNamespace = "")
+        String contenido);
+
+    /**
+     * 
+     * @param correo
+     * @param x
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AgregarAmigo")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AgregarAmigo", targetNamespace = "http://service/", className = "service.AgregarAmigo")
+    @ResponseWrapper(localName = "AgregarAmigoResponse", targetNamespace = "http://service/", className = "service.AgregarAmigoResponse")
+    @Action(input = "http://service/NewWebService/AgregarAmigoRequest", output = "http://service/NewWebService/AgregarAmigoResponse")
+    public String agregarAmigo(
+        @WebParam(name = "x", targetNamespace = "")
+        String x,
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo,
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre);
+
+    /**
+     * 
+     * @param password
+     * @param correo
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AgregarUsuario")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AgregarUsuario", targetNamespace = "http://service/", className = "service.AgregarUsuario")
+    @ResponseWrapper(localName = "AgregarUsuarioResponse", targetNamespace = "http://service/", className = "service.AgregarUsuarioResponse")
+    @Action(input = "http://service/NewWebService/AgregarUsuarioRequest", output = "http://service/NewWebService/AgregarUsuarioResponse")
+    public String agregarUsuario(
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo,
+        @WebParam(name = "password", targetNamespace = "")
+        String password);
 
     /**
      * 
@@ -342,152 +375,14 @@ public interface NewWebService {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "MostrarPhoto")
+    @WebMethod(operationName = "MostrarMiEvento")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "MostrarPhoto", targetNamespace = "http://service/", className = "service.MostrarPhoto")
-    @ResponseWrapper(localName = "MostrarPhotoResponse", targetNamespace = "http://service/", className = "service.MostrarPhotoResponse")
-    @Action(input = "http://service/NewWebService/MostrarPhotoRequest", output = "http://service/NewWebService/MostrarPhotoResponse")
-    public String mostrarPhoto(
+    @RequestWrapper(localName = "MostrarMiEvento", targetNamespace = "http://service/", className = "service.MostrarMiEvento")
+    @ResponseWrapper(localName = "MostrarMiEventoResponse", targetNamespace = "http://service/", className = "service.MostrarMiEventoResponse")
+    @Action(input = "http://service/NewWebService/MostrarMiEventoRequest", output = "http://service/NewWebService/MostrarMiEventoResponse")
+    public String mostrarMiEvento(
         @WebParam(name = "x", targetNamespace = "")
         String x);
-
-    /**
-     * 
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "MostrarEvento")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "MostrarEvento", targetNamespace = "http://service/", className = "service.MostrarEvento")
-    @ResponseWrapper(localName = "MostrarEventoResponse", targetNamespace = "http://service/", className = "service.MostrarEventoResponse")
-    @Action(input = "http://service/NewWebService/MostrarEventoRequest", output = "http://service/NewWebService/MostrarEventoResponse")
-    public String mostrarEvento(
-        @WebParam(name = "x", targetNamespace = "")
-        String x);
-
-    /**
-     * 
-     * @param contenido
-     * @param nombre
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AgregarHistorial")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AgregarHistorial", targetNamespace = "http://service/", className = "service.AgregarHistorial")
-    @ResponseWrapper(localName = "AgregarHistorialResponse", targetNamespace = "http://service/", className = "service.AgregarHistorialResponse")
-    @Action(input = "http://service/NewWebService/AgregarHistorialRequest", output = "http://service/NewWebService/AgregarHistorialResponse")
-    public String agregarHistorial(
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre,
-        @WebParam(name = "contenido", targetNamespace = "")
-        String contenido);
-
-    /**
-     * 
-     * @param correo
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "EliminarUsuario")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "EliminarUsuario", targetNamespace = "http://service/", className = "service.EliminarUsuario")
-    @ResponseWrapper(localName = "EliminarUsuarioResponse", targetNamespace = "http://service/", className = "service.EliminarUsuarioResponse")
-    @Action(input = "http://service/NewWebService/EliminarUsuarioRequest", output = "http://service/NewWebService/EliminarUsuarioResponse")
-    public String eliminarUsuario(
-        @WebParam(name = "correo", targetNamespace = "")
-        String correo);
-
-    /**
-     * 
-     * @param correo
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "ExisteAVL")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "ExisteAVL", targetNamespace = "http://service/", className = "service.ExisteAVL")
-    @ResponseWrapper(localName = "ExisteAVLResponse", targetNamespace = "http://service/", className = "service.ExisteAVLResponse")
-    @Action(input = "http://service/NewWebService/ExisteAVLRequest", output = "http://service/NewWebService/ExisteAVLResponse")
-    public String existeAVL(
-        @WebParam(name = "x", targetNamespace = "")
-        String x,
-        @WebParam(name = "correo", targetNamespace = "")
-        String correo);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "DarNombre")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "DarNombre", targetNamespace = "http://service/", className = "service.DarNombre")
-    @ResponseWrapper(localName = "DarNombreResponse", targetNamespace = "http://service/", className = "service.DarNombreResponse")
-    @Action(input = "http://service/NewWebService/DarNombreRequest", output = "http://service/NewWebService/DarNombreResponse")
-    public String darNombre();
-
-    /**
-     * 
-     * @param correo
-     * @param x
-     * @param nombre
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AgregarAmigo")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AgregarAmigo", targetNamespace = "http://service/", className = "service.AgregarAmigo")
-    @ResponseWrapper(localName = "AgregarAmigoResponse", targetNamespace = "http://service/", className = "service.AgregarAmigoResponse")
-    @Action(input = "http://service/NewWebService/AgregarAmigoRequest", output = "http://service/NewWebService/AgregarAmigoResponse")
-    public String agregarAmigo(
-        @WebParam(name = "x", targetNamespace = "")
-        String x,
-        @WebParam(name = "correo", targetNamespace = "")
-        String correo,
-        @WebParam(name = "nombre", targetNamespace = "")
-        String nombre);
-
-    /**
-     * 
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "GraphHistorial")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GraphHistorial", targetNamespace = "http://service/", className = "service.GraphHistorial")
-    @ResponseWrapper(localName = "GraphHistorialResponse", targetNamespace = "http://service/", className = "service.GraphHistorialResponse")
-    @Action(input = "http://service/NewWebService/GraphHistorialRequest", output = "http://service/NewWebService/GraphHistorialResponse")
-    public String graphHistorial();
-
-    /**
-     * 
-     * @param fecha
-     * @param evento
-     * @param correo
-     * @param x
-     * @param direccion
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AgregarEvento")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AgregarEvento", targetNamespace = "http://service/", className = "service.AgregarEvento")
-    @ResponseWrapper(localName = "AgregarEventoResponse", targetNamespace = "http://service/", className = "service.AgregarEventoResponse")
-    @Action(input = "http://service/NewWebService/AgregarEventoRequest", output = "http://service/NewWebService/AgregarEventoResponse")
-    public String agregarEvento(
-        @WebParam(name = "x", targetNamespace = "")
-        String x,
-        @WebParam(name = "correo", targetNamespace = "")
-        String correo,
-        @WebParam(name = "evento", targetNamespace = "")
-        String evento,
-        @WebParam(name = "fecha", targetNamespace = "")
-        String fecha,
-        @WebParam(name = "direccion", targetNamespace = "")
-        String direccion);
 
     /**
      * 
@@ -500,24 +395,6 @@ public interface NewWebService {
     @ResponseWrapper(localName = "GraphArbolBResponse", targetNamespace = "http://service/", className = "service.GraphArbolBResponse")
     @Action(input = "http://service/NewWebService/GraphArbolBRequest", output = "http://service/NewWebService/GraphArbolBResponse")
     public String graphArbolB();
-
-    /**
-     * 
-     * @param foto
-     * @param x
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod(operationName = "AsignarPhoto")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "AsignarPhoto", targetNamespace = "http://service/", className = "service.AsignarPhoto")
-    @ResponseWrapper(localName = "AsignarPhotoResponse", targetNamespace = "http://service/", className = "service.AsignarPhotoResponse")
-    @Action(input = "http://service/NewWebService/AsignarPhotoRequest", output = "http://service/NewWebService/AsignarPhotoResponse")
-    public String asignarPhoto(
-        @WebParam(name = "x", targetNamespace = "")
-        String x,
-        @WebParam(name = "foto", targetNamespace = "")
-        String foto);
 
     /**
      * 
@@ -536,18 +413,45 @@ public interface NewWebService {
 
     /**
      * 
+     * @param correo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "EliminarSistema")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "EliminarSistema", targetNamespace = "http://service/", className = "service.EliminarSistema")
+    @ResponseWrapper(localName = "EliminarSistemaResponse", targetNamespace = "http://service/", className = "service.EliminarSistemaResponse")
+    @Action(input = "http://service/NewWebService/EliminarSistemaRequest", output = "http://service/NewWebService/EliminarSistemaResponse")
+    public String eliminarSistema(
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo);
+
+    /**
+     * 
      * @param x
      * @return
      *     returns java.lang.String
      */
-    @WebMethod(operationName = "GraphAVL")
+    @WebMethod(operationName = "MostrarAmigos")
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GraphAVL", targetNamespace = "http://service/", className = "service.GraphAVL")
-    @ResponseWrapper(localName = "GraphAVLResponse", targetNamespace = "http://service/", className = "service.GraphAVLResponse")
-    @Action(input = "http://service/NewWebService/GraphAVLRequest", output = "http://service/NewWebService/GraphAVLResponse")
-    public String graphAVL(
+    @RequestWrapper(localName = "MostrarAmigos", targetNamespace = "http://service/", className = "service.MostrarAmigos")
+    @ResponseWrapper(localName = "MostrarAmigosResponse", targetNamespace = "http://service/", className = "service.MostrarAmigosResponse")
+    @Action(input = "http://service/NewWebService/MostrarAmigosRequest", output = "http://service/NewWebService/MostrarAmigosResponse")
+    public String mostrarAmigos(
         @WebParam(name = "x", targetNamespace = "")
         String x);
+
+    /**
+     * 
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarHistorial")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarHistorial", targetNamespace = "http://service/", className = "service.MostrarHistorial")
+    @ResponseWrapper(localName = "MostrarHistorialResponse", targetNamespace = "http://service/", className = "service.MostrarHistorialResponse")
+    @Action(input = "http://service/NewWebService/MostrarHistorialRequest", output = "http://service/NewWebService/MostrarHistorialResponse")
+    public String mostrarHistorial();
 
     /**
      * 
@@ -566,5 +470,197 @@ public interface NewWebService {
         String x,
         @WebParam(name = "password", targetNamespace = "")
         String password);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "GraphAVL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GraphAVL", targetNamespace = "http://service/", className = "service.GraphAVL")
+    @ResponseWrapper(localName = "GraphAVLResponse", targetNamespace = "http://service/", className = "service.GraphAVLResponse")
+    @Action(input = "http://service/NewWebService/GraphAVLRequest", output = "http://service/NewWebService/GraphAVLResponse")
+    public String graphAVL(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarPublicacion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarPublicacion", targetNamespace = "http://service/", className = "service.MostrarPublicacion")
+    @ResponseWrapper(localName = "MostrarPublicacionResponse", targetNamespace = "http://service/", className = "service.MostrarPublicacionResponse")
+    @Action(input = "http://service/NewWebService/MostrarPublicacionRequest", output = "http://service/NewWebService/MostrarPublicacionResponse")
+    public String mostrarPublicacion(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarEventoAndroid")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarEventoAndroid", targetNamespace = "http://service/", className = "service.MostrarEventoAndroid")
+    @ResponseWrapper(localName = "MostrarEventoAndroidResponse", targetNamespace = "http://service/", className = "service.MostrarEventoAndroidResponse")
+    @Action(input = "http://service/NewWebService/MostrarEventoAndroidRequest", output = "http://service/NewWebService/MostrarEventoAndroidResponse")
+    public String mostrarEventoAndroid(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param contenido
+     * @param palabra1
+     * @param palabra2
+     * @param nombre
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AgregarHistorial2")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AgregarHistorial2", targetNamespace = "http://service/", className = "service.AgregarHistorial2")
+    @ResponseWrapper(localName = "AgregarHistorial2Response", targetNamespace = "http://service/", className = "service.AgregarHistorial2Response")
+    @Action(input = "http://service/NewWebService/AgregarHistorial2Request", output = "http://service/NewWebService/AgregarHistorial2Response")
+    public String agregarHistorial2(
+        @WebParam(name = "palabra1", targetNamespace = "")
+        String palabra1,
+        @WebParam(name = "nombre", targetNamespace = "")
+        String nombre,
+        @WebParam(name = "palabra2", targetNamespace = "")
+        String palabra2,
+        @WebParam(name = "contenido", targetNamespace = "")
+        String contenido);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarPublicacionAndroid")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarPublicacionAndroid", targetNamespace = "http://service/", className = "service.MostrarPublicacionAndroid")
+    @ResponseWrapper(localName = "MostrarPublicacionAndroidResponse", targetNamespace = "http://service/", className = "service.MostrarPublicacionAndroidResponse")
+    @Action(input = "http://service/NewWebService/MostrarPublicacionAndroidRequest", output = "http://service/NewWebService/MostrarPublicacionAndroidResponse")
+    public String mostrarPublicacionAndroid(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "DarDatosPerfilAndroid")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DarDatosPerfilAndroid", targetNamespace = "http://service/", className = "service.DarDatosPerfilAndroid")
+    @ResponseWrapper(localName = "DarDatosPerfilAndroidResponse", targetNamespace = "http://service/", className = "service.DarDatosPerfilAndroidResponse")
+    @Action(input = "http://service/NewWebService/DarDatosPerfilAndroidRequest", output = "http://service/NewWebService/DarDatosPerfilAndroidResponse")
+    public String darDatosPerfilAndroid(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param usuario
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AsignarUsuarioLog")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AsignarUsuarioLog", targetNamespace = "http://service/", className = "service.AsignarUsuarioLog")
+    @ResponseWrapper(localName = "AsignarUsuarioLogResponse", targetNamespace = "http://service/", className = "service.AsignarUsuarioLogResponse")
+    @Action(input = "http://service/NewWebService/AsignarUsuarioLogRequest", output = "http://service/NewWebService/AsignarUsuarioLogResponse")
+    public String asignarUsuarioLog(
+        @WebParam(name = "usuario", targetNamespace = "")
+        String usuario);
+
+    /**
+     * 
+     * @param texto
+     * @param publicador
+     * @param correo
+     * @param x
+     * @param titulo
+     * @param imagen
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AgregarPublicacion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AgregarPublicacion", targetNamespace = "http://service/", className = "service.AgregarPublicacion")
+    @ResponseWrapper(localName = "AgregarPublicacionResponse", targetNamespace = "http://service/", className = "service.AgregarPublicacionResponse")
+    @Action(input = "http://service/NewWebService/AgregarPublicacionRequest", output = "http://service/NewWebService/AgregarPublicacionResponse")
+    public String agregarPublicacion(
+        @WebParam(name = "x", targetNamespace = "")
+        String x,
+        @WebParam(name = "correo", targetNamespace = "")
+        String correo,
+        @WebParam(name = "titulo", targetNamespace = "")
+        String titulo,
+        @WebParam(name = "publicador", targetNamespace = "")
+        String publicador,
+        @WebParam(name = "texto", targetNamespace = "")
+        String texto,
+        @WebParam(name = "imagen", targetNamespace = "")
+        String imagen);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarMiPublicacion")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarMiPublicacion", targetNamespace = "http://service/", className = "service.MostrarMiPublicacion")
+    @ResponseWrapper(localName = "MostrarMiPublicacionResponse", targetNamespace = "http://service/", className = "service.MostrarMiPublicacionResponse")
+    @Action(input = "http://service/NewWebService/MostrarMiPublicacionRequest", output = "http://service/NewWebService/MostrarMiPublicacionResponse")
+    public String mostrarMiPublicacion(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param x
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MostrarPhotoAndroid")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MostrarPhotoAndroid", targetNamespace = "http://service/", className = "service.MostrarPhotoAndroid")
+    @ResponseWrapper(localName = "MostrarPhotoAndroidResponse", targetNamespace = "http://service/", className = "service.MostrarPhotoAndroidResponse")
+    @Action(input = "http://service/NewWebService/MostrarPhotoAndroidRequest", output = "http://service/NewWebService/MostrarPhotoAndroidResponse")
+    public String mostrarPhotoAndroid(
+        @WebParam(name = "x", targetNamespace = "")
+        String x);
+
+    /**
+     * 
+     * @param x
+     * @param parameter1
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "AgregarEliminarAVL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "AgregarEliminarAVL", targetNamespace = "http://service/", className = "service.AgregarEliminarAVL")
+    @ResponseWrapper(localName = "AgregarEliminarAVLResponse", targetNamespace = "http://service/", className = "service.AgregarEliminarAVLResponse")
+    @Action(input = "http://service/NewWebService/AgregarEliminarAVLRequest", output = "http://service/NewWebService/AgregarEliminarAVLResponse")
+    public String agregarEliminarAVL(
+        @WebParam(name = "x", targetNamespace = "")
+        String x,
+        @WebParam(name = "parameter1", targetNamespace = "")
+        String parameter1);
 
 }

@@ -16,26 +16,24 @@
     <font color="white" face="arial">
         <h1>CHANGE PHOTO</h1>
         Selecciona tu foto
-        <%-- start web service invocation --%><hr/>
-    <%
+        <br></br>
+        <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioLog();
-	out.println("Usuario = "+result);
+	out.println("USUARIO = "+result);
         usuarioLog = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
+    <br></br>
     <br></br>
     
     <form action="uploadFile.jsp" method="POST" enctype="multipart/form-data">
         <input type="file" name="file1"/>
-     
         <input type="submit" value="Seleccionar Foto"/>
     </form>
     
@@ -49,40 +47,6 @@
         </form>
     </div>
     <center>
-            <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	// TODO process result here
-	java.lang.String result = port.mostrarPublicacion(x);
-	out.println("Result Public= "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
-        <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	service.NewWebService_Service service = new service.NewWebService_Service();
-	service.NewWebService port = service.getNewWebServicePort();
-	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	// TODO process result here
-	java.lang.String result = port.mostrarEvento(x);
-	out.println("Result Evento= "+result);
-    } catch (Exception ex) {
-	// TODO handle custom exceptions here
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
-
-    
-    
         <img src="CHANGE.png" width="800" height="400"/>  
     </center>
     </font>

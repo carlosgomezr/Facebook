@@ -16,21 +16,19 @@
     <font color="white" face="arial">
         <h1>Modificar datos </h1>
         Edita tus datos...
-       <%-- start web service invocation --%><hr/>
-    <%
+      <br></br><%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioLog();
-	out.println("Result = "+result);
+	out.println("USUARIO "+result);
         usuarioLog = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
+    <br></br>
     <br></br>
     <DIV ALIGN=right>
         <form name="pasarperfil" action="Perfil.jsp" method="POST">
@@ -83,24 +81,26 @@
     }
     %>
     <%-- end web service invocation --%><hr/>
-    
-        <%-- start web service invocation --%><hr/>
-    <%
+
+        <br></br>    <%
+
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "Modificó ";
 	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = " Modifico Datos "+request.getParameter("texto0")+" "+request.getParameter("texto1")+" "+request.getParameter("texto2")+" "+request.getParameter("texto3")+" "+request.getParameter("texto4");
+	java.lang.String palabra2 = " datos ";
+	java.lang.String contenido = request.getParameter("texto0")+" "+request.getParameter("texto1")+" "+request.getParameter("texto2")+" "+request.getParameter("texto3")+" "+request.getParameter("texto4");
 	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
 	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-             
+   
+   <br></br>          
     
     
                         <input type="submit" value="ModificaR" name="boton2" />

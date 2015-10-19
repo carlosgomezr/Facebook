@@ -4,6 +4,198 @@
 <xsd:import namespace="http://service/" schemaLocation="http://localhost:8080/FBService/NewWebService?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="AgregarEvento">
+<part name="parameters" element="tns:AgregarEvento"/>
+</message>
+<message name="AgregarEventoResponse">
+<part name="parameters" element="tns:AgregarEventoResponse"/>
+</message>
+<message name="DarUsuarioLog">
+<part name="parameters" element="tns:DarUsuarioLog"/>
+</message>
+<message name="DarUsuarioLogResponse">
+<part name="parameters" element="tns:DarUsuarioLogResponse"/>
+</message>
+<message name="MostrarPhoto">
+<part name="parameters" element="tns:MostrarPhoto"/>
+</message>
+<message name="MostrarPhotoResponse">
+<part name="parameters" element="tns:MostrarPhotoResponse"/>
+</message>
+<message name="AsignarName">
+<part name="parameters" element="tns:AsignarName"/>
+</message>
+<message name="AsignarNameResponse">
+<part name="parameters" element="tns:AsignarNameResponse"/>
+</message>
+<message name="EliminarUsuario">
+<part name="parameters" element="tns:EliminarUsuario"/>
+</message>
+<message name="EliminarUsuarioResponse">
+<part name="parameters" element="tns:EliminarUsuarioResponse"/>
+</message>
+<message name="AsignarPhoto">
+<part name="parameters" element="tns:AsignarPhoto"/>
+</message>
+<message name="AsignarPhotoResponse">
+<part name="parameters" element="tns:AsignarPhotoResponse"/>
+</message>
+<message name="DarDatosPerfil">
+<part name="parameters" element="tns:DarDatosPerfil"/>
+</message>
+<message name="DarDatosPerfilResponse">
+<part name="parameters" element="tns:DarDatosPerfilResponse"/>
+</message>
+<message name="GraphHistorial">
+<part name="parameters" element="tns:GraphHistorial"/>
+</message>
+<message name="GraphHistorialResponse">
+<part name="parameters" element="tns:GraphHistorialResponse"/>
+</message>
+<message name="MostrarEvento">
+<part name="parameters" element="tns:MostrarEvento"/>
+</message>
+<message name="MostrarEventoResponse">
+<part name="parameters" element="tns:MostrarEventoResponse"/>
+</message>
+<message name="GraphPublicacion">
+<part name="parameters" element="tns:GraphPublicacion"/>
+</message>
+<message name="GraphPublicacionResponse">
+<part name="parameters" element="tns:GraphPublicacionResponse"/>
+</message>
+<message name="DarUsuarioPerfil">
+<part name="parameters" element="tns:DarUsuarioPerfil"/>
+</message>
+<message name="DarUsuarioPerfilResponse">
+<part name="parameters" element="tns:DarUsuarioPerfilResponse"/>
+</message>
+<message name="AsignarUsuario">
+<part name="parameters" element="tns:AsignarUsuario"/>
+</message>
+<message name="AsignarUsuarioResponse">
+<part name="parameters" element="tns:AsignarUsuarioResponse"/>
+</message>
+<message name="DarNombre">
+<part name="parameters" element="tns:DarNombre"/>
+</message>
+<message name="DarNombreResponse">
+<part name="parameters" element="tns:DarNombreResponse"/>
+</message>
+<message name="ModificarUsuario">
+<part name="parameters" element="tns:ModificarUsuario"/>
+</message>
+<message name="ModificarUsuarioResponse">
+<part name="parameters" element="tns:ModificarUsuarioResponse"/>
+</message>
+<message name="ExisteAVL">
+<part name="parameters" element="tns:ExisteAVL"/>
+</message>
+<message name="ExisteAVLResponse">
+<part name="parameters" element="tns:ExisteAVLResponse"/>
+</message>
+<message name="GraphEvento">
+<part name="parameters" element="tns:GraphEvento"/>
+</message>
+<message name="GraphEventoResponse">
+<part name="parameters" element="tns:GraphEventoResponse"/>
+</message>
+<message name="AgregarHistorial">
+<part name="parameters" element="tns:AgregarHistorial"/>
+</message>
+<message name="AgregarHistorialResponse">
+<part name="parameters" element="tns:AgregarHistorialResponse"/>
+</message>
+<message name="AgregarAmigo">
+<part name="parameters" element="tns:AgregarAmigo"/>
+</message>
+<message name="AgregarAmigoResponse">
+<part name="parameters" element="tns:AgregarAmigoResponse"/>
+</message>
+<message name="AgregarUsuario">
+<part name="parameters" element="tns:AgregarUsuario"/>
+</message>
+<message name="AgregarUsuarioResponse">
+<part name="parameters" element="tns:AgregarUsuarioResponse"/>
+</message>
+<message name="EliminarAmigo">
+<part name="parameters" element="tns:EliminarAmigo"/>
+</message>
+<message name="EliminarAmigoResponse">
+<part name="parameters" element="tns:EliminarAmigoResponse"/>
+</message>
+<message name="MostrarMiEvento">
+<part name="parameters" element="tns:MostrarMiEvento"/>
+</message>
+<message name="MostrarMiEventoResponse">
+<part name="parameters" element="tns:MostrarMiEventoResponse"/>
+</message>
+<message name="GraphArbolB">
+<part name="parameters" element="tns:GraphArbolB"/>
+</message>
+<message name="GraphArbolBResponse">
+<part name="parameters" element="tns:GraphArbolBResponse"/>
+</message>
+<message name="hello">
+<part name="parameters" element="tns:hello"/>
+</message>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse"/>
+</message>
+<message name="EliminarSistema">
+<part name="parameters" element="tns:EliminarSistema"/>
+</message>
+<message name="EliminarSistemaResponse">
+<part name="parameters" element="tns:EliminarSistemaResponse"/>
+</message>
+<message name="MostrarAmigos">
+<part name="parameters" element="tns:MostrarAmigos"/>
+</message>
+<message name="MostrarAmigosResponse">
+<part name="parameters" element="tns:MostrarAmigosResponse"/>
+</message>
+<message name="MostrarHistorial">
+<part name="parameters" element="tns:MostrarHistorial"/>
+</message>
+<message name="MostrarHistorialResponse">
+<part name="parameters" element="tns:MostrarHistorialResponse"/>
+</message>
+<message name="Login">
+<part name="parameters" element="tns:Login"/>
+</message>
+<message name="LoginResponse">
+<part name="parameters" element="tns:LoginResponse"/>
+</message>
+<message name="GraphAVL">
+<part name="parameters" element="tns:GraphAVL"/>
+</message>
+<message name="GraphAVLResponse">
+<part name="parameters" element="tns:GraphAVLResponse"/>
+</message>
+<message name="MostrarPublicacion">
+<part name="parameters" element="tns:MostrarPublicacion"/>
+</message>
+<message name="MostrarPublicacionResponse">
+<part name="parameters" element="tns:MostrarPublicacionResponse"/>
+</message>
+<message name="MostrarEventoAndroid">
+<part name="parameters" element="tns:MostrarEventoAndroid"/>
+</message>
+<message name="MostrarEventoAndroidResponse">
+<part name="parameters" element="tns:MostrarEventoAndroidResponse"/>
+</message>
+<message name="AgregarHistorial2">
+<part name="parameters" element="tns:AgregarHistorial2"/>
+</message>
+<message name="AgregarHistorial2Response">
+<part name="parameters" element="tns:AgregarHistorial2Response"/>
+</message>
+<message name="MostrarPublicacionAndroid">
+<part name="parameters" element="tns:MostrarPublicacionAndroid"/>
+</message>
+<message name="MostrarPublicacionAndroidResponse">
+<part name="parameters" element="tns:MostrarPublicacionAndroidResponse"/>
+</message>
 <message name="DarDatosPerfilAndroid">
 <part name="parameters" element="tns:DarDatosPerfilAndroid"/>
 </message>
@@ -16,17 +208,17 @@
 <message name="AsignarUsuarioLogResponse">
 <part name="parameters" element="tns:AsignarUsuarioLogResponse"/>
 </message>
-<message name="MostrarPublicacionAndroid">
-<part name="parameters" element="tns:MostrarPublicacionAndroid"/>
+<message name="AgregarPublicacion">
+<part name="parameters" element="tns:AgregarPublicacion"/>
 </message>
-<message name="MostrarPublicacionAndroidResponse">
-<part name="parameters" element="tns:MostrarPublicacionAndroidResponse"/>
+<message name="AgregarPublicacionResponse">
+<part name="parameters" element="tns:AgregarPublicacionResponse"/>
 </message>
-<message name="MostrarEventoAndroid">
-<part name="parameters" element="tns:MostrarEventoAndroid"/>
+<message name="MostrarMiPublicacion">
+<part name="parameters" element="tns:MostrarMiPublicacion"/>
 </message>
-<message name="MostrarEventoAndroidResponse">
-<part name="parameters" element="tns:MostrarEventoAndroidResponse"/>
+<message name="MostrarMiPublicacionResponse">
+<part name="parameters" element="tns:MostrarMiPublicacionResponse"/>
 </message>
 <message name="MostrarPhotoAndroid">
 <part name="parameters" element="tns:MostrarPhotoAndroid"/>
@@ -34,169 +226,141 @@
 <message name="MostrarPhotoAndroidResponse">
 <part name="parameters" element="tns:MostrarPhotoAndroidResponse"/>
 </message>
-<message name="MostrarPublicacion">
-<part name="parameters" element="tns:MostrarPublicacion"/>
-</message>
-<message name="MostrarPublicacionResponse">
-<part name="parameters" element="tns:MostrarPublicacionResponse"/>
-</message>
-<message name="AgregarPublicacion">
-<part name="parameters" element="tns:AgregarPublicacion"/>
-</message>
-<message name="AgregarPublicacionResponse">
-<part name="parameters" element="tns:AgregarPublicacionResponse"/>
-</message>
 <message name="AgregarEliminarAVL">
 <part name="parameters" element="tns:AgregarEliminarAVL"/>
 </message>
 <message name="AgregarEliminarAVLResponse">
 <part name="parameters" element="tns:AgregarEliminarAVLResponse"/>
 </message>
-<message name="DarUsuarioLog">
-<part name="parameters" element="tns:DarUsuarioLog"/>
-</message>
-<message name="DarUsuarioLogResponse">
-<part name="parameters" element="tns:DarUsuarioLogResponse"/>
-</message>
-<message name="DarUsuarioPerfil">
-<part name="parameters" element="tns:DarUsuarioPerfil"/>
-</message>
-<message name="DarUsuarioPerfilResponse">
-<part name="parameters" element="tns:DarUsuarioPerfilResponse"/>
-</message>
-<message name="AgregarUsuario">
-<part name="parameters" element="tns:AgregarUsuario"/>
-</message>
-<message name="AgregarUsuarioResponse">
-<part name="parameters" element="tns:AgregarUsuarioResponse"/>
-</message>
-<message name="GraphEvento">
-<part name="parameters" element="tns:GraphEvento"/>
-</message>
-<message name="GraphEventoResponse">
-<part name="parameters" element="tns:GraphEventoResponse"/>
-</message>
-<message name="DarDatosPerfil">
-<part name="parameters" element="tns:DarDatosPerfil"/>
-</message>
-<message name="DarDatosPerfilResponse">
-<part name="parameters" element="tns:DarDatosPerfilResponse"/>
-</message>
-<message name="AsignarName">
-<part name="parameters" element="tns:AsignarName"/>
-</message>
-<message name="AsignarNameResponse">
-<part name="parameters" element="tns:AsignarNameResponse"/>
-</message>
-<message name="ModificarUsuario">
-<part name="parameters" element="tns:ModificarUsuario"/>
-</message>
-<message name="ModificarUsuarioResponse">
-<part name="parameters" element="tns:ModificarUsuarioResponse"/>
-</message>
-<message name="GraphPublicacion">
-<part name="parameters" element="tns:GraphPublicacion"/>
-</message>
-<message name="GraphPublicacionResponse">
-<part name="parameters" element="tns:GraphPublicacionResponse"/>
-</message>
-<message name="AsignarUsuario">
-<part name="parameters" element="tns:AsignarUsuario"/>
-</message>
-<message name="AsignarUsuarioResponse">
-<part name="parameters" element="tns:AsignarUsuarioResponse"/>
-</message>
-<message name="EliminarAmigo">
-<part name="parameters" element="tns:EliminarAmigo"/>
-</message>
-<message name="EliminarAmigoResponse">
-<part name="parameters" element="tns:EliminarAmigoResponse"/>
-</message>
-<message name="MostrarPhoto">
-<part name="parameters" element="tns:MostrarPhoto"/>
-</message>
-<message name="MostrarPhotoResponse">
-<part name="parameters" element="tns:MostrarPhotoResponse"/>
-</message>
-<message name="MostrarEvento">
-<part name="parameters" element="tns:MostrarEvento"/>
-</message>
-<message name="MostrarEventoResponse">
-<part name="parameters" element="tns:MostrarEventoResponse"/>
-</message>
-<message name="AgregarHistorial">
-<part name="parameters" element="tns:AgregarHistorial"/>
-</message>
-<message name="AgregarHistorialResponse">
-<part name="parameters" element="tns:AgregarHistorialResponse"/>
-</message>
-<message name="EliminarUsuario">
-<part name="parameters" element="tns:EliminarUsuario"/>
-</message>
-<message name="EliminarUsuarioResponse">
-<part name="parameters" element="tns:EliminarUsuarioResponse"/>
-</message>
-<message name="ExisteAVL">
-<part name="parameters" element="tns:ExisteAVL"/>
-</message>
-<message name="ExisteAVLResponse">
-<part name="parameters" element="tns:ExisteAVLResponse"/>
-</message>
-<message name="DarNombre">
-<part name="parameters" element="tns:DarNombre"/>
-</message>
-<message name="DarNombreResponse">
-<part name="parameters" element="tns:DarNombreResponse"/>
-</message>
-<message name="AgregarAmigo">
-<part name="parameters" element="tns:AgregarAmigo"/>
-</message>
-<message name="AgregarAmigoResponse">
-<part name="parameters" element="tns:AgregarAmigoResponse"/>
-</message>
-<message name="GraphHistorial">
-<part name="parameters" element="tns:GraphHistorial"/>
-</message>
-<message name="GraphHistorialResponse">
-<part name="parameters" element="tns:GraphHistorialResponse"/>
-</message>
-<message name="AgregarEvento">
-<part name="parameters" element="tns:AgregarEvento"/>
-</message>
-<message name="AgregarEventoResponse">
-<part name="parameters" element="tns:AgregarEventoResponse"/>
-</message>
-<message name="GraphArbolB">
-<part name="parameters" element="tns:GraphArbolB"/>
-</message>
-<message name="GraphArbolBResponse">
-<part name="parameters" element="tns:GraphArbolBResponse"/>
-</message>
-<message name="AsignarPhoto">
-<part name="parameters" element="tns:AsignarPhoto"/>
-</message>
-<message name="AsignarPhotoResponse">
-<part name="parameters" element="tns:AsignarPhotoResponse"/>
-</message>
-<message name="hello">
-<part name="parameters" element="tns:hello"/>
-</message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse"/>
-</message>
-<message name="GraphAVL">
-<part name="parameters" element="tns:GraphAVL"/>
-</message>
-<message name="GraphAVLResponse">
-<part name="parameters" element="tns:GraphAVLResponse"/>
-</message>
-<message name="Login">
-<part name="parameters" element="tns:Login"/>
-</message>
-<message name="LoginResponse">
-<part name="parameters" element="tns:LoginResponse"/>
-</message>
 <portType name="NewWebService">
+<operation name="AgregarEvento">
+<input wsam:Action="http://service/NewWebService/AgregarEventoRequest" message="tns:AgregarEvento"/>
+<output wsam:Action="http://service/NewWebService/AgregarEventoResponse" message="tns:AgregarEventoResponse"/>
+</operation>
+<operation name="DarUsuarioLog">
+<input wsam:Action="http://service/NewWebService/DarUsuarioLogRequest" message="tns:DarUsuarioLog"/>
+<output wsam:Action="http://service/NewWebService/DarUsuarioLogResponse" message="tns:DarUsuarioLogResponse"/>
+</operation>
+<operation name="MostrarPhoto">
+<input wsam:Action="http://service/NewWebService/MostrarPhotoRequest" message="tns:MostrarPhoto"/>
+<output wsam:Action="http://service/NewWebService/MostrarPhotoResponse" message="tns:MostrarPhotoResponse"/>
+</operation>
+<operation name="AsignarName">
+<input wsam:Action="http://service/NewWebService/AsignarNameRequest" message="tns:AsignarName"/>
+<output wsam:Action="http://service/NewWebService/AsignarNameResponse" message="tns:AsignarNameResponse"/>
+</operation>
+<operation name="EliminarUsuario">
+<input wsam:Action="http://service/NewWebService/EliminarUsuarioRequest" message="tns:EliminarUsuario"/>
+<output wsam:Action="http://service/NewWebService/EliminarUsuarioResponse" message="tns:EliminarUsuarioResponse"/>
+</operation>
+<operation name="AsignarPhoto">
+<input wsam:Action="http://service/NewWebService/AsignarPhotoRequest" message="tns:AsignarPhoto"/>
+<output wsam:Action="http://service/NewWebService/AsignarPhotoResponse" message="tns:AsignarPhotoResponse"/>
+</operation>
+<operation name="DarDatosPerfil">
+<input wsam:Action="http://service/NewWebService/DarDatosPerfilRequest" message="tns:DarDatosPerfil"/>
+<output wsam:Action="http://service/NewWebService/DarDatosPerfilResponse" message="tns:DarDatosPerfilResponse"/>
+</operation>
+<operation name="GraphHistorial">
+<input wsam:Action="http://service/NewWebService/GraphHistorialRequest" message="tns:GraphHistorial"/>
+<output wsam:Action="http://service/NewWebService/GraphHistorialResponse" message="tns:GraphHistorialResponse"/>
+</operation>
+<operation name="MostrarEvento">
+<input wsam:Action="http://service/NewWebService/MostrarEventoRequest" message="tns:MostrarEvento"/>
+<output wsam:Action="http://service/NewWebService/MostrarEventoResponse" message="tns:MostrarEventoResponse"/>
+</operation>
+<operation name="GraphPublicacion">
+<input wsam:Action="http://service/NewWebService/GraphPublicacionRequest" message="tns:GraphPublicacion"/>
+<output wsam:Action="http://service/NewWebService/GraphPublicacionResponse" message="tns:GraphPublicacionResponse"/>
+</operation>
+<operation name="DarUsuarioPerfil">
+<input wsam:Action="http://service/NewWebService/DarUsuarioPerfilRequest" message="tns:DarUsuarioPerfil"/>
+<output wsam:Action="http://service/NewWebService/DarUsuarioPerfilResponse" message="tns:DarUsuarioPerfilResponse"/>
+</operation>
+<operation name="AsignarUsuario">
+<input wsam:Action="http://service/NewWebService/AsignarUsuarioRequest" message="tns:AsignarUsuario"/>
+<output wsam:Action="http://service/NewWebService/AsignarUsuarioResponse" message="tns:AsignarUsuarioResponse"/>
+</operation>
+<operation name="DarNombre">
+<input wsam:Action="http://service/NewWebService/DarNombreRequest" message="tns:DarNombre"/>
+<output wsam:Action="http://service/NewWebService/DarNombreResponse" message="tns:DarNombreResponse"/>
+</operation>
+<operation name="ModificarUsuario">
+<input wsam:Action="http://service/NewWebService/ModificarUsuarioRequest" message="tns:ModificarUsuario"/>
+<output wsam:Action="http://service/NewWebService/ModificarUsuarioResponse" message="tns:ModificarUsuarioResponse"/>
+</operation>
+<operation name="ExisteAVL">
+<input wsam:Action="http://service/NewWebService/ExisteAVLRequest" message="tns:ExisteAVL"/>
+<output wsam:Action="http://service/NewWebService/ExisteAVLResponse" message="tns:ExisteAVLResponse"/>
+</operation>
+<operation name="GraphEvento">
+<input wsam:Action="http://service/NewWebService/GraphEventoRequest" message="tns:GraphEvento"/>
+<output wsam:Action="http://service/NewWebService/GraphEventoResponse" message="tns:GraphEventoResponse"/>
+</operation>
+<operation name="AgregarHistorial">
+<input wsam:Action="http://service/NewWebService/AgregarHistorialRequest" message="tns:AgregarHistorial"/>
+<output wsam:Action="http://service/NewWebService/AgregarHistorialResponse" message="tns:AgregarHistorialResponse"/>
+</operation>
+<operation name="AgregarAmigo">
+<input wsam:Action="http://service/NewWebService/AgregarAmigoRequest" message="tns:AgregarAmigo"/>
+<output wsam:Action="http://service/NewWebService/AgregarAmigoResponse" message="tns:AgregarAmigoResponse"/>
+</operation>
+<operation name="AgregarUsuario">
+<input wsam:Action="http://service/NewWebService/AgregarUsuarioRequest" message="tns:AgregarUsuario"/>
+<output wsam:Action="http://service/NewWebService/AgregarUsuarioResponse" message="tns:AgregarUsuarioResponse"/>
+</operation>
+<operation name="EliminarAmigo">
+<input wsam:Action="http://service/NewWebService/EliminarAmigoRequest" message="tns:EliminarAmigo"/>
+<output wsam:Action="http://service/NewWebService/EliminarAmigoResponse" message="tns:EliminarAmigoResponse"/>
+</operation>
+<operation name="MostrarMiEvento">
+<input wsam:Action="http://service/NewWebService/MostrarMiEventoRequest" message="tns:MostrarMiEvento"/>
+<output wsam:Action="http://service/NewWebService/MostrarMiEventoResponse" message="tns:MostrarMiEventoResponse"/>
+</operation>
+<operation name="GraphArbolB">
+<input wsam:Action="http://service/NewWebService/GraphArbolBRequest" message="tns:GraphArbolB"/>
+<output wsam:Action="http://service/NewWebService/GraphArbolBResponse" message="tns:GraphArbolBResponse"/>
+</operation>
+<operation name="hello">
+<input wsam:Action="http://service/NewWebService/helloRequest" message="tns:hello"/>
+<output wsam:Action="http://service/NewWebService/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="EliminarSistema">
+<input wsam:Action="http://service/NewWebService/EliminarSistemaRequest" message="tns:EliminarSistema"/>
+<output wsam:Action="http://service/NewWebService/EliminarSistemaResponse" message="tns:EliminarSistemaResponse"/>
+</operation>
+<operation name="MostrarAmigos">
+<input wsam:Action="http://service/NewWebService/MostrarAmigosRequest" message="tns:MostrarAmigos"/>
+<output wsam:Action="http://service/NewWebService/MostrarAmigosResponse" message="tns:MostrarAmigosResponse"/>
+</operation>
+<operation name="MostrarHistorial">
+<input wsam:Action="http://service/NewWebService/MostrarHistorialRequest" message="tns:MostrarHistorial"/>
+<output wsam:Action="http://service/NewWebService/MostrarHistorialResponse" message="tns:MostrarHistorialResponse"/>
+</operation>
+<operation name="Login">
+<input wsam:Action="http://service/NewWebService/LoginRequest" message="tns:Login"/>
+<output wsam:Action="http://service/NewWebService/LoginResponse" message="tns:LoginResponse"/>
+</operation>
+<operation name="GraphAVL">
+<input wsam:Action="http://service/NewWebService/GraphAVLRequest" message="tns:GraphAVL"/>
+<output wsam:Action="http://service/NewWebService/GraphAVLResponse" message="tns:GraphAVLResponse"/>
+</operation>
+<operation name="MostrarPublicacion">
+<input wsam:Action="http://service/NewWebService/MostrarPublicacionRequest" message="tns:MostrarPublicacion"/>
+<output wsam:Action="http://service/NewWebService/MostrarPublicacionResponse" message="tns:MostrarPublicacionResponse"/>
+</operation>
+<operation name="MostrarEventoAndroid">
+<input wsam:Action="http://service/NewWebService/MostrarEventoAndroidRequest" message="tns:MostrarEventoAndroid"/>
+<output wsam:Action="http://service/NewWebService/MostrarEventoAndroidResponse" message="tns:MostrarEventoAndroidResponse"/>
+</operation>
+<operation name="AgregarHistorial2">
+<input wsam:Action="http://service/NewWebService/AgregarHistorial2Request" message="tns:AgregarHistorial2"/>
+<output wsam:Action="http://service/NewWebService/AgregarHistorial2Response" message="tns:AgregarHistorial2Response"/>
+</operation>
+<operation name="MostrarPublicacionAndroid">
+<input wsam:Action="http://service/NewWebService/MostrarPublicacionAndroidRequest" message="tns:MostrarPublicacionAndroid"/>
+<output wsam:Action="http://service/NewWebService/MostrarPublicacionAndroidResponse" message="tns:MostrarPublicacionAndroidResponse"/>
+</operation>
 <operation name="DarDatosPerfilAndroid">
 <input wsam:Action="http://service/NewWebService/DarDatosPerfilAndroidRequest" message="tns:DarDatosPerfilAndroid"/>
 <output wsam:Action="http://service/NewWebService/DarDatosPerfilAndroidResponse" message="tns:DarDatosPerfilAndroidResponse"/>
@@ -205,129 +369,313 @@
 <input wsam:Action="http://service/NewWebService/AsignarUsuarioLogRequest" message="tns:AsignarUsuarioLog"/>
 <output wsam:Action="http://service/NewWebService/AsignarUsuarioLogResponse" message="tns:AsignarUsuarioLogResponse"/>
 </operation>
-<operation name="MostrarPublicacionAndroid">
-<input wsam:Action="http://service/NewWebService/MostrarPublicacionAndroidRequest" message="tns:MostrarPublicacionAndroid"/>
-<output wsam:Action="http://service/NewWebService/MostrarPublicacionAndroidResponse" message="tns:MostrarPublicacionAndroidResponse"/>
+<operation name="AgregarPublicacion">
+<input wsam:Action="http://service/NewWebService/AgregarPublicacionRequest" message="tns:AgregarPublicacion"/>
+<output wsam:Action="http://service/NewWebService/AgregarPublicacionResponse" message="tns:AgregarPublicacionResponse"/>
 </operation>
-<operation name="MostrarEventoAndroid">
-<input wsam:Action="http://service/NewWebService/MostrarEventoAndroidRequest" message="tns:MostrarEventoAndroid"/>
-<output wsam:Action="http://service/NewWebService/MostrarEventoAndroidResponse" message="tns:MostrarEventoAndroidResponse"/>
+<operation name="MostrarMiPublicacion">
+<input wsam:Action="http://service/NewWebService/MostrarMiPublicacionRequest" message="tns:MostrarMiPublicacion"/>
+<output wsam:Action="http://service/NewWebService/MostrarMiPublicacionResponse" message="tns:MostrarMiPublicacionResponse"/>
 </operation>
 <operation name="MostrarPhotoAndroid">
 <input wsam:Action="http://service/NewWebService/MostrarPhotoAndroidRequest" message="tns:MostrarPhotoAndroid"/>
 <output wsam:Action="http://service/NewWebService/MostrarPhotoAndroidResponse" message="tns:MostrarPhotoAndroidResponse"/>
 </operation>
-<operation name="MostrarPublicacion">
-<input wsam:Action="http://service/NewWebService/MostrarPublicacionRequest" message="tns:MostrarPublicacion"/>
-<output wsam:Action="http://service/NewWebService/MostrarPublicacionResponse" message="tns:MostrarPublicacionResponse"/>
-</operation>
-<operation name="AgregarPublicacion">
-<input wsam:Action="http://service/NewWebService/AgregarPublicacionRequest" message="tns:AgregarPublicacion"/>
-<output wsam:Action="http://service/NewWebService/AgregarPublicacionResponse" message="tns:AgregarPublicacionResponse"/>
-</operation>
 <operation name="AgregarEliminarAVL">
 <input wsam:Action="http://service/NewWebService/AgregarEliminarAVLRequest" message="tns:AgregarEliminarAVL"/>
 <output wsam:Action="http://service/NewWebService/AgregarEliminarAVLResponse" message="tns:AgregarEliminarAVLResponse"/>
 </operation>
-<operation name="DarUsuarioLog">
-<input wsam:Action="http://service/NewWebService/DarUsuarioLogRequest" message="tns:DarUsuarioLog"/>
-<output wsam:Action="http://service/NewWebService/DarUsuarioLogResponse" message="tns:DarUsuarioLogResponse"/>
-</operation>
-<operation name="DarUsuarioPerfil">
-<input wsam:Action="http://service/NewWebService/DarUsuarioPerfilRequest" message="tns:DarUsuarioPerfil"/>
-<output wsam:Action="http://service/NewWebService/DarUsuarioPerfilResponse" message="tns:DarUsuarioPerfilResponse"/>
-</operation>
-<operation name="AgregarUsuario">
-<input wsam:Action="http://service/NewWebService/AgregarUsuarioRequest" message="tns:AgregarUsuario"/>
-<output wsam:Action="http://service/NewWebService/AgregarUsuarioResponse" message="tns:AgregarUsuarioResponse"/>
-</operation>
-<operation name="GraphEvento">
-<input wsam:Action="http://service/NewWebService/GraphEventoRequest" message="tns:GraphEvento"/>
-<output wsam:Action="http://service/NewWebService/GraphEventoResponse" message="tns:GraphEventoResponse"/>
-</operation>
-<operation name="DarDatosPerfil">
-<input wsam:Action="http://service/NewWebService/DarDatosPerfilRequest" message="tns:DarDatosPerfil"/>
-<output wsam:Action="http://service/NewWebService/DarDatosPerfilResponse" message="tns:DarDatosPerfilResponse"/>
-</operation>
-<operation name="AsignarName">
-<input wsam:Action="http://service/NewWebService/AsignarNameRequest" message="tns:AsignarName"/>
-<output wsam:Action="http://service/NewWebService/AsignarNameResponse" message="tns:AsignarNameResponse"/>
-</operation>
-<operation name="ModificarUsuario">
-<input wsam:Action="http://service/NewWebService/ModificarUsuarioRequest" message="tns:ModificarUsuario"/>
-<output wsam:Action="http://service/NewWebService/ModificarUsuarioResponse" message="tns:ModificarUsuarioResponse"/>
-</operation>
-<operation name="GraphPublicacion">
-<input wsam:Action="http://service/NewWebService/GraphPublicacionRequest" message="tns:GraphPublicacion"/>
-<output wsam:Action="http://service/NewWebService/GraphPublicacionResponse" message="tns:GraphPublicacionResponse"/>
-</operation>
-<operation name="AsignarUsuario">
-<input wsam:Action="http://service/NewWebService/AsignarUsuarioRequest" message="tns:AsignarUsuario"/>
-<output wsam:Action="http://service/NewWebService/AsignarUsuarioResponse" message="tns:AsignarUsuarioResponse"/>
-</operation>
-<operation name="EliminarAmigo">
-<input wsam:Action="http://service/NewWebService/EliminarAmigoRequest" message="tns:EliminarAmigo"/>
-<output wsam:Action="http://service/NewWebService/EliminarAmigoResponse" message="tns:EliminarAmigoResponse"/>
-</operation>
-<operation name="MostrarPhoto">
-<input wsam:Action="http://service/NewWebService/MostrarPhotoRequest" message="tns:MostrarPhoto"/>
-<output wsam:Action="http://service/NewWebService/MostrarPhotoResponse" message="tns:MostrarPhotoResponse"/>
-</operation>
-<operation name="MostrarEvento">
-<input wsam:Action="http://service/NewWebService/MostrarEventoRequest" message="tns:MostrarEvento"/>
-<output wsam:Action="http://service/NewWebService/MostrarEventoResponse" message="tns:MostrarEventoResponse"/>
-</operation>
-<operation name="AgregarHistorial">
-<input wsam:Action="http://service/NewWebService/AgregarHistorialRequest" message="tns:AgregarHistorial"/>
-<output wsam:Action="http://service/NewWebService/AgregarHistorialResponse" message="tns:AgregarHistorialResponse"/>
-</operation>
-<operation name="EliminarUsuario">
-<input wsam:Action="http://service/NewWebService/EliminarUsuarioRequest" message="tns:EliminarUsuario"/>
-<output wsam:Action="http://service/NewWebService/EliminarUsuarioResponse" message="tns:EliminarUsuarioResponse"/>
-</operation>
-<operation name="ExisteAVL">
-<input wsam:Action="http://service/NewWebService/ExisteAVLRequest" message="tns:ExisteAVL"/>
-<output wsam:Action="http://service/NewWebService/ExisteAVLResponse" message="tns:ExisteAVLResponse"/>
-</operation>
-<operation name="DarNombre">
-<input wsam:Action="http://service/NewWebService/DarNombreRequest" message="tns:DarNombre"/>
-<output wsam:Action="http://service/NewWebService/DarNombreResponse" message="tns:DarNombreResponse"/>
-</operation>
-<operation name="AgregarAmigo">
-<input wsam:Action="http://service/NewWebService/AgregarAmigoRequest" message="tns:AgregarAmigo"/>
-<output wsam:Action="http://service/NewWebService/AgregarAmigoResponse" message="tns:AgregarAmigoResponse"/>
-</operation>
-<operation name="GraphHistorial">
-<input wsam:Action="http://service/NewWebService/GraphHistorialRequest" message="tns:GraphHistorial"/>
-<output wsam:Action="http://service/NewWebService/GraphHistorialResponse" message="tns:GraphHistorialResponse"/>
-</operation>
-<operation name="AgregarEvento">
-<input wsam:Action="http://service/NewWebService/AgregarEventoRequest" message="tns:AgregarEvento"/>
-<output wsam:Action="http://service/NewWebService/AgregarEventoResponse" message="tns:AgregarEventoResponse"/>
-</operation>
-<operation name="GraphArbolB">
-<input wsam:Action="http://service/NewWebService/GraphArbolBRequest" message="tns:GraphArbolB"/>
-<output wsam:Action="http://service/NewWebService/GraphArbolBResponse" message="tns:GraphArbolBResponse"/>
-</operation>
-<operation name="AsignarPhoto">
-<input wsam:Action="http://service/NewWebService/AsignarPhotoRequest" message="tns:AsignarPhoto"/>
-<output wsam:Action="http://service/NewWebService/AsignarPhotoResponse" message="tns:AsignarPhotoResponse"/>
-</operation>
-<operation name="hello">
-<input wsam:Action="http://service/NewWebService/helloRequest" message="tns:hello"/>
-<output wsam:Action="http://service/NewWebService/helloResponse" message="tns:helloResponse"/>
-</operation>
-<operation name="GraphAVL">
-<input wsam:Action="http://service/NewWebService/GraphAVLRequest" message="tns:GraphAVL"/>
-<output wsam:Action="http://service/NewWebService/GraphAVLResponse" message="tns:GraphAVLResponse"/>
-</operation>
-<operation name="Login">
-<input wsam:Action="http://service/NewWebService/LoginRequest" message="tns:Login"/>
-<output wsam:Action="http://service/NewWebService/LoginResponse" message="tns:LoginResponse"/>
-</operation>
 </portType>
 <binding name="NewWebServicePortBinding" type="tns:NewWebService">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="AgregarEvento">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DarUsuarioLog">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarPhoto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AsignarName">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="EliminarUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AsignarPhoto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DarDatosPerfil">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GraphHistorial">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarEvento">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GraphPublicacion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DarUsuarioPerfil">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AsignarUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="DarNombre">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ModificarUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ExisteAVL">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GraphEvento">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AgregarHistorial">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AgregarAmigo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AgregarUsuario">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="EliminarAmigo">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarMiEvento">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GraphArbolB">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="hello">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="EliminarSistema">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarAmigos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarHistorial">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="Login">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="GraphAVL">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarPublicacion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarEventoAndroid">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="AgregarHistorial2">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="MostrarPublicacionAndroid">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="DarDatosPerfilAndroid">
 <soap:operation soapAction=""/>
 <input>
@@ -346,7 +694,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="MostrarPublicacionAndroid">
+<operation name="AgregarPublicacion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -355,7 +703,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="MostrarEventoAndroid">
+<operation name="MostrarMiPublicacion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -373,241 +721,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="MostrarPublicacion">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AgregarPublicacion">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="AgregarEliminarAVL">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="DarUsuarioLog">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="DarUsuarioPerfil">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AgregarUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GraphEvento">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="DarDatosPerfil">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AsignarName">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="ModificarUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GraphPublicacion">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AsignarUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="EliminarAmigo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="MostrarPhoto">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="MostrarEvento">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AgregarHistorial">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="EliminarUsuario">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="ExisteAVL">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="DarNombre">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AgregarAmigo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GraphHistorial">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AgregarEvento">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GraphArbolB">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="AsignarPhoto">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="hello">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="GraphAVL">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="Login">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

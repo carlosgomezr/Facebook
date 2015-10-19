@@ -59,6 +59,30 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                 <input type=\"text\" name=\"texto1\" value=\"\" size=\"15\" />\n");
       out.write("                  Password:\n");
       out.write("                  <input type=\"password\" name=\"texto2\" value=\"\" size=\"15\" /> \n");
+      out.write("                      ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "Usuario ";
+	java.lang.String nombre = request.getParameter("texto1");
+	java.lang.String palabra2 = " Logueo ";
+	java.lang.String contenido = " a la APP ";
+	// TODO process result here
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("\n");
+      out.write("                  \n");
       out.write("                  <input type=\"submit\" value=\"Log-in\" name=\"boton1\">\n");
       out.write("             </form>\n");
       out.write("                 <form name=\"pasarreporte\" action=\"reporte.jsp\" method=\"POST\">\n");
@@ -106,6 +130,30 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                         <td></td>\n");
       out.write("                         \n");
       out.write("                         <td>\n");
+      out.write("        ");
+      out.write("<hr/>\n");
+      out.write("    ");
+
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "Se registró ";
+	java.lang.String nombre = request.getParameter("texto3");
+	java.lang.String palabra2 = " con correo ";
+	java.lang.String contenido = request.getParameter("texto4");
+	// TODO process result here
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    
+      out.write("\n");
+      out.write("    ");
+      out.write("<hr/>\n");
+      out.write("                         \n");
+      out.write("                             \n");
       out.write("        ");
       out.write("<hr/>\n");
       out.write("    ");

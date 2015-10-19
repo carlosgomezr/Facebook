@@ -59,6 +59,25 @@
     %>
     <%-- end web service invocation --%><hr/>
 
+        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "Agregó ";
+	java.lang.String nombre = usuarioLog;
+	java.lang.String palabra2 = " a ";
+	java.lang.String contenido = usuarioPerfil;
+	// TODO process result here
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
     
         
             <%-- start web service invocation --%><hr/>
@@ -67,8 +86,8 @@
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String correo = usuarioPerfil;
+	java.lang.String x = usuarioPerfil;
+	java.lang.String correo = usuarioLog;
 	java.lang.String nombre = name;
 	// TODO process result here
 	java.lang.String result = port.agregarAmigo(x, correo, nombre);

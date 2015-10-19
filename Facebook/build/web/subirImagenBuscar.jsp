@@ -29,10 +29,9 @@
     }
     
 %>
-<%! String usuarioLog=""; String usuarioPerfil=""; String titulo1=""; String texto1="";%>
+<%! String usuarioLog=""; String usuarioPerfil=""; String titulo1="Titulo"; String texto1="Imagen :D";%>
 <%
-            titulo1 = request.getParameter("titulo");
-            texto1 = request.getParameter("texto1");
+
 %>
     <%-- start web service invocation --%><hr/>
     <%
@@ -66,7 +65,7 @@
         
         <%-- start web service invocation --%><hr/>
     <%
-    try {
+    try { 
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
@@ -88,13 +87,15 @@
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String correo = usuarioPerfil;
+        
+	java.lang.String x = usuarioPerfil;
+	java.lang.String correo = usuarioLog;
 	java.lang.String titulo = titulo1;
-	java.lang.String publicador = usuarioPerfil;
+	java.lang.String publicador = usuarioLog;
 	java.lang.String texto = texto1;
 	java.lang.String imagen = aux;
-	// TODO process result here
+	out.println(" usuarioPerfil "+usuarioPerfil+" usuarioLog "+usuarioLog+" titulo1 "+titulo1+" texto1 "+texto1);
+        // TODO process result here
 	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
 	out.println("Result = "+result);
         response.sendRedirect("http://localhost:8080/Facebook/buscar.jsp");

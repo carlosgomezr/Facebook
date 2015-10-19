@@ -31,19 +31,24 @@ public class ObjectFactory {
     private final static QName _AsignarUsuario_QNAME = new QName("http://service/", "AsignarUsuario");
     private final static QName _GraphEvento_QNAME = new QName("http://service/", "GraphEvento");
     private final static QName _AgregarEvento_QNAME = new QName("http://service/", "AgregarEvento");
+    private final static QName _MostrarMiPublicacionResponse_QNAME = new QName("http://service/", "MostrarMiPublicacionResponse");
     private final static QName _MostrarPhotoAndroidResponse_QNAME = new QName("http://service/", "MostrarPhotoAndroidResponse");
     private final static QName _AgregarAmigoResponse_QNAME = new QName("http://service/", "AgregarAmigoResponse");
+    private final static QName _AgregarHistorial2Response_QNAME = new QName("http://service/", "AgregarHistorial2Response");
     private final static QName _DarNombre_QNAME = new QName("http://service/", "DarNombre");
     private final static QName _AgregarUsuarioResponse_QNAME = new QName("http://service/", "AgregarUsuarioResponse");
     private final static QName _GraphHistorialResponse_QNAME = new QName("http://service/", "GraphHistorialResponse");
     private final static QName _GraphAVLResponse_QNAME = new QName("http://service/", "GraphAVLResponse");
     private final static QName _GraphHistorial_QNAME = new QName("http://service/", "GraphHistorial");
+    private final static QName _AgregarHistorial2_QNAME = new QName("http://service/", "AgregarHistorial2");
+    private final static QName _EliminarSistemaResponse_QNAME = new QName("http://service/", "EliminarSistemaResponse");
     private final static QName _MostrarPublicacionAndroid_QNAME = new QName("http://service/", "MostrarPublicacionAndroid");
     private final static QName _AsignarName_QNAME = new QName("http://service/", "AsignarName");
     private final static QName _DarUsuarioPerfilResponse_QNAME = new QName("http://service/", "DarUsuarioPerfilResponse");
     private final static QName _GraphArbolBResponse_QNAME = new QName("http://service/", "GraphArbolBResponse");
     private final static QName _AsignarNameResponse_QNAME = new QName("http://service/", "AsignarNameResponse");
     private final static QName _MostrarEventoResponse_QNAME = new QName("http://service/", "MostrarEventoResponse");
+    private final static QName _MostrarHistorialResponse_QNAME = new QName("http://service/", "MostrarHistorialResponse");
     private final static QName _MostrarPhoto_QNAME = new QName("http://service/", "MostrarPhoto");
     private final static QName _AgregarHistorial_QNAME = new QName("http://service/", "AgregarHistorial");
     private final static QName _AgregarEventoResponse_QNAME = new QName("http://service/", "AgregarEventoResponse");
@@ -53,12 +58,18 @@ public class ObjectFactory {
     private final static QName _GraphEventoResponse_QNAME = new QName("http://service/", "GraphEventoResponse");
     private final static QName _AsignarPhoto_QNAME = new QName("http://service/", "AsignarPhoto");
     private final static QName _EliminarUsuario_QNAME = new QName("http://service/", "EliminarUsuario");
+    private final static QName _MostrarAmigosResponse_QNAME = new QName("http://service/", "MostrarAmigosResponse");
     private final static QName _MostrarEventoAndroidResponse_QNAME = new QName("http://service/", "MostrarEventoAndroidResponse");
+    private final static QName _MostrarMiEventoResponse_QNAME = new QName("http://service/", "MostrarMiEventoResponse");
     private final static QName _DarDatosPerfil_QNAME = new QName("http://service/", "DarDatosPerfil");
+    private final static QName _EliminarSistema_QNAME = new QName("http://service/", "EliminarSistema");
     private final static QName _LoginResponse_QNAME = new QName("http://service/", "LoginResponse");
     private final static QName _GraphPublicacionResponse_QNAME = new QName("http://service/", "GraphPublicacionResponse");
+    private final static QName _MostrarMiEvento_QNAME = new QName("http://service/", "MostrarMiEvento");
+    private final static QName _MostrarMiPublicacion_QNAME = new QName("http://service/", "MostrarMiPublicacion");
     private final static QName _Login_QNAME = new QName("http://service/", "Login");
     private final static QName _DarDatosPerfilAndroidResponse_QNAME = new QName("http://service/", "DarDatosPerfilAndroidResponse");
+    private final static QName _MostrarHistorial_QNAME = new QName("http://service/", "MostrarHistorial");
     private final static QName _ExisteAVLResponse_QNAME = new QName("http://service/", "ExisteAVLResponse");
     private final static QName _MostrarEventoAndroid_QNAME = new QName("http://service/", "MostrarEventoAndroid");
     private final static QName _MostrarPublicacionAndroidResponse_QNAME = new QName("http://service/", "MostrarPublicacionAndroidResponse");
@@ -75,6 +86,7 @@ public class ObjectFactory {
     private final static QName _AgregarUsuario_QNAME = new QName("http://service/", "AgregarUsuario");
     private final static QName _GraphPublicacion_QNAME = new QName("http://service/", "GraphPublicacion");
     private final static QName _MostrarPublicacion_QNAME = new QName("http://service/", "MostrarPublicacion");
+    private final static QName _MostrarAmigos_QNAME = new QName("http://service/", "MostrarAmigos");
     private final static QName _DarNombreResponse_QNAME = new QName("http://service/", "DarNombreResponse");
     private final static QName _AsignarPhotoResponse_QNAME = new QName("http://service/", "AsignarPhotoResponse");
     private final static QName _ModificarUsuarioResponse_QNAME = new QName("http://service/", "ModificarUsuarioResponse");
@@ -142,6 +154,14 @@ public class ObjectFactory {
      */
     public DarNombreResponse createDarNombreResponse() {
         return new DarNombreResponse();
+    }
+
+    /**
+     * Create an instance of {@link MostrarAmigos }
+     * 
+     */
+    public MostrarAmigos createMostrarAmigos() {
+        return new MostrarAmigos();
     }
 
     /**
@@ -233,6 +253,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link EliminarSistema }
+     * 
+     */
+    public EliminarSistema createEliminarSistema() {
+        return new EliminarSistema();
+    }
+
+    /**
      * Create an instance of {@link LoginResponse }
      * 
      */
@@ -249,6 +277,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MostrarHistorial }
+     * 
+     */
+    public MostrarHistorial createMostrarHistorial() {
+        return new MostrarHistorial();
+    }
+
+    /**
      * Create an instance of {@link DarDatosPerfilAndroidResponse }
      * 
      */
@@ -262,6 +298,22 @@ public class ObjectFactory {
      */
     public Login createLogin() {
         return new Login();
+    }
+
+    /**
+     * Create an instance of {@link MostrarMiEvento }
+     * 
+     */
+    public MostrarMiEvento createMostrarMiEvento() {
+        return new MostrarMiEvento();
+    }
+
+    /**
+     * Create an instance of {@link MostrarMiPublicacion }
+     * 
+     */
+    public MostrarMiPublicacion createMostrarMiPublicacion() {
+        return new MostrarMiPublicacion();
     }
 
     /**
@@ -377,6 +429,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link EliminarSistemaResponse }
+     * 
+     */
+    public EliminarSistemaResponse createEliminarSistemaResponse() {
+        return new EliminarSistemaResponse();
+    }
+
+    /**
      * Create an instance of {@link MostrarPublicacionAndroid }
      * 
      */
@@ -390,6 +450,14 @@ public class ObjectFactory {
      */
     public MostrarPhoto createMostrarPhoto() {
         return new MostrarPhoto();
+    }
+
+    /**
+     * Create an instance of {@link MostrarHistorialResponse }
+     * 
+     */
+    public MostrarHistorialResponse createMostrarHistorialResponse() {
+        return new MostrarHistorialResponse();
     }
 
     /**
@@ -473,6 +541,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MostrarMiEventoResponse }
+     * 
+     */
+    public MostrarMiEventoResponse createMostrarMiEventoResponse() {
+        return new MostrarMiEventoResponse();
+    }
+
+    /**
+     * Create an instance of {@link MostrarAmigosResponse }
+     * 
+     */
+    public MostrarAmigosResponse createMostrarAmigosResponse() {
+        return new MostrarAmigosResponse();
+    }
+
+    /**
      * Create an instance of {@link MostrarEventoAndroidResponse }
      * 
      */
@@ -545,6 +629,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MostrarMiPublicacionResponse }
+     * 
+     */
+    public MostrarMiPublicacionResponse createMostrarMiPublicacionResponse() {
+        return new MostrarMiPublicacionResponse();
+    }
+
+    /**
      * Create an instance of {@link GraphEvento }
      * 
      */
@@ -561,6 +653,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AgregarHistorial2Response }
+     * 
+     */
+    public AgregarHistorial2Response createAgregarHistorial2Response() {
+        return new AgregarHistorial2Response();
+    }
+
+    /**
      * Create an instance of {@link DarNombre }
      * 
      */
@@ -574,6 +674,14 @@ public class ObjectFactory {
      */
     public MostrarPhotoAndroidResponse createMostrarPhotoAndroidResponse() {
         return new MostrarPhotoAndroidResponse();
+    }
+
+    /**
+     * Create an instance of {@link AgregarHistorial2 }
+     * 
+     */
+    public AgregarHistorial2 createAgregarHistorial2() {
+        return new AgregarHistorial2();
     }
 
     /**
@@ -672,6 +780,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarMiPublicacionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarMiPublicacionResponse")
+    public JAXBElement<MostrarMiPublicacionResponse> createMostrarMiPublicacionResponse(MostrarMiPublicacionResponse value) {
+        return new JAXBElement<MostrarMiPublicacionResponse>(_MostrarMiPublicacionResponse_QNAME, MostrarMiPublicacionResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link MostrarPhotoAndroidResponse }{@code >}}
      * 
      */
@@ -687,6 +804,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "AgregarAmigoResponse")
     public JAXBElement<AgregarAmigoResponse> createAgregarAmigoResponse(AgregarAmigoResponse value) {
         return new JAXBElement<AgregarAmigoResponse>(_AgregarAmigoResponse_QNAME, AgregarAmigoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarHistorial2Response }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "AgregarHistorial2Response")
+    public JAXBElement<AgregarHistorial2Response> createAgregarHistorial2Response(AgregarHistorial2Response value) {
+        return new JAXBElement<AgregarHistorial2Response>(_AgregarHistorial2Response_QNAME, AgregarHistorial2Response.class, null, value);
     }
 
     /**
@@ -732,6 +858,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "GraphHistorial")
     public JAXBElement<GraphHistorial> createGraphHistorial(GraphHistorial value) {
         return new JAXBElement<GraphHistorial>(_GraphHistorial_QNAME, GraphHistorial.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarHistorial2 }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "AgregarHistorial2")
+    public JAXBElement<AgregarHistorial2> createAgregarHistorial2(AgregarHistorial2 value) {
+        return new JAXBElement<AgregarHistorial2>(_AgregarHistorial2_QNAME, AgregarHistorial2 .class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarSistemaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "EliminarSistemaResponse")
+    public JAXBElement<EliminarSistemaResponse> createEliminarSistemaResponse(EliminarSistemaResponse value) {
+        return new JAXBElement<EliminarSistemaResponse>(_EliminarSistemaResponse_QNAME, EliminarSistemaResponse.class, null, value);
     }
 
     /**
@@ -786,6 +930,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "MostrarEventoResponse")
     public JAXBElement<MostrarEventoResponse> createMostrarEventoResponse(MostrarEventoResponse value) {
         return new JAXBElement<MostrarEventoResponse>(_MostrarEventoResponse_QNAME, MostrarEventoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarHistorialResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarHistorialResponse")
+    public JAXBElement<MostrarHistorialResponse> createMostrarHistorialResponse(MostrarHistorialResponse value) {
+        return new JAXBElement<MostrarHistorialResponse>(_MostrarHistorialResponse_QNAME, MostrarHistorialResponse.class, null, value);
     }
 
     /**
@@ -870,6 +1023,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarAmigosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarAmigosResponse")
+    public JAXBElement<MostrarAmigosResponse> createMostrarAmigosResponse(MostrarAmigosResponse value) {
+        return new JAXBElement<MostrarAmigosResponse>(_MostrarAmigosResponse_QNAME, MostrarAmigosResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link MostrarEventoAndroidResponse }{@code >}}
      * 
      */
@@ -879,12 +1041,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarMiEventoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarMiEventoResponse")
+    public JAXBElement<MostrarMiEventoResponse> createMostrarMiEventoResponse(MostrarMiEventoResponse value) {
+        return new JAXBElement<MostrarMiEventoResponse>(_MostrarMiEventoResponse_QNAME, MostrarMiEventoResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link DarDatosPerfil }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://service/", name = "DarDatosPerfil")
     public JAXBElement<DarDatosPerfil> createDarDatosPerfil(DarDatosPerfil value) {
         return new JAXBElement<DarDatosPerfil>(_DarDatosPerfil_QNAME, DarDatosPerfil.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link EliminarSistema }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "EliminarSistema")
+    public JAXBElement<EliminarSistema> createEliminarSistema(EliminarSistema value) {
+        return new JAXBElement<EliminarSistema>(_EliminarSistema_QNAME, EliminarSistema.class, null, value);
     }
 
     /**
@@ -906,6 +1086,24 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarMiEvento }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarMiEvento")
+    public JAXBElement<MostrarMiEvento> createMostrarMiEvento(MostrarMiEvento value) {
+        return new JAXBElement<MostrarMiEvento>(_MostrarMiEvento_QNAME, MostrarMiEvento.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarMiPublicacion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarMiPublicacion")
+    public JAXBElement<MostrarMiPublicacion> createMostrarMiPublicacion(MostrarMiPublicacion value) {
+        return new JAXBElement<MostrarMiPublicacion>(_MostrarMiPublicacion_QNAME, MostrarMiPublicacion.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Login }{@code >}}
      * 
      */
@@ -921,6 +1119,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "DarDatosPerfilAndroidResponse")
     public JAXBElement<DarDatosPerfilAndroidResponse> createDarDatosPerfilAndroidResponse(DarDatosPerfilAndroidResponse value) {
         return new JAXBElement<DarDatosPerfilAndroidResponse>(_DarDatosPerfilAndroidResponse_QNAME, DarDatosPerfilAndroidResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarHistorial }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarHistorial")
+    public JAXBElement<MostrarHistorial> createMostrarHistorial(MostrarHistorial value) {
+        return new JAXBElement<MostrarHistorial>(_MostrarHistorial_QNAME, MostrarHistorial.class, null, value);
     }
 
     /**
@@ -1065,6 +1272,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "MostrarPublicacion")
     public JAXBElement<MostrarPublicacion> createMostrarPublicacion(MostrarPublicacion value) {
         return new JAXBElement<MostrarPublicacion>(_MostrarPublicacion_QNAME, MostrarPublicacion.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MostrarAmigos }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "MostrarAmigos")
+    public JAXBElement<MostrarAmigos> createMostrarAmigos(MostrarAmigos value) {
+        return new JAXBElement<MostrarAmigos>(_MostrarAmigos_QNAME, MostrarAmigos.class, null, value);
     }
 
     /**

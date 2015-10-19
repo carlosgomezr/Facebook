@@ -26,23 +26,22 @@
     <DIV ALIGN=right>
         <h2> Mis Eventos </h2>
 
-    <%-- start web service invocation --%><hr/>
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioLog();
-	out.println("Result = "+result);
+	out.println("USUARIO "+result);
         usuarioLog = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
+    <br></br>    
         
-        
-    <%-- start web service invocation --%><hr/>
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -51,14 +50,26 @@
 	java.lang.String x = usuarioLog;
 	// TODO process result here
 	java.lang.String result = port.mostrarEvento(x);
-	out.println("Result xD= "+result);
+	out.println(""+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %><br></br>
+
+    <br></br><%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String x = usuarioLog;
+	// TODO process result here
+	java.lang.String result = port.mostrarMiEvento(x);
+	out.println("Eventos creados por mi :D "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
-
+    <br></br>
         <h2> Crea tus eventos :D </h2>
         <form name="pasarevento" action="evento.jsp" method="POST">
         <table border="0">
@@ -95,8 +106,7 @@
                     <td></td>
                     <td></td>
                     <td>
-        <%-- start web service invocation --%><hr/>
-    <%
+  <br></br>  <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
@@ -108,16 +118,14 @@
 	java.lang.String direccion = request.getParameter("texto3");
 	// TODO process result here
 	java.lang.String result = port.agregarEvento(x, correo, evento, fecha, direccion);
-	out.println("Result = "+result);
+//	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
+  <br></br>
     
-        <%-- start web service invocation --%><hr/>
-    <%
+  <br></br>  <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
@@ -129,24 +137,24 @@
 	java.lang.String direccion = request.getParameter("texto3");
 	// TODO process result here
 	java.lang.String result = port.agregarEvento(x, correo, evento, fecha, direccion);
-	out.println("Result = "+result);
+//	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-    
-        <%-- start web service invocation --%><hr/>
-    <%
+  <br></br>
+  <br></br>  <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "Creo Evento ";
 	java.lang.String nombre = usuarioLog;
-	java.lang.String contenido = "Creo Evento "+request.getParameter("texto1")+"  Fecha "+request.getParameter("texto2")+" Direccion "+request.getParameter("texto3");
+	java.lang.String palabra2 = " invito ";
+	java.lang.String contenido = " a "+request.getParameter("texto4");
 	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
-	out.println("Result = "+result);
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
+//	out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }

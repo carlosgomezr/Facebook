@@ -29,10 +29,9 @@
     }
     
 %>
-<%! String usuarioLog=""; String usuarioPerfil=""; String titulo1=""; String texto1="";%>
+<%! String usuarioLog=""; String usuarioPerfil=""; String titulo1="Titulo"; String texto1="Imagen :D";%>
 <%
-            titulo1 = request.getParameter("titulo");
-            texto1 = request.getParameter("texto1");
+            
 %>
     <%-- start web service invocation --%><hr/>
     <%
@@ -94,10 +93,11 @@
 	java.lang.String publicador = usuarioLog;
 	java.lang.String texto = texto1;
 	java.lang.String imagen = aux;
-	// TODO process result here
+        out.println(usuarioLog+"  "+titulo1+"  "+texto1);
 	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
 	out.println("Result = "+result);
-        response.sendRedirect("http://localhost:8080/Facebook/Perfil.jsp");
+         response.sendRedirect("http://localhost:8080/Facebook/Perfil.jsp");
+ 
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }

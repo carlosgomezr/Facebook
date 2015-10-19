@@ -16,37 +16,34 @@
         <img src="BANNER FB.png"/>   
         
     <font color="white" FACE="verdana" SIZE=2>
-    <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioLog();
-	out.println("Result UserLog= "+result);
+	out.println("USUARIO = "+result);
         usuarioLog = result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
+    <br></br> 
     
-    
-        <%-- start web service invocation --%><hr/>
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.darUsuarioPerfil();
-	out.println("Result = "+result);
+	//out.println(""+result);
         usuarioPerfil=result;
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
+    <br></br>
     
         <h1></h1>  
     <br></br>
@@ -56,16 +53,16 @@
         </form>
         <form name="pasarbuscar" action="amigoredir.jsp" method="POST">
             
-                <%-- start web service invocation --%><hr/>
+            <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String nombre = usuarioPerfil;
+	java.lang.String nombre = usuarioLog;
 	// TODO process result here
 	java.lang.String result = port.asignarName(nombre);
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
@@ -76,11 +73,14 @@
             
             <input type="submit" value="<%= men%>" name="agregar" />
         </form>
+        <form name="pasareliminar" action="buscareliminar.jsp" method="POST">    
+            <input type="submit" value="ELIMINAR" name="eliminaruser" />
+        </form>
         
     </div>
     <div align="center"> 
         <DIV ALIGN=left>  
-        <%-- start web service invocation --%><hr/>
+            <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -89,13 +89,30 @@
 	java.lang.String x = usuarioPerfil;
 	// TODO process result here
 	java.lang.String result = port.mostrarPhoto(x);
-	out.println("Result = "+result);
-        out.println("O.O");
+	out.println(""+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
+   <br></br> 
+  <br></br>  
+  <%
+    try {
+	service.NewWebService_Service service = new service.NewWebService_Service();
+	service.NewWebService port = service.getNewWebServicePort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String palabra1 = "";
+	java.lang.String nombre = usuarioLog;
+	java.lang.String palabra2 = " busco a ";
+	java.lang.String contenido = usuarioPerfil;
+	// TODO process result here
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
+	//out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+  <br></br>  
  ---------¿Que es lo que me pasa?---------> 
 </DIV> 
              <table border="0">
@@ -111,44 +128,45 @@
                                     </textarea>
                                 </DIV>
                                 <DIV ALIGN=left>  
-                                    <%-- start web service invocation --%><hr/>
-    <%
+          <br></br>
+          <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String x = usuarioLog;
-	java.lang.String correo = usuarioPerfil;
+	java.lang.String x = usuarioPerfil;
+	java.lang.String correo = usuarioLog;
 	java.lang.String titulo = request.getParameter("titulo");
-	java.lang.String publicador = usuarioPerfil;
+	java.lang.String publicador = usuarioLog;
 	java.lang.String texto = request.getParameter("texto1");
 	java.lang.String imagen = "";
 	// TODO process result here
 	java.lang.String result = port.agregarPublicacion(x, correo, titulo, publicador, texto, imagen);
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-    
-        <%-- start web service invocation --%><hr/>
+    <br></br>    
+    <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String nombre = usuarioPerfil;
-	java.lang.String contenido = " Publicó "+request.getParameter("texto1");
+	java.lang.String palabra1 = " Publicó ";
+	java.lang.String nombre = usuarioLog;
+	java.lang.String palabra2 = " a ";
+	java.lang.String contenido = usuarioPerfil;
 	// TODO process result here
-	java.lang.String result = port.agregarHistorial(nombre, contenido);
-	out.println("Result = "+result);
+	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
     <%-- end web service invocation --%><hr/>
-                                
+
                                     <input type="submit" value="Publicar" name="boton1" /> 
                                 </DIV>
                              </form>
@@ -185,7 +203,7 @@
 	java.lang.String x = usuarioPerfil;
 	// TODO process result here
 	java.lang.String result = port.darDatosPerfil(x);
-	out.println("Result = "+result);
+	out.println(""+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
