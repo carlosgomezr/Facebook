@@ -57,7 +57,7 @@ public String imprimir()
         actual=primero;
         while(actual!=null)
         {
-            concatenar=concatenar+" <h3> Titulo "+actual.titulo+" </h3> <h3> Publicó: "+actual.nombre +" </h3> Texto: "+actual.texto +" <br></br> Imagen: <IMG SRC=\"/photos/"+actual.imagen+"\">  <br></br> ";
+            concatenar=concatenar+" <h3> Titulo "+actual.titulo+" </h3> <h3> Publicó: "+actual.nombre +" </h3> Texto: "+actual.texto +" <br></br> Imagen: <IMG SRC=\"http://localhost:8080/Facebook/photos/"+actual.imagen+"\"  <br></br> ";
             actual=actual.next;
         }
        primero=aux;

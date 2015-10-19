@@ -29,6 +29,7 @@ String auxpais="";
 String auxestado="";
 String auxfoto="";
 String auxcorreo="";
+String auxamigos="";
 boolean bandera=false;
 boolean banderalog=false;
 boolean existebandera=false;
@@ -542,6 +543,69 @@ nodo=nodo.Ramas[i];
 while (!Pila.VaciaLista() || !Vacio(nodo));
 }
 
+
+//Elimina al usuario del sistema completamente
+
+
+void eliminarSistema(String correo){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+        nodo.Claves[i-1].usuarios.eliminar(nodo.Claves[i-1].usuarios.root, correo);
+        
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+//Muestra amigos del usuario
+void MostrarAmigos(String x){
+int i=0;
+Bnodo nodo=p;
+auxamigos="";
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].usuarios.verAmigos(nodo.Claves[i-1].usuarios.root);
+        auxamigos=nodo.Claves[i-1].usuarios.amigo;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
 //Inserta en la lista de publicaciones del AVL del arbol B
 void insertarAVLPublicacion(String x,String correo,int id,String titulo,String publicador,String texto,String imagen){
 int i=0;
@@ -912,7 +976,7 @@ i++;
 if (i <= nodo.Cuentas){
     if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
         nodo.Claves[i-1].usuarios.verPublicacion(nodo.Claves[i-1].usuarios.root);
-        publicacion = nodo.Claves[i-1].usuarios.publicacion+nodo.Claves[i-1].publicacion.imprimir(); 
+        publicacion = nodo.Claves[i-1].usuarios.publicacion; 
     }
 if (i < nodo.Cuentas)
 Pila.InsertaFinal(nodo, i);
@@ -923,6 +987,36 @@ nodo=nodo.Ramas[i];
 while (!Pila.VaciaLista() || !Vacio(nodo));
 }
 
+void mostrarMiPublicacion(String x){
+int i=0;
+Bnodo nodo=p;
+banderalog = false;
+publicacion="";
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].publicacion.imprimir(); 
+        publicacion = nodo.Claves[i-1].publicacion.concatenar;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
 
 //Da los valores del nodo del arbol B
 void mostrarPublicacionAndroid(String x){
@@ -945,7 +1039,8 @@ i++;
 if (i <= nodo.Cuentas){
     if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
         nodo.Claves[i-1].usuarios.verPublicacionAndroid(nodo.Claves[i-1].usuarios.root);
-        publicacion = nodo.Claves[i-1].usuarios.publicacion+nodo.Claves[i-1].publicacion.imprimirAndroid();
+        nodo.Claves[i-1].publicacion.imprimirAndroid();
+        publicacion = nodo.Claves[i-1].usuarios.publicacion+nodo.Claves[i-1].publicacion.concatenar;
     }
 if (i < nodo.Cuentas)
 Pila.InsertaFinal(nodo, i);
@@ -978,7 +1073,7 @@ i++;
 if (i <= nodo.Cuentas){
     if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
         nodo.Claves[i-1].usuarios.verEvento(nodo.Claves[i-1].usuarios.root);
-        evento = nodo.Claves[i-1].usuarios.evento+nodo.Claves[i-1].evento.imprimir();
+        evento = nodo.Claves[i-1].usuarios.evento;
     }
 if (i < nodo.Cuentas)
 Pila.InsertaFinal(nodo, i);
@@ -989,6 +1084,38 @@ nodo=nodo.Ramas[i];
 while (!Pila.VaciaLista() || !Vacio(nodo));
 }
 
+
+
+void mostrarMiEvento(String x){
+int i=0;
+Bnodo nodo=p;
+banderalog = false;
+evento = "";
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].evento.imprimir();
+        evento=nodo.Claves[i-1].evento.concatenar;
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
 
 void mostrarEventoAndroid(String x){
 int i=0;
@@ -1011,7 +1138,8 @@ if (i <= nodo.Cuentas){
     if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
         nodo.Claves[i-1].usuarios.verEventoAndroid(nodo.Claves[i-1].usuarios.root);
         //System.out.println("evento antes "+evento);
-        evento =nodo.Claves[i-1].usuarios.evento+nodo.Claves[i-1].evento.imprimirAndroid();
+        nodo.Claves[i-1].evento.imprimir();
+        evento =nodo.Claves[i-1].usuarios.evento+nodo.Claves[i-1].evento.concatenar;
         //System.out.println("evento despues "+evento);
     }
 if (i < nodo.Cuentas)

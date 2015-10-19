@@ -49,7 +49,7 @@ public void imprimir()
         concatenar = "HISTORIAL DE: "+actual.nombre+" <br></br>";
         while(actual!=null)
         {
-            concatenar=concatenar+" contenido "+actual.contenido +" <br></br>";
+            concatenar=concatenar+" usuario "+actual.nombre+" contenido "+actual.contenido +" <br></br>";
             actual=actual.next;
         }
        primero=aux;

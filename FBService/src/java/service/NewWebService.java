@@ -466,6 +466,76 @@ public static listaHistorial historial = new listaHistorial();
         return name;
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "MostrarMiPublicacion")
+    public String MostrarMiPublicacion(@WebParam(name = "x") String x) {
+        m.mostrarMiPublicacion(x);
+        String mensaje=m.publicacion;
+        return mensaje;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "MostrarMiEvento")
+    public String MostrarMiEvento(@WebParam(name = "x") String x) {
+        m.mostrarMiEvento(x);
+        String mensaje = m.evento;
+        return mensaje;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "AgregarHistorial2")
+    public String AgregarHistorial2(@WebParam(name = "palabra1") String palabra1, @WebParam(name = "nombre") String nombre, @WebParam(name = "palabra2") String palabra2, @WebParam(name = "contenido") String contenido) {
+        if(nombre!=null && contenido!=null && palabra2!=null){
+            historial.alta(palabra1+" "+nombre,palabra2+" "+contenido);
+            Funcion g = new Funcion();
+            g.generarHistorial(historial,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Historial.txt",usuarioLog);
+            g.generarImagen("Historial","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Historial.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\"); 
+        }
+        //TODO write your implementation code here:
+        return "Agregar Historial ";
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "EliminarSistema")
+    public String EliminarSistema(@WebParam(name = "correo") String correo) {
+        m.eliminarSistema(correo);
+        m.GraficarArbolB("C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\ArbolB.txt");
+        Funcion g = new Funcion();
+        g.generarImagen("ArbolB","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\ArbolB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        //TODO write your implementation code here:
+        return null;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "MostrarAmigos")
+    public String MostrarAmigos(@WebParam(name = "x") String x) {
+        m.MostrarAmigos(x);
+        String mensaje=m.auxamigos;
+        //TODO write your implementation code here:
+        return mensaje;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "MostrarHistorial")
+    public String MostrarHistorial() {
+         historial.imprimir();
+         String mensaje = historial.concatenar;
+        //TODO write your implementation code here:
+        return mensaje;
+    }
+
 
 
     

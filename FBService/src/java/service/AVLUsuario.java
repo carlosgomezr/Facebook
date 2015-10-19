@@ -27,6 +27,7 @@ public AVLNode r;
 public boolean flag=false;
 public String evento="";
 public String publicacion="";
+public String amigo="";
 public boolean existe=false;
     public void insert( String correo,String nombre,int contador ){
         root = insert(correo,nombre,contador,root );
@@ -163,6 +164,45 @@ public String mostrarEventoAndroid(AVLNode nuevo){
                 mostrarEventoAndroid(nuevo.derecho);
             } 
             return evento;
+}
+
+public String verAmigos(AVLNode nuevo){
+    amigo="";
+    mostrarAmigos(nuevo);
+    return amigo;
+}
+
+public String verAmigosAndroid(AVLNode nuevo){
+    amigo="";
+    mostrarAmigosAndroid(nuevo);
+    return amigo;
+}
+
+public String mostrarAmigos(AVLNode nuevo){
+            
+            amigo = amigo+"<h2>"+nuevo.correo+" <br></br> "+nuevo.nombre+"</h2>";
+            if(nuevo.izquierdo!=null){
+                mostrarAmigos(nuevo.izquierdo);
+            }
+            if(nuevo.derecho!=null){
+                mostrarAmigos(nuevo.derecho);
+            } 
+            return amigo;
+         
+}
+
+
+public String mostrarAmigosAndroid(AVLNode nuevo){
+            
+            amigo = amigo+"\n"+nuevo.correo+"\n"+nuevo.nombre+"\n";
+            if(nuevo.izquierdo!=null){
+                mostrarAmigos(nuevo.izquierdo);
+            }
+            if(nuevo.derecho!=null){
+                mostrarAmigos(nuevo.derecho);
+            } 
+            return amigo;
+         
 }
 
 public void insertarPublicacion(AVLNode nuevo,String x,int id,String titulo, String publicador, String texto, String imagen){
