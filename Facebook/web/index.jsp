@@ -20,8 +20,7 @@
                  <input type="text" name="texto1" value="" size="15" />
                   Password:
                   <input type="password" name="texto2" value="" size="15" /> 
-                      <%-- start web service invocation --%><hr/>
-    <%
+      <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
@@ -32,16 +31,16 @@
 	java.lang.String contenido = " a la APP ";
 	// TODO process result here
 	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
+    
                   
                   <input type="submit" value="Log-in" name="boton1">
              </form>
+    <br></br>
                  <form name="pasarreporte" action="reporte.jsp" method="POST">
                      <input type="submit" value="REPORTES" name="botonr" />
                  </form>
@@ -87,7 +86,6 @@
                          <td></td>
                          
                          <td>
-        <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -99,15 +97,11 @@
 	java.lang.String contenido = request.getParameter("texto4");
 	// TODO process result here
 	java.lang.String result = port.agregarHistorial2(palabra1, nombre, palabra2, contenido);
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-                         
-                             
-        <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -123,25 +117,19 @@
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-                         
-                             
-        <%-- start web service invocation --%><hr/>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.graphArbolB();
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-                         
                              
-                                    <input type="submit" value="Registrar xD" name="boton2" />
+                         <input type="submit" value="Registrar xD" name="boton2" />
                          </td>
                      </tr>
                  </tbody>

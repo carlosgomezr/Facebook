@@ -23,25 +23,22 @@
      </form>
     </div>
     <form name="pasarreporte" action="reporte.jsp" method="POST">
-            <%-- start web service invocation --%><hr/>
-    <%
+      <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
 	service.NewWebService port = service.getNewWebServicePort();
 	// TODO process result here
 	java.lang.String result = port.graphArbolB();
-	out.println("Result = "+result);
+	//out.println("Result = "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }
     %>
-    <%-- end web service invocation --%><hr/>
-
         <input type="submit" value="                   ARBOL B               " name="boton0" />
     </form>
     <br></br>
     <form name="pasarreporte" action="reporte.jsp" method="POST">
-         <input type="text" name="texto1" value="" size="15" />
+         NODO B <input type="text" name="texto1" value="" size="15" />
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -61,8 +58,8 @@
     <br></br>
     <form name="pasarreporte" action="reporte.jsp" method="POST">
 
-        <input type="text" name="texto2" value="" size="15" />
-        <input type="text" name="texto5" value="" size="15" />
+        NODO B<input type="text" name="texto2" value="" size="15" />
+        NODO AVL<input type="text" name="texto5" value="" size="15" />
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -86,8 +83,8 @@
     
     
     <form name="pasarreporte" action="reporte.jsp" method="POST">
-        <input type="text" name="texto3" value="" size="15" />
-        <input type="text" name="texto6" value="" size="15" />
+        NODO B<input type="text" name="texto3" value="" size="15" />
+        NODO AVL<input type="text" name="texto6" value="" size="15" />
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();

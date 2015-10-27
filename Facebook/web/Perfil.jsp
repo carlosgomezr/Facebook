@@ -16,6 +16,7 @@
     <font color="white" face="arial">
              <img src="BANNER FB.png"/>    
              <center>
+                 <h2>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -28,6 +29,7 @@
 	// TODO handle custom exceptions here
     }
     %>
+                 </h2>
     <br></br>
                  <table border="0">
                      <tbody>

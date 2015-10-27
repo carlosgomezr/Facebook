@@ -16,6 +16,8 @@
         <img src="BANNER FB.png"/>   
         
     <font color="white" FACE="verdana" SIZE=2>
+    <center>
+    <h2>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -28,9 +30,8 @@
 	// TODO handle custom exceptions here
     }
     %>
-    <br></br> 
-    
-    <br></br>
+    </h2>
+    </center>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();
@@ -43,17 +44,14 @@
 	// TODO handle custom exceptions here
     }
     %>
-    <br></br>
     
-        <h1></h1>  
-    <br></br>
+    <h2><%=usuarioPerfil%></h2>  
     <DIV ALIGN=right>
         <form name="pasarperfil" action="Perfil.jsp" method="POST">
             <input type="submit" value="Mi Perfil" name="boton1" />
         </form>
         <form name="pasarbuscar" action="amigoredir.jsp" method="POST">
             
-            <br></br>
     <%
     try {
 	service.NewWebService_Service service = new service.NewWebService_Service();

@@ -32,6 +32,7 @@ public class ObjectFactory {
     private final static QName _GraphEvento_QNAME = new QName("http://service/", "GraphEvento");
     private final static QName _AgregarEvento_QNAME = new QName("http://service/", "AgregarEvento");
     private final static QName _MostrarMiPublicacionResponse_QNAME = new QName("http://service/", "MostrarMiPublicacionResponse");
+    private final static QName _AgregarEventoAmigos_QNAME = new QName("http://service/", "AgregarEventoAmigos");
     private final static QName _MostrarPhotoAndroidResponse_QNAME = new QName("http://service/", "MostrarPhotoAndroidResponse");
     private final static QName _AgregarAmigoResponse_QNAME = new QName("http://service/", "AgregarAmigoResponse");
     private final static QName _AgregarHistorial2Response_QNAME = new QName("http://service/", "AgregarHistorial2Response");
@@ -90,6 +91,7 @@ public class ObjectFactory {
     private final static QName _DarNombreResponse_QNAME = new QName("http://service/", "DarNombreResponse");
     private final static QName _AsignarPhotoResponse_QNAME = new QName("http://service/", "AsignarPhotoResponse");
     private final static QName _ModificarUsuarioResponse_QNAME = new QName("http://service/", "ModificarUsuarioResponse");
+    private final static QName _AgregarEventoAmigosResponse_QNAME = new QName("http://service/", "AgregarEventoAmigosResponse");
     private final static QName _EliminarAmigo_QNAME = new QName("http://service/", "EliminarAmigo");
     private final static QName _AgregarPublicacionResponse_QNAME = new QName("http://service/", "AgregarPublicacionResponse");
     private final static QName _GraphAVL_QNAME = new QName("http://service/", "GraphAVL");
@@ -186,6 +188,14 @@ public class ObjectFactory {
      */
     public AgregarPublicacionResponse createAgregarPublicacionResponse() {
         return new AgregarPublicacionResponse();
+    }
+
+    /**
+     * Create an instance of {@link AgregarEventoAmigosResponse }
+     * 
+     */
+    public AgregarEventoAmigosResponse createAgregarEventoAmigosResponse() {
+        return new AgregarEventoAmigosResponse();
     }
 
     /**
@@ -669,6 +679,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AgregarEventoAmigos }
+     * 
+     */
+    public AgregarEventoAmigos createAgregarEventoAmigos() {
+        return new AgregarEventoAmigos();
+    }
+
+    /**
      * Create an instance of {@link MostrarPhotoAndroidResponse }
      * 
      */
@@ -786,6 +804,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "MostrarMiPublicacionResponse")
     public JAXBElement<MostrarMiPublicacionResponse> createMostrarMiPublicacionResponse(MostrarMiPublicacionResponse value) {
         return new JAXBElement<MostrarMiPublicacionResponse>(_MostrarMiPublicacionResponse_QNAME, MostrarMiPublicacionResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarEventoAmigos }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "AgregarEventoAmigos")
+    public JAXBElement<AgregarEventoAmigos> createAgregarEventoAmigos(AgregarEventoAmigos value) {
+        return new JAXBElement<AgregarEventoAmigos>(_AgregarEventoAmigos_QNAME, AgregarEventoAmigos.class, null, value);
     }
 
     /**
@@ -1308,6 +1335,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://service/", name = "ModificarUsuarioResponse")
     public JAXBElement<ModificarUsuarioResponse> createModificarUsuarioResponse(ModificarUsuarioResponse value) {
         return new JAXBElement<ModificarUsuarioResponse>(_ModificarUsuarioResponse_QNAME, ModificarUsuarioResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AgregarEventoAmigosResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://service/", name = "AgregarEventoAmigosResponse")
+    public JAXBElement<AgregarEventoAmigosResponse> createAgregarEventoAmigosResponse(AgregarEventoAmigosResponse value) {
+        return new JAXBElement<AgregarEventoAmigosResponse>(_AgregarEventoAmigosResponse_QNAME, AgregarEventoAmigosResponse.class, null, value);
     }
 
     /**

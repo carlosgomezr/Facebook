@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/FBService/NewWebService?wsdl" uri="src/conf/xml-resources/web-service-references/NewWebService/wsdl/localhost_8080/FBService/NewWebService.wsdl"/>
     <system systemId="http://localhost:8080/FBService/NewWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/NewWebService/wsdl/localhost_8080/FBService/NewWebService.xsd_1.xsd"/>
+    <system systemId="http://192.168.160.1:8080/FBService/NewWebService?wsdl" uri="src/conf/xml-resources/web-service-references/NewWebService/wsdl/192.168.160.1_8080/FBService/NewWebService.wsdl"/>
+    <system systemId="http://192.168.160.1:8080/FBService/NewWebService?xsd=1" uri="src/conf/xml-resources/web-service-references/NewWebService/wsdl/192.168.160.1_8080/FBService/NewWebService.xsd_1.xsd"/>
 </catalog>
