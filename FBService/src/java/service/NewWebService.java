@@ -66,7 +66,7 @@ public static listaHistorial historial = new listaHistorial();
             if(m.bandera==false){
                 idusuarios = idusuarios+1;
                 mensaje="USUARIO CREADO "+nombre+"  "+correo+"  "+password;
-                NodoPr user = new NodoPr(idusuarios,correo,password,nombre,0,"","","","");
+                NodoPr user = new NodoPr(idusuarios,correo,password,nombre,0,"","","","hombre.png");
                 m.Inserta(user);
                 m.GraficarArbolB("C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\ArbolB.txt");
                 Funcion g = new Funcion();
@@ -170,6 +170,7 @@ public static listaHistorial historial = new listaHistorial();
     @WebMethod(operationName = "AgregarAmigo")
     public String AgregarAmigo(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo, @WebParam(name = "nombre") String nombre) {
         m.insertarAVL(x, correo, nombre, idAVL);
+        idAVL = idAVL+1;
         m.graficarAVL(x,"AVL "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt");
         Funcion g = new Funcion();
         g.generarImagen("AVL "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\AVL.txt", "C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
@@ -211,11 +212,22 @@ public static listaHistorial historial = new listaHistorial();
      */
     @WebMethod(operationName = "AgregarEvento")
     public String AgregarEvento(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo, @WebParam(name = "evento") String evento, @WebParam(name = "fecha") String fecha, @WebParam(name = "direccion") String direccion) {
-        if(x!=null && correo!=null && evento!=null && fecha!=null && direccion!=null){
+        if(x!=null && evento!=null && fecha!=null && direccion!=null){
+            //if(correo!=null){
+              //  listanombre l = new listanombre();
+              //  analizador ana = new analizador();
+              //  ana.analizar(l, correo);
+            //    int t = l.tamaño();
+            //    for(int i=1;i<=t;i++){
+            //        m.insertarAVLEvento(l.posicionPublicacion(i),x, ideventos, evento, fecha, direccion);
+            //    }
+            //}else{
+            //m.insertarAVLEvento(x, correo,0, "event", "fecha", "direccion");
             m.insertarAVLEvento(x, correo, ideventos, evento, fecha, direccion);
-            m.graficarAVLEvento(x,correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","Eventos :B");
+            //}
+            m.graficarAVLEvento(x,correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Eventos2B.txt","Eventos");
             Funcion g = new Funcion();
-            g.generarImagen("Eventos"+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+            g.generarImagen("Eventos"+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Eventos2B.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
         }
         //TODO write your implementation code here:
         return "Evento creado ";
@@ -326,7 +338,7 @@ public static listaHistorial historial = new listaHistorial();
     public String MostrarPhoto(@WebParam(name = "x") String x) {
     String mensaje="";
     m.darPhotoB(x);
-    mensaje="<img src=\"photos/"+m.auxfoto+"\"/  width=\"80\" height=\"80\">";
+    mensaje="<img src=\"photos/"+m.auxfoto+"\"/  width=\"120\" height=\"120\">";
     
     
         //TODO write your implementation code here:
@@ -431,7 +443,11 @@ public static listaHistorial historial = new listaHistorial();
         Funcion g = new Funcion();
         m.graficarAVLPublicacion(x, correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicacion.txt", "Publicaciones "+x);
         g.generarImagen("Publicacion "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Publicacion.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        m.graficarMiPublicacion(x, "C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\MiPublicacion.txt");
+        g.generarImagen("MiPublicacion "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\MiPublicacion.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
         return "Graficar Publicacion";
+
+    
     }
 
     /**
@@ -443,6 +459,9 @@ public static listaHistorial historial = new listaHistorial();
         Funcion g = new Funcion();
         m.graficarAVLPublicacion(x, correo,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Evento.txt", "Eventos "+x);
         g.generarImagen("Evento "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\Evento.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        m.graficarMiEvento(x, "C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\MiEvento.txt");
+        g.generarImagen("Mi Evento "+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\MiEvento.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        
         return "Graficar Evento";
     }
 
@@ -535,6 +554,33 @@ public static listaHistorial historial = new listaHistorial();
         //TODO write your implementation code here:
         return mensaje;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "AgregarEventoAmigos")
+    public String AgregarEventoAmigos(@WebParam(name = "x") String x, @WebParam(name = "correo") String correo, @WebParam(name = "evento") String evento, @WebParam(name = "fecha") String fecha, @WebParam(name = "direccion") String direccion) {
+       if(x!=null && evento!=null && fecha!=null && direccion!=null){
+            if(correo!=null){
+                listanombre l = new listanombre();
+                analizador ana = new analizador();
+                ana.analizar(l, correo);
+                int t = l.tamaño();
+                for(int i=1;i<=t;i++){
+                     m.insertarAVLEvento(l.posicionPublicacion(i),x, ideventos, evento, fecha, direccion);
+              }
+            }
+            //m.insertarAVLEvento(x, correo,0, "event", "fecha", "direccion");
+            //m.insertarAVLEvento(x, correo, ideventos, evento, fecha, direccion);
+            //}
+            m.graficarAVLEvento(x,x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","Eventos");
+            Funcion g = new Funcion();
+            g.generarImagen("Eventos"+x,"C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\EventosB.txt","C:\\Users\\estua_000\\Documents\\NetBeansProjects\\FBService\\src\\");
+        }
+        //TODO write your implementation code here:
+        return "Evento creado ";
+    }
+
 
 
 

@@ -177,6 +177,58 @@ public int posicionPublicacionID(int tam){
         return id;
 }
 
+public void generarPublicaciones(listaPublicacion lista,String ruta){
+            listaPublicacion aux = lista;
+	    nodoP auxprimero = lista.primero;
+            nodoP auxultimo = lista.ultimo;
+            File f;
+            
+            int c = 0;
+            int c2 = 1;
+	    
+            FileWriter escribir;
+	    try{
+	    f = new File(ruta);
+	    escribir = new FileWriter(f);
+	    BufferedWriter bw = new BufferedWriter(escribir);
+	    PrintWriter pw = new PrintWriter(bw);
+            pw.write("digraph grafica { \n");
+            pw.write("label= \"LISTA DOBLE  Mis publicaciones\"");
+            pw.write("node [shape=record];\n");
+	    pw.write("subgraph g { \n "); 
+            if(lista.primero!=null){
+                
+         
+                    if(aux.primero.next!=null){
+                        while(aux.primero.next!=null){
+                            pw.write("node"+c+"[label=\" Titulo: "+aux.primero.titulo+"\\n Quien publicó: "+aux.primero.nombre+"\\n Texto: "+aux.primero.texto+"\\n Imagen: "+aux.primero.imagen+"\"];\n");
+                            pw.write("node"+c2+"[label=\" Titulo: "+aux.primero.next.titulo+"\\n Quien publicó: "+aux.primero.next.nombre+"\\n Texto: "+aux.primero.next.texto+"\\n Imagen: "+aux.primero.next.imagen+"\"];\n");
+                            pw.write("node"+c+"->node"+c2+";\n");
+                            pw.write("node"+c2+"->node"+c+";\n");
+                            aux.primero = aux.primero.next;
+                            c=c+1;
+                            c2=c2+1;
+                        }
+                    }
+                    else{
+                            pw.write("node"+aux.primero.id+"[label=\" Titulo: "+aux.primero.titulo+"\\n Quien publicó: "+aux.primero.nombre+"\\n Texto: "+aux.primero.texto+"\\n Imagen: "+aux.primero.imagen+"\"];\n");
+                    }
+                
+            }
+            else{
+                    System.out.println("    lista vacia  ");
+            }
+            pw.write("}\n");
+	    pw.write("}\n");
+	    pw.close();
+	    bw.close();
+	    aux.primero = auxprimero;
+            aux.ultimo = auxultimo;
+            }
+	    catch(IOException e){System.out.println("Error: "+e.getMessage());
+            
+            }       
+}
 
 }
 

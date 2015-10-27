@@ -659,6 +659,7 @@ nodo=Pila.UltimoNodo.datos;
 Pila.EliminaFinal();
 i++;
 if (i <= nodo.Cuentas){
+    
     if(nodo.Claves[i-1].correo.compareTo(x)==0||nodo.Claves[i-1].user.compareTo(x)==0){
         if(x.compareTo(correo)==0){
             nodo.Claves[i-1].evento.alta(id, evento, fecha, direccion,"ACTIVO");
@@ -822,6 +823,63 @@ i++;
 if (i <= nodo.Cuentas){
     if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
         nodo.Claves[i-1].usuarios.PublicacionxUsuario(nodo.Claves[i-1].usuarios.root, correo, ruta, nombre);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+
+void graficarMiPublicacion(String x,String ruta){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].publicacion.generarPublicaciones(nodo.Claves[i-1].publicacion,ruta);
+    }
+if (i < nodo.Cuentas)
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+}
+}
+while (!Pila.VaciaLista() || !Vacio(nodo));
+}
+
+void graficarMiEvento(String x,String ruta){
+int i=0;
+Bnodo nodo=p;
+ListaSimpleB Pila = new ListaSimpleB();
+do{
+i=0;
+while (!Vacio(nodo)){
+Pila.InsertaFinal(nodo, i);
+nodo=nodo.Ramas[i];
+}
+if (!Pila.VaciaLista()){
+i=Pila.UltimoNodo.indice;
+nodo=Pila.UltimoNodo.datos;
+Pila.EliminaFinal();
+i++;
+if (i <= nodo.Cuentas){
+    if(nodo.Claves[i-1].correo.compareTo(x)==0 || nodo.Claves[i-1].user.compareTo(x)==0){
+        nodo.Claves[i-1].evento.generarEvento(nodo.Claves[i-1].evento, ruta);
     }
 if (i < nodo.Cuentas)
 Pila.InsertaFinal(nodo, i);
